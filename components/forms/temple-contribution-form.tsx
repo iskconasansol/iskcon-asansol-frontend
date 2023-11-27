@@ -94,7 +94,10 @@ const TempleContributionForm: React.FC<Props> = ({ className }) => {
                 Square feet contribution
               </FormLabel>
 
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={String(field.value)}
+              >
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Select sqft" />
@@ -132,7 +135,7 @@ const TempleContributionForm: React.FC<Props> = ({ className }) => {
                 <FormLabel>Labour Charges</FormLabel>
                 <Select
                   onValueChange={field.onChange}
-                  defaultValue={field.value}
+                  defaultValue={String(field.value)}
                 >
                   <FormControl>
                     <SelectTrigger>
