@@ -1,6 +1,6 @@
 import ComingSoon from '@/components/coming-soon';
 
-const Projects = () => {
+const Festivals = () => {
   return (
     <main>
       <ComingSoon />
@@ -8,4 +8,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Festivals;

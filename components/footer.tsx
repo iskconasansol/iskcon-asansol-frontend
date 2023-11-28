@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="min-h-[100px] w-full container mx-auto font-light px-8 md:px-auto border-t">
-      <div className="grid gap-4 py-8 md:grid-cols-4">
+      <div className="grid gap-4 py-16 md:grid-cols-4">
         <section>
           <div className="flex gap-2 items-center">
             <IskconLogoIcon className="w-20 h-20" />
@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
         </section>
       </div>
-      <div className="flex justify-between items-center w-full border-t border-gray-200 py-8 text-xs md:text-md">
+      <div className="flex justify-between items-center w-full border-t border-gray-200 py-8 text-xs md:text-base">
         <div>© {currentYear} ISKCON Asansol</div>
 
         {/* terms privacy cancellation */}

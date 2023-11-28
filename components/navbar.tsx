@@ -32,7 +32,7 @@ const Navbar = () => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Iskcon</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="md:w-[600px]">
+                    <ul className="md:w-[200px]">
                       <li>
                         <Link href="/history" legacyBehavior passHref>
                           <NavigationMenuLink
@@ -73,89 +73,41 @@ const Navbar = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-                  <NavigationMenuContent></NavigationMenuContent>
+                  <Link href="/projects" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Projects
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Activities</NavigationMenuTrigger>
-                  <NavigationMenuContent></NavigationMenuContent>
+                  <Link href="/activities" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Activities
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Festivals</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="md:w-[600px]">
-                      <li>
-                        <Link href="/upcoming-events" legacyBehavior passHref>
-                          <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                          >
-                            Upcoming Events
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/nityananda-trayodasi"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                          >
-                            Nityananda Trayodasi
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/vasanta-panchami" legacyBehavior passHref>
-                          <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                          >
-                            Vasanta Panchami
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
+                  <Link href="/festivals" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Festivals
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Our Members</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="md:w-[600px]">
-                      <li>
-                        <Link href="/upcoming-events" legacyBehavior passHref>
-                          <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                          >
-                            Founder Members
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/nityananda-trayodasi"
-                          legacyBehavior
-                          passHref
-                        >
-                          <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                          >
-                            Nitya Seva Members
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/vasanta-panchami" legacyBehavior passHref>
-                          <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                          >
-                            Rath Yatra Seva Members
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
+                  <Link href="/members" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Members
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>

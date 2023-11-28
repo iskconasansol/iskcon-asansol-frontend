@@ -27,7 +27,7 @@ type PropType = {
 };
 
 const autoplayOptions = {
-  delay: 4000,
+  delay: 8000,
   jump: false,
   rootNode: (emblaRoot: any) => emblaRoot.parentElement,
 };
@@ -60,17 +60,17 @@ const Carousel: React.FC<PropType> = (props) => {
                   fill={true}
                 />
               </div>
-              <div className="bg-opacity-70 bg-purple-800 absolute left-8 lg:left-12 top-2/3 transform -translate-y-1/3 py-4 px-4 lg:px-10 rounded-md font-light">
-                <div className="text-2xl md:text-4xl lg:text-7xl font-bold text-yellow-400">
+              <div className="bg-opacity-60 bg-teal-800 absolute right-8 top-0 mt-4 py-4 px-4 lg:px-8 rounded-md font-light">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-300">
                   {slide.title}
                 </div>
-                <div className="text-sm lg:text-2xl mt-2 text-white">
+                <div className="text-sm lg:text-2xl text-white">
                   {slide.description}
                 </div>
 
                 {slide.callToAction && (
                   <Link href={slide.callToAction.link}>
-                    <Button className="mt-2 md:mt-4 text-sm md:text-xl bg-orange-600">
+                    <Button className="mt-2 md:mt-4 text-sm md:text-xl bg-orange-900">
                       {slide.callToAction.text}
                     </Button>
                   </Link>

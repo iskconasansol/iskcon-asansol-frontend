@@ -34,7 +34,7 @@ const TempleTimeStatus = () => {
   }, []);
 
   return (
-    <div className="flex gap-2 items-center rounded-full p-2 border-gray-100 border-2 shadow-md">
+    <div className="flex gap-2 items-center rounded-full p-2 border-gray-100 border-2 shadow-md text-xs md:text-base">
       <div
         className={clsx(
           'w-4 h-4 rounded-full border-4',

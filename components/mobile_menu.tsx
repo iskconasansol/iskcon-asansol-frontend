@@ -3,28 +3,29 @@ import CurrencyRupeeIcon from '@/app/icons/currency-rupee-icon';
 import HomeIcon from '@/app/icons/home-icon';
 import PlusIcon from '@/app/icons/plus-icon';
 import SparklesIcon from '@/app/icons/sparkles-icon';
+import Link from 'next/link';
 
 const MobileNav = () => {
   return (
     <nav className="sticky bottom-0 md:hidden shadow-lg shadow-gray-500 drop-shadow-lg border-gray-100 border-t">
       <div className="flex justify-between items-center bg-white py-4 px-8 text-xs font-light">
-        <a href="#" className="flex justify-center flex-col items-center">
+        <Link href="/" className="flex justify-center flex-col items-center">
           <HomeIcon />
           <span>Home</span>
-        </a>
+        </Link>
 
-        <a href="#" className="flex justify-center flex-col items-center">
+        <Link href="/projects" className="flex justify-center flex-col items-center">
           <ChartBarIcon />
           <span>Projects</span>
-        </a>
-        <a href="#" className="flex justify-center flex-col items-center">
+        </Link>
+        <Link href="/donation" className="flex justify-center flex-col items-center">
           <CurrencyRupeeIcon />
           <span>Donate</span>
-        </a>
-        <a href="#" className="flex justify-center flex-col items-center">
+        </Link>
+        <Link href="/activities" className="flex justify-center flex-col items-center">
           <SparklesIcon />
           <span>Activities</span>
-        </a>
+        </Link>
         <a href="#" className="flex justify-center flex-col items-center">
           <PlusIcon />
           <span>More</span>
