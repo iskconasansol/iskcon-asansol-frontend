@@ -18,13 +18,17 @@ const TempleTimeStatus = () => {
   useEffect(() => {
     const date = new Date();
     const hour = date.getHours();
-    if (hour >= 4 && hour < 12) {
+    const minutes = date.getMinutes();
+
+    const totalMinutes = hour * 60 + minutes;
+
+    if (totalMinutes >= 4 * 60 + 30 && totalMinutes < 12 * 60 + 45) {
       setTempleStatus('open');
       setTempleTiming('4:30-12:30');
-    } else if (hour >= 12 && hour < 16) {
+    } else if (totalMinutes >= 12 * 60 + 45 && totalMinutes < 16 * 60 + 30) {
       setTempleStatus('closed');
       setTempleTiming('12:45 - 16:30');
-    } else if (hour >= 16 && hour < 20) {
+    } else if (totalMinutes >= 16 * 60 + 30 && totalMinutes < 20 * 60 + 30) {
       setTempleStatus('open');
       setTempleTiming('16:30 - 20:30');
     } else {
