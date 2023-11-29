@@ -17,7 +17,7 @@ const slides: Slide[] = [
     description: 'Daily worship of the Lord. Join us',
     image: '/images/lord_chaitanya.jpg',
     callToAction: {
-      text: 'Donate',
+      text: 'Know More',
       link: '/donation/nitya-seva',
     },
   },
