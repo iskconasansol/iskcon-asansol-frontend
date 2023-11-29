@@ -60,7 +60,7 @@ const Carousel: React.FC<PropType> = (props) => {
                   fill={true}
                 />
               </div>
-              <div className="bg-opacity-95 bg-gradient-to-b from-transparent to-fuchsia-900 absolute w-full md:w-full md:h-[400px] bottom-0 px-8 rounded-md font-light">
+              <div className="bg-opacity-95 bg-gradient-to-b from-transparent to-fuchsia-900 absolute w-full md:w-full md:h-[400px] bottom-0 p-8 md:py-0 rounded-md font-light">
                 <div className="md:transform md:translate-y-60 2xl:translate-y-28">
                   <div className="text-2xl md:text-3xl lg:text-4xl 2xl:text-8xl font-bold text-yellow-300">
                     {slide.title}
