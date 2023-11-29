@@ -52,7 +52,7 @@ const Carousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
-              <div className="relative w-full h-[300px] md:h-[600px]">
+              <div className="relative w-full h-[300px] md:h-[600px] 2xl:h-[800px]">
                 <Image
                   className="embla__slide__img object-cover object-top"
                   src={slide.image}
@@ -60,21 +60,23 @@ const Carousel: React.FC<PropType> = (props) => {
                   fill={true}
                 />
               </div>
-              <div className="bg-opacity-60 bg-teal-800 absolute right-8 top-0 mt-4 py-4 px-4 lg:px-8 rounded-md font-light">
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-300">
-                  {slide.title}
-                </div>
-                <div className="text-sm lg:text-2xl text-white">
-                  {slide.description}
-                </div>
+              <div className="bg-opacity-95 bg-gradient-to-b from-transparent to-fuchsia-900 absolute w-full md:w-full md:h-[400px] bottom-0 px-8 rounded-md font-light">
+                <div className="md:transform md:translate-y-60 2xl:translate-y-28">
+                  <div className="text-2xl md:text-3xl lg:text-4xl 2xl:text-8xl font-bold text-yellow-300">
+                    {slide.title}
+                  </div>
+                  <div className="text-sm lg:text-2xl 2xl:text-4xl text-white">
+                    {slide.description}
+                  </div>
 
-                {slide.callToAction && (
-                  <Link href={slide.callToAction.link}>
-                    <Button className="mt-2 md:mt-4 text-sm md:text-xl bg-orange-900">
-                      {slide.callToAction.text}
-                    </Button>
-                  </Link>
-                )}
+                  {slide.callToAction && (
+                    <Link href={slide.callToAction.link}>
+                      <Button className="mt-2 md:mt-4 text-sm md:text-xl 2xl:text-4xl 2xl:h-20 2xl:px-8 2xl:mt-8 bg-orange-600">
+                        {slide.callToAction.text}
+                      </Button>
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}

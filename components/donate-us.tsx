@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const items = [
 
@@ -18,20 +19,20 @@ const DonateUs = () => {
         </div>
 
         <div className="grid md:grid-cols-4 gap-4 mt-4">
-          <div className="bg-white rounded-md p-4 shadow-md border">
+          <Link href={'donation/nitya-seva'} className="bg-white rounded-md p-4 shadow-md border">
             <div className="h-40 bg-purple-300 rounded-md"></div>
 
             <h4 className="mt-2">Nitya Seva</h4>
 
             <Button className="mt-2">Donate Now</Button>
-          </div>
-          <div className="bg-white rounded-md p-4 shadow-md border">
+          </Link>
+          <Link href={'/projects/new-temple'} className="bg-white rounded-md p-4 shadow-md border">
             <div className="h-40 bg-orange-300 rounded-md"></div>
 
             <h4 className="mt-2">New Temple Construction</h4>
 
             <Button className="mt-2">Donate Now</Button>
-          </div>
+          </Link>
           <div className="bg-white rounded-md p-4 shadow-md border">
             <div className="h-40 bg-green-300 rounded-md"></div>
 

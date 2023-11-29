@@ -24,19 +24,19 @@ const Footer = () => {
           <h3 className="text-xl font-semibold">Quick Links</h3>
           <div className="mt-2">
             <div>
-              <Link href="#">About</Link>
+              <Link href="about-us">About</Link>
             </div>
             <div>
-              <Link href="#">Projects</Link>
+              <Link href="projects">Projects</Link>
             </div>
             <div>
-              <Link href="#">Donate</Link>
+              <Link href="donation">Donate</Link>
             </div>
             <div>
-              <Link href="#">Festivals</Link>
+              <Link href="festivals">Festivals</Link>
             </div>
             <div>
-              <Link href="#">Activities</Link>
+              <Link href="activities">Activities</Link>
             </div>
           </div>
         </section>
@@ -70,10 +70,10 @@ const Footer = () => {
 
         {/* terms privacy cancellation */}
         <div className="divide-x divide-gray-400">
-          <Link href="/terms" className="px-4">
+          <Link href="terms" className="px-4">
             Terms
           </Link>
-          <Link href="/privacy" className="px-4">
+          <Link href="privacy" className="px-4">
             Privacy
           </Link>
         </div>
