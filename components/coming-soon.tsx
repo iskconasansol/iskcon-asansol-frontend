@@ -7,13 +7,15 @@ const ComingSoon = () => {
             Coming Soon!
           </h1>
           <p className="text-gray-500">
-            We are working on this page. Please come back later.
+            Hare Krishna!
+            <br /> Dear devotee, the page you are looking for is currently under
+            construction. <br />
+            Please visit again later.
           </p>
         </div>
       </div>
     </section>
   );
 };
-
 
 export default ComingSoon;

@@ -1,24 +1,29 @@
-import BookIcon from '@/app/icons/book-icon';
 import CowIcon from '@/app/icons/cow-icon';
-import KitchenIcon from '@/app/icons/kitchen-icon';
 import KrishnaIcon from '@/app/icons/krishna-icon';
+import GitaIcon from '@/app/icons/gita-icon';
+import PrasadamIcon from '@/app/icons/prasadam-icon';
+import Link from 'next/link';
 
 const servicesData = [
   {
     title: 'Deity Worship',
-    icon: <KrishnaIcon className="w-10 h-10" />,
+    icon: <KrishnaIcon className="w-20 h-20" />,
+    link: '#',
   },
   {
     title: 'Devotee Prasadam',
-    icon: <KitchenIcon className="w-10 h-10" />,
+    icon: <PrasadamIcon className="w-20 h-20" />,
+    link: '#',
   },
   {
     title: 'Goshala',
-    icon: <CowIcon className="w-10 h-10" />,
+    icon: <CowIcon className="w-20 h-20" />,
+    link: '#',
   },
   {
     title: 'Free Gita Classes',
-    icon: <BookIcon className="w-10 h-10" />,
+    icon: <GitaIcon className="w-20 h-20" />,
+    link: 'activities/gita-classes',
   },
 ];
 
@@ -33,17 +38,18 @@ const Services = () => {
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {servicesData.map((service, index) => (
-            <div
+            <Link
+              href={service.link}
               key={index}
               className="flex flex-col items-center justify-center gap-2"
             >
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center">
                 {service.icon}
               </div>
               <div className="text-xs md:text-base text-center">
                 {service.title}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

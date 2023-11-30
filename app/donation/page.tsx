@@ -1,3 +1,9 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Donate Us',
+};
+
 const Donation = () => {
   return (
     <main className="bg-yellow-50">

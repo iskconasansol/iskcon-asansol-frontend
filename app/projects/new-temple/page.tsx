@@ -8,7 +8,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import NityaSevaForm from '@/components/forms/nitya-seva-form';
+
+import {Metadata} from 'next';
+
+export const metadata: Metadata = {
+  title: 'New Temple',
+};
 
 const NewTemple = () => {
   return (

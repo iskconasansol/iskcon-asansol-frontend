@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Privacy Policy',
+};
+
 const Privacy = () => {
   return (
     <main className="py-16">

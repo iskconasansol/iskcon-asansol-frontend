@@ -58,7 +58,6 @@ const Carousel: React.FC<PropType> = (props) => {
                   src={slide.image}
                   alt={slide.description}
                   fill={true}
-                  placeholder="blur"
                 />
               </div>
               <div className="md:bg-gradient-to-b from-transparent to-fuchsia-900 bg-fuchsia-800 bg-opacity-70 md:bg-transparent absolute w-full md:w-full md:h-[400px] bottom-0 px-8 py-4 md:py-0 rounded-md font-light">
