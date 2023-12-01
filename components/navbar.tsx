@@ -34,7 +34,7 @@ const Navbar = () => {
                   <NavigationMenuContent>
                     <ul className="md:w-[200px]">
                       <li>
-                        <Link href="/history" legacyBehavior passHref>
+                        <Link href="/iskcon/history" legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
@@ -43,7 +43,7 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/philosophy" legacyBehavior passHref>
+                        <Link href="/iskcon/philosophy" legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
@@ -52,7 +52,7 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/founder" legacyBehavior passHref>
+                        <Link href="/iskcon/founder" legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
@@ -61,7 +61,7 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li className="">
-                        <Link href="/about-us" legacyBehavior passHref>
+                        <Link href="/iskcon/about-us" legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >

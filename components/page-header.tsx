@@ -4,10 +4,11 @@ import { cn } from '@/lib/utils';
 
 type Props = {
   className?: string;
-  title: string;
+  title?: string;
+  children?: React.ReactNode;
 };
 
-const PageHeader: React.FC<Props> = ({ className, title }) => {
+const PageHeader: React.FC<Props> = ({ className, title, children }) => {
   return (
     <section
       className={cn(
@@ -15,7 +16,11 @@ const PageHeader: React.FC<Props> = ({ className, title }) => {
         className
       )}
     >
-      <h1 className="text-lg md:text-2xl lg:text-5xl font-bold">{title}</h1>
+      {title && (
+        <h1 className="text-lg md:text-2xl lg:text-5xl font-bold">{title}</h1>
+      )}
+
+      {children}
     </section>
   );
 };

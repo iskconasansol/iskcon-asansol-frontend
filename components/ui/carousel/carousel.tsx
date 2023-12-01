@@ -52,7 +52,7 @@ const Carousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
-              <div className="relative w-full h-[300px] md:h-[600px] 2xl:h-[800px]">
+              <div className="relative w-full h-[300px] md:h-[600px]">
                 <Image
                   className="embla__slide__img object-cover object-top"
                   src={slide.image}
@@ -61,17 +61,17 @@ const Carousel: React.FC<PropType> = (props) => {
                 />
               </div>
               <div className="md:bg-gradient-to-b from-transparent to-fuchsia-900 bg-fuchsia-800 bg-opacity-70 md:bg-transparent absolute w-full md:w-full md:h-[400px] bottom-0 px-8 py-4 md:py-0 rounded-md font-light">
-                <div className="md:transform md:translate-y-60 2xl:translate-y-28">
-                  <div className="text-xl md:text-3xl lg:text-4xl 2xl:text-8xl font-bold text-yellow-300">
+                <div className="md:transform md:translate-y-60">
+                  <div className="text-xl md:text-3xl lg:text-4xl font-bold text-yellow-300">
                     {slide.title}
                   </div>
-                  <div className="text-sm lg:text-2xl 2xl:text-4xl text-white">
+                  <div className="text-sm lg:text-2xl text-white">
                     {slide.description}
                   </div>
 
                   {slide.callToAction && (
                     <Link href={slide.callToAction.link}>
-                      <Button className="mt-2 md:mt-4 text-sm md:text-xl 2xl:text-4xl 2xl:h-20 2xl:px-8 2xl:mt-8 bg-orange-600">
+                      <Button className="mt-2 md:mt-4 text-sm md:text-xl bg-orange-600">
                         {slide.callToAction.text}
                       </Button>
                     </Link>
