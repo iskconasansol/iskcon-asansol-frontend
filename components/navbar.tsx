@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="flex gap-4">
           <TempleTimeStatus />
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
