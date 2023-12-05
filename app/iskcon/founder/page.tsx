@@ -9,7 +9,8 @@ const Founder = () => {
           src={'/images/prabhupada.jpg'}
           fill={true}
           alt="Prabhupada image"
-          className="object-none object-top"
+          objectFit='cover'
+          objectPosition='top'
         />
       </PageHeader>
 

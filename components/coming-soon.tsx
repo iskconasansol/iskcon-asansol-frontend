@@ -1,4 +1,4 @@
-import KrishnaIcon from '@/app/icons/krishna-icon';
+import KrishnaIcon from '@/components/icons/krishna-icon';
 
 const ComingSoon = () => {
   return (
@@ -12,7 +12,7 @@ const ComingSoon = () => {
           <div className="mt-4 text-center flex flex-col items-center space-y-4">
             <KrishnaIcon className="w-40 h-40" />
             <p className="text-gray-500 mt-4 text-center">
-             <span className='font-semibold text-xl'>Hare Krishna!</span>
+              <span className="font-semibold text-xl">Hare Krishna!</span>
               <br /> Dear devotee, the page you are looking for is currently
               under construction. <br />
               Please visit again later.

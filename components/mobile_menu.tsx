@@ -1,8 +1,10 @@
-import ChartBarIcon from '@/app/icons/chart-bar-icon';
-import CurrencyRupeeIcon from '@/app/icons/currency-rupee-icon';
-import HomeIcon from '@/app/icons/home-icon';
-import PlusIcon from '@/app/icons/plus-icon';
-import SparklesIcon from '@/app/icons/sparkles-icon';
+'use client';
+
+import ChartBarIcon from '@/components/icons/chart-bar-icon';
+import CurrencyRupeeIcon from '@/components/icons/currency-rupee-icon';
+import HomeIcon from '@/components/icons/home-icon';
+import PlusIcon from '@/components/icons/plus-icon';
+import SparklesIcon from '@/components/icons/sparkles-icon';
 import Link from 'next/link';
 import {
   Popover,
@@ -12,6 +14,7 @@ import {
   PopoverArrow,
 } from '@/components/ui/popover';
 import { X } from 'lucide-react';
+import { useRef } from 'react';
 
 const moreItems = [
   {
@@ -30,14 +33,27 @@ const moreItems = [
     name: 'About Us',
     href: '/iskcon/about-us',
   },
+  {
+    name: 'Festivals',
+    href: '/festivals',
+  },
+  {
+    name: 'Members',
+    href: '/members',
+  },
+  {
+    name: 'Learn from Prabhupada',
+    href: '/learn-from-prabhupada',
+  }
 ];
 
 const MobileNav = () => {
+  const popoverClose = useRef(null);
   return (
-    <nav className="sticky bottom-0 lg:hidden shadow-lg shadow-gray-500 drop-shadow-lg border-gray-100 border-t">
-      <div className="flex justify-between items-center bg-white py-4 px-8 text-xs font-light">
-        <Link href="/" className="flex justify-center flex-col items-center">
-          <HomeIcon />
+    <nav className="sticky bottom-0 lg:hidden bg-yellow-50 text-gray-800">
+      <div className="flex justify-between items-center py-4 px-8 text-xs font-light">
+        <Link href="/" className="flex justify-center flex-col items-center ">
+          <HomeIcon className="" />
           <span>Home</span>
         </Link>
 
@@ -75,12 +91,18 @@ const MobileNav = () => {
                     href={item.href}
                     key={item.name}
                     className="py-2 px-4 hover:bg-gray-100"
+                    onClick={() => {
+                      if (popoverClose.current) {
+                        (popoverClose.current as HTMLButtonElement).click();
+                      }
+                    }}
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
               <PopoverClose
+                ref={popoverClose}
                 className="rounded-full h-[25px] w-[25px] inline-flex items-center justify-center absolute top-[5px] right-[5px] outline-none cursor-default"
                 aria-label="Close"
               >

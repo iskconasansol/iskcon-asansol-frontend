@@ -1,7 +1,7 @@
-import CowIcon from '@/app/icons/cow-icon';
-import KrishnaIcon from '@/app/icons/krishna-icon';
-import GitaIcon from '@/app/icons/gita-icon';
-import PrasadamIcon from '@/app/icons/prasadam-icon';
+import CowIcon from '@/components/icons/cow-icon';
+import KrishnaIcon from '@/components/icons/krishna-icon';
+import GitaIcon from '@/components/icons/gita-icon';
+import PrasadamIcon from '@/components/icons/prasadam-icon';
 import Link from 'next/link';
 
 const servicesData = [

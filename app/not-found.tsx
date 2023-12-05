@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import KrishnaIcon from './icons/krishna-icon';
+import KrishnaIcon from '../components/icons/krishna-icon';
 import Link from 'next/link';
 
 const NotFound = () => {

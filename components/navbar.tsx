@@ -1,6 +1,5 @@
 'use client';
 
-import IskconLogoIcon from '@/app/icons/iskcon-logo-icon';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,14 +11,20 @@ import {
 } from '@/components/ui/navigation-menu';
 import Link from 'next/link';
 import TempleTimeStatus from './temple-time-status';
+import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav className="w-full sticky top-0 shadow-md bg-white z-10">
+    <nav className="w-full sticky top-0 shadow-md bg-white z-10 py-2">
       <div className="container mx-auto md:px-auto flex justify-between items-center">
         <div className="flex gap-2 items-center">
           <Link href="/">
-            <IskconLogoIcon className="w-20 h-20" />
+            <Image
+              src="/images/logo/iskcon-asansol-logo.svg"
+              width={60}
+              height={60}
+              alt="logo"
+            />
           </Link>
         </div>
 
