@@ -12,6 +12,16 @@ import {
 import Link from 'next/link';
 import TempleTimeStatus from './temple-time-status';
 import Image from 'next/image';
+import {
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+  MenubarShortcut,
+} from '@/components/ui/menubar';
+import { Button } from '@/components/ui/button';
+import TranslateIcon from './icons/translate-icon';
 
 const Navbar = () => {
   return (
@@ -30,7 +40,6 @@ const Navbar = () => {
 
         <div className="flex gap-4">
           <TempleTimeStatus />
-
           <div className="hidden lg:block">
             <NavigationMenu>
               <NavigationMenuList>
@@ -108,6 +117,20 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+          </div>
+
+          <div className='hidden md:block'>
+            <Menubar>
+              <MenubarMenu>
+                <MenubarTrigger>
+                  <TranslateIcon />
+                </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>English</MenubarItem>
+                  <MenubarItem>Bengali</MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+            </Menubar>
           </div>
         </div>
       </div>
