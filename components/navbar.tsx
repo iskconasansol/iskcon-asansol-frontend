@@ -77,15 +77,7 @@ const Navbar = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/projects" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      Projects
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
+
                 <NavigationMenuItem>
                   <Link href="/activities" legacyBehavior passHref>
                     <NavigationMenuLink

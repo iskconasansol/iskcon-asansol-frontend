@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/popover';
 import { X } from 'lucide-react';
 import { useRef } from 'react';
+import FireIcon from './icons/fire-icon';
 
 const moreItems = [
   {
@@ -44,7 +45,7 @@ const moreItems = [
   {
     name: 'Learn from Prabhupada',
     href: '/learn-from-prabhupada',
-  }
+  },
 ];
 
 const MobileNav = () => {
@@ -58,11 +59,11 @@ const MobileNav = () => {
         </Link>
 
         <Link
-          href="/projects"
+          href="/activities"
           className="flex justify-center flex-col items-center"
         >
-          <ChartBarIcon />
-          <span>Projects</span>
+          <SparklesIcon />
+          <span>Activities</span>
         </Link>
         <Link
           href="/donation"
@@ -72,12 +73,13 @@ const MobileNav = () => {
           <span>Donate</span>
         </Link>
         <Link
-          href="/activities"
+          href="/festivals"
           className="flex justify-center flex-col items-center"
         >
-          <SparklesIcon />
-          <span>Activities</span>
+          <FireIcon />
+          <span>Donate</span>
         </Link>
+
         <a href="#" className="flex justify-center flex-col items-center">
           <Popover>
             <PopoverTrigger>

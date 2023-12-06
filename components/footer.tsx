@@ -51,7 +51,6 @@ const templeSchedule = [
 
 const quickLinks = [
   { name: 'About', link: '/about-us' },
-  { name: 'Projects', link: '/projects' },
   { name: 'Donate', link: '/donation' },
   { name: 'Festivals', link: '/festivals' },
   { name: 'Activities', link: '/activities' },

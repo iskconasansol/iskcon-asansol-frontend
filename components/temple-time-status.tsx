@@ -11,6 +11,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import TempleSchedule from './temple-schedule';
+import { ScrollArea } from './ui/scroll-area';
 
 type Props = {
   className?: string;
@@ -77,9 +78,13 @@ const TempleTimeStatus: React.FC<Props> = ({ className }) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className='text-left md:text-center'>Temple Schedule</DialogTitle>
+          <DialogTitle className="text-left md:text-center">
+            Temple Schedule
+          </DialogTitle>
           <DialogDescription>
-            <TempleSchedule />
+            <ScrollArea className="h-[450px] md:h-auto">
+              <TempleSchedule />
+            </ScrollArea>
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const items = [];
@@ -23,31 +24,59 @@ const DonateUs = () => {
             href={'donation/nitya-seva'}
             className="bg-white rounded-md p-4 shadow-md border"
           >
-            <div className="h-40 bg-purple-300 rounded-md"></div>
+            <div className="h-40 bg-purple-100 rounded-md relative">
+              <Image
+                fill={true}
+                src={'/images/jagannath.svg'}
+                alt="lord jagannath icon"
+                objectFit="contain"
+              />
+            </div>
 
             <h4 className="mt-2">Nitya Seva</h4>
 
             <Button className="mt-2">Donate Now</Button>
           </Link>
           <Link
-            href={'/projects/new-temple'}
+            href={'/activities/new-temple'}
             className="bg-white rounded-md p-4 shadow-md border"
           >
-            <div className="h-40 bg-orange-300 rounded-md"></div>
+            <div className="h-40 bg-orange-100 rounded-md relative">
+              <Image
+                fill={true}
+                src={'/images/temple.svg'}
+                alt="temple icon"
+                objectFit="contain"
+              />
+            </div>
 
             <h4 className="mt-2">Future Temple</h4>
 
             <Button className="mt-2">Donate Now</Button>
           </Link>
           <div className="bg-white rounded-md p-4 shadow-md border">
-            <div className="h-40 bg-green-300 rounded-md"></div>
+            <div className="h-40 bg-green-100 rounded-md relative">
+              <Image
+                fill={true}
+                src={'/images/shri_krishna.svg'}
+                alt="Shri Krishna image"
+                objectFit="contain"
+              />
+            </div>
 
             <h4 className="mt-2">Vigraha Seva</h4>
 
             <Button className="mt-2">Donate Now</Button>
           </div>
           <div className="bg-white rounded-md p-4 shadow-md border">
-            <div className="h-40 bg-teal-300 rounded-md"></div>
+            <div className="h-40 bg-teal-100 rounded-md relative">
+              <Image
+                fill={true}
+                src={'/images/namaste.svg'}
+                alt="Namaste icon"
+                objectFit="contain"
+              />
+            </div>
 
             <h4 className="mt-2">Temple Donation</h4>
 
