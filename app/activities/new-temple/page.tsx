@@ -1,19 +1,8 @@
-import TempleContributionForm from '@/components/forms/temple-contribution-form';
+'use client';
+
+import FutureTempleContributionForm from '@/components/forms/future-temple-contribution-form';
 import Image from 'next/image';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-
-import {Metadata} from 'next';
-
-export const metadata: Metadata = {
-  title: 'New Temple',
-};
+import { Card } from '@/components/ui/card';
 
 const NewTemple = () => {
   return (
@@ -25,31 +14,31 @@ const NewTemple = () => {
               {` Contribute towards construction of Lord Jagannath's temple`}
             </p>
             <p className="mt-2">
-              The new temple will be a 5 storey building with a total area of
-              25,000 sqft.
+              We are building a beautiful temple of Lord Jagannath in Garui
+              Village. You can contribute towards the construction of the temple
+              by donating funds or by donating construction materials. Hare
+              Krishna!
             </p>
           </div>
-          <div className="relative rounded-lg overflow-hidden">
+          <div className="relative rounded-lg overflow-hidden bg-yellow-100">
             <Image
-              src={'/images/new_temple.jpg'}
+              src={'/images/temple.svg'}
               fill={true}
               alt="new temple image"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         </section>
 
-        <Card className="md:w-[800px] shadow-md bg-orange-50 mx-auto mt-8">
-          <CardHeader>
-            <CardTitle>Contribute</CardTitle>
-            <CardDescription>
-              {`Contribute towards construction of Lord Jagannath's temple`}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {/* <NityaSevaForm /> */}
-            <TempleContributionForm />
-          </CardContent>
+        <Card className="md:w-[800px] shadow-md bg-yellow-100 mx-auto p-4 mt-4">
+          <h3 className="font-semibold text-xl lg:text-2xl text-center text-red-600">{`Contribute and receive Krishna's blessings`}</h3>
+
+          <FutureTempleContributionForm
+            className="mt-4"
+            onFormSubmit={(data) => {
+              console.log('form data', data);
+            }}
+          />
         </Card>
       </div>
     </main>

@@ -119,7 +119,7 @@ const Navbar = () => {
             </NavigationMenu>
           </div>
 
-          <div className='hidden md:block'>
+          <div className='hidden'>
             <Menubar>
               <MenubarMenu>
                 <MenubarTrigger>

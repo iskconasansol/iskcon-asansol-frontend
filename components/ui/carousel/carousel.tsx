@@ -71,7 +71,7 @@ const Carousel: React.FC<PropType> = (props) => {
 
                   {slide.callToAction && (
                     <Link href={slide.callToAction.link}>
-                      <Button className="mt-2 md:mt-4 text-sm md:text-xl bg-orange-300">
+                      <Button className="mt-2 md:mt-4 text-sm md:text-xl bg-orange-600 hover:bg-orange-800">
                         {slide.callToAction.text}
                       </Button>
                     </Link>

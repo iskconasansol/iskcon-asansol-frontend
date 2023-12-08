@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+        default: "bg-purple-900 text-purple-50 hover:bg-purple-900/90 dark:bg-purple-50 dark:text-purple-900 dark:hover:bg-purple-50/90",
         destructive:
-          "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
+          "bg-red-500 text-purple-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-purple-50 dark:hover:bg-red-900/90",
         outline:
-          "border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
+          "border border-purple-200 bg-white hover:bg-purple-100 hover:text-purple-900 dark:border-purple-800 dark:bg-purple-950 dark:hover:bg-purple-800 dark:hover:text-purple-50",
         secondary:
-          "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
-        ghost: "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
-        link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
+          "bg-purple-100 text-purple-900 hover:bg-purple-100/80 dark:bg-purple-800 dark:text-purple-50 dark:hover:bg-purple-800/80",
+        ghost: "hover:bg-purple-100 hover:text-purple-900 dark:hover:bg-purple-800 dark:hover:text-purple-50",
+        link: "text-purple-900 underline-offset-4 hover:underline dark:text-purple-50",
       },
       size: {
         default: "h-10 px-4 py-2",

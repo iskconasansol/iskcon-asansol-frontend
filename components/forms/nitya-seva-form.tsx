@@ -170,10 +170,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
   useEffect(() => {
     const sevaType = watchSevaType;
     if (sevaType !== 'others') {
-      setValue(
-        'amount',
-        String(sevaTypes.find((seva) => seva.value === sevaType)?.amount)
-      );
+      setValue('amount', '');
     }
   }, [watchSevaType, setValue]);
 
@@ -187,65 +184,63 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn('space-y-6', className)}
       >
-        <div>
+        <FormField
+          control={form.control}
+          name="seva_type"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel htmlFor="seva_type">Select Seva</FormLabel>
+
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={String(field.value)}
+              >
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select seva" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {sevaTypes.map((sevaType) => (
+                    <SelectItem
+                      key={sevaType.value}
+                      value={sevaType.value}
+                      className="text-sm"
+                    >
+                      <span>{sevaType.name}</span>
+                      <span className="font-semibold ml-2">
+                        {sevaType.amount ? `(₹${sevaType.amount})` : null}
+                      </span>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {Number(watchAmount) ? (
+                <FormDescription>
+                  {`You are contributing ₹${watchAmount} for the seva of the lord. Hare Krishna!`}
+                </FormDescription>
+              ) : null}
+              <FormMessage {...field} />
+            </FormItem>
+          )}
+        ></FormField>
+
+        {watch('seva_type') === 'others' && (
           <FormField
             control={form.control}
-            name="seva_type"
+            name="amount"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="seva_type">Select Seva</FormLabel>
-
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={String(field.value)}
-                >
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select seva" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {sevaTypes.map((sevaType) => (
-                      <SelectItem
-                        key={sevaType.value}
-                        value={sevaType.value}
-                        className="text-sm"
-                      >
-                        <span>{sevaType.name}</span>
-                        <span className="font-semibold ml-2">
-                          {sevaType.amount ? `(₹${sevaType.amount})` : null}
-                        </span>
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-
-                {Number(watchAmount) ? (
-                  <FormDescription>
-                    {`You are contributing ₹${watchAmount} for the seva of the lord. Hare Krishna!`}
-                  </FormDescription>
-                ) : null}
-                <FormMessage {...field} />
+                <FormLabel>Amount</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter amount" {...field} />
+                </FormControl>
+                <FormMessage />
               </FormItem>
             )}
-          ></FormField>
-
-          {watch('seva_type') === 'others' && (
-            <FormField
-              control={form.control}
-              name="amount"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Amount</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter amount" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          )}
-        </div>
+          />
+        )}
 
         <FormField
           control={form.control}

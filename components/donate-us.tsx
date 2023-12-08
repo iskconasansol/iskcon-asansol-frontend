@@ -29,7 +29,7 @@ const DonateUs = () => {
                 fill={true}
                 src={'/images/jagannath.svg'}
                 alt="lord jagannath icon"
-                objectFit="contain"
+                className='object-contain p-4'
               />
             </div>
 
@@ -46,7 +46,7 @@ const DonateUs = () => {
                 fill={true}
                 src={'/images/temple.svg'}
                 alt="temple icon"
-                objectFit="contain"
+                className='object-contain'
               />
             </div>
 
@@ -60,7 +60,7 @@ const DonateUs = () => {
                 fill={true}
                 src={'/images/shri_krishna.svg'}
                 alt="Shri Krishna image"
-                objectFit="contain"
+                className='object-contain p-4'
               />
             </div>
 
@@ -74,7 +74,7 @@ const DonateUs = () => {
                 fill={true}
                 src={'/images/namaste.svg'}
                 alt="Namaste icon"
-                objectFit="contain"
+                className='object-contain p-4'
               />
             </div>
 
