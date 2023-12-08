@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { TimeIcon, EnvelopeIcon, PhoneIcon } from '@/components/icons';
+import MahamantraMarquee from './mahamantra-marquee';
 
 const templeSchedule = [
   {
@@ -63,6 +64,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="min-h-[100px] w-full container mx-auto font-light px-8 md:px-auto border-t">
+      <MahamantraMarquee className='text-lg py-8 text-red-600' />
       <div className="grid gap-8 lg:gap-4 py-16 lg:grid-cols-4 text-gray-600">
         <section>
           <div className="flex gap-2 items-center">

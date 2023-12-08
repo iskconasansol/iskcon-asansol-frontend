@@ -1,4 +1,5 @@
-import ComingSoon from '@/components/coming-soon';
+import Festivals from '@/components/festivals';
+import PageHeader from '@/components/page-header';
 
 import { Metadata } from 'next';
 
@@ -6,12 +7,16 @@ export const metadata: Metadata = {
   title: 'Festivals',
 };
 
-const Festivals = () => {
+const FestivalsPage = () => {
   return (
     <main>
-      <ComingSoon />
+      <PageHeader>
+        <h1 className='md:text-4xl'>Festivals</h1>
+      </PageHeader>
+
+      <Festivals />
     </main>
   );
 };
 
-export default Festivals;
+export default FestivalsPage;

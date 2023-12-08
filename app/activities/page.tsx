@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const Activities = () => {
   return (
     <main>
-      <PageHeader title="Activities" />
+      {/* <PageHeader title="Activities" /> */}
       <ComingSoon />
     </main>
   );
