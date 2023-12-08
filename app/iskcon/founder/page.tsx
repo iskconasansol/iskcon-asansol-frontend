@@ -4,13 +4,12 @@ import Image from 'next/image';
 const Founder = () => {
   return (
     <main>
-      <PageHeader className="relative lg:h-[400px]">
+      <PageHeader className="relative lg:h-[300px] bg-slate-100">
         <Image
-          src={'/images/prabhupada.jpg'}
+          src={'/images/prabhupada_smiling.svg'}
           fill={true}
           alt="Prabhupada image"
-          objectFit='cover'
-          objectPosition='top'
+          className='object-contain'
         />
       </PageHeader>
 

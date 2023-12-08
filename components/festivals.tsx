@@ -11,7 +11,7 @@ const festivals = [
   },
   {
     name: 'Sri Krishna Janmashtami',
-    image: '/images/temple.svg',
+    image: '/images/janmasthami.svg',
     link: '/festivals/janmashtami',
     className: 'bg-green-100',
   },

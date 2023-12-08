@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-4">
-          <TempleTimeStatus />
+          <TempleTimeStatus className='cursor-pointer hover:bg-slate-100'/>
           <div className="hidden lg:block">
             <NavigationMenu>
               <NavigationMenuList>

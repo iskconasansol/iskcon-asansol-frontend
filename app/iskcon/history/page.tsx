@@ -4,12 +4,11 @@ import Image from 'next/image';
 const History = () => {
   return (
     <main>
-      <PageHeader className="relative lg:h-[300px]">
+      <PageHeader className="relative lg:h-[450px]">
         <Image
-          src="/images/iskcon_history.jpg"
+          src="/images/prabhupada_journey_to_usa.svg"
           layout="fill"
-          objectFit='cover'
-          objectPosition='top'
+          className='object-cover object-top'
           alt="prabhupada image old"
         />
       </PageHeader>

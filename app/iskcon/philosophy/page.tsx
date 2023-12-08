@@ -5,13 +5,12 @@ import Image from 'next/image';
 const Philosophy = () => {
   return (
     <main>
-      <PageHeader className="relative lg:h-[300px]">
+      <PageHeader className="relative lg:h-[300px] bg-orange-200">
         <Image
-          src="/images/iskcon_history.jpg"
+          src="/images/prabhupada.svg"
           layout="fill"
-          objectFit="cover"
-          objectPosition="top"
           alt="prabhupada image old"
+          className='object-contain'
         />
       </PageHeader>
 
