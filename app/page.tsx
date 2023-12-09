@@ -23,12 +23,12 @@ const slides: Slide[] = [
   },
 
   {
-    title: 'Perform a house program',
-    description: 'Invite the Lord to your home',
+    title: 'Become a Life Member',
+    description: 'Embrace the role of a life member today!',
     image: '/images/chaitanya_nityananda.jpg',
     callToAction: {
-      text: 'Book Now',
-      link: '/services/house-program',
+      text: 'Know More',
+      link: '/membership',
     },
   },
 ];
