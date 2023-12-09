@@ -11,14 +11,14 @@ export const metadata: Metadata = {
 const Donation = () => {
   return (
     <main className="">
-      <PageHeader className="bg-yellow-50 md:h-[auto] py-16 md:px-16 text-center">
+      <PageHeader className="bg-yellow-50 h-[auto] md:h-[auto] py-16 md:px-16 text-center">
         <div>
           <h1 className="text-xl md:text-3xl font-semibold text-gray-600">
             Iskcon Asansol Donation
           </h1>
           <p>Your small contribution can make a big difference!</p>
 
-          <div className="py-8 space-y-4 text-red-700 text-2xl">
+          <div className="py-8 px-8 space-y-4 text-red-700 md:text-2xl">
             <p>
               दातव्यमिति यद्दानं दीयतेऽनुपकारिणे | देशे काले च पात्रे च तद्दानं
               सात्त्विकं स्मृतम् || 20||

@@ -74,7 +74,7 @@ const Navbar = () => {
                           </NavigationMenuLink>
                         </Link>
                       </li>
-                      <li className="">
+                      {/* <li className="">
                         <Link href="/iskcon/about-us" legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
@@ -82,7 +82,7 @@ const Navbar = () => {
                             About Us
                           </NavigationMenuLink>
                         </Link>
-                      </li>
+                      </li> */}
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -111,7 +111,7 @@ const Navbar = () => {
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
-                      Members
+                      Membership
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

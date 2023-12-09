@@ -39,7 +39,7 @@ const moreItems = [
     href: '/festivals',
   },
   {
-    name: 'Members',
+    name: 'Membership',
     href: '/members',
   },
   {
@@ -77,7 +77,7 @@ const MobileNav = () => {
           className="flex justify-center flex-col items-center"
         >
           <FireIcon />
-          <span>Donate</span>
+          <span>Festivals</span>
         </Link>
 
         <a href="#" className="flex justify-center flex-col items-center">
