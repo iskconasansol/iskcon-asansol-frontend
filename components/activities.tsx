@@ -1,16 +1,10 @@
 import CowIcon from '@/components/icons/cow-icon';
-import GitaIcon from '@/components/icons/gita-icon';
 import KrishnaIcon from '@/components/icons/krishna-icon';
+import GitaIcon from '@/components/icons/gita-icon';
 import PrasadamIcon from '@/components/icons/prasadam-icon';
-import PageHeader from '@/components/page-header';
-import { cn } from '@/lib/utils';
-import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Activities',
-};
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 const activities = [
   {
@@ -45,31 +39,27 @@ const activities = [
 
 const Activities = () => {
   return (
-    <main>
-      <PageHeader className="relative lg:h-[300px] bg-slate-100">
-        <Image
-          src={'/images/krishna_playing_flute.svg'}
-          fill={true}
-          alt="Prabhupada image"
-          className="object-contain p-4"
-        />
-      </PageHeader>
-      <div className="py-16 container">
-        <h2 className="text-xl md:text-3xl font-semibold text-purple-600">
-          Our Activites
-        </h2>
-        <p className="text-slate-700 mt-2">
-          {`Our society, guided by the teachings of our spiritual leader Srila
-          Prabhupada, is dedicated to providing individuals with the chance
-          to lead a life filled with happiness, robust health, peace of
-          mind, and virtuous qualities through God consciousness.`}
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+    <section className=" py-16 bg-yellow-50">
+      <div className="container mx-auto">
+        <div className="flex justify-between">
+          <div>
+            <h3 className="text-3xl">Our Activities</h3>
+          </div>
+
+          <Link href={'/activities'} className="flex items-center">
+            <Button variant={'outline'} className="bg-transparent">
+              View All
+            </Button>
+          </Link>
+        </div>
+        <p>Explore through our various activities</p>
+
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {activities.map((activity, index) => (
             <Link
               key={index}
               href={'#'}
-              className="bg-white rounded-md p-4 border text-slate-700 shadow hover:shadow-md "
+              className="bg-white rounded-md p-4 border text-slate-700 shadow hover:shadow-md"
             >
               <div
                 className={cn(
@@ -81,12 +71,12 @@ const Activities = () => {
               </div>
 
               <h4 className="mt-2 font-semibold">{activity.title}</h4>
-              <p className="text-xs">{activity.subtitle}</p>
+              <p className='text-xs'>{activity.subtitle}</p>
             </Link>
           ))}
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

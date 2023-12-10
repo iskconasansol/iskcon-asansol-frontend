@@ -1,6 +1,6 @@
 import DonateUs from '@/components/donate-us';
-import Services from '@/components/services';
 import Carousel, { Slide } from '@/components/ui/carousel/carousel';
+import Activities from '@/components/activities';
 
 const slides: Slide[] = [
   {
@@ -28,7 +28,7 @@ const slides: Slide[] = [
     image: '/images/chaitanya_nityananda.jpg',
     callToAction: {
       text: 'Know More',
-      link: '/membership',
+      link: '/members',
     },
   },
 ];
@@ -44,7 +44,7 @@ export default function Home() {
           }}
         />
       </section>
-      <Services />
+      <Activities />
       <DonateUs />
     </main>
   );

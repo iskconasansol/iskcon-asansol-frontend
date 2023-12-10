@@ -12,7 +12,7 @@ const Members = () => {
   return (
     <main>
       <PageHeader className="bg-teal-100 h-auto md:h-auto py-16">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 px-4">
           <h1 className="text-xl md:text-3xl font-semibold text-slate-600">
             Embrace the Role of a Life Member Today!
           </h1>
