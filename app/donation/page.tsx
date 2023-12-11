@@ -1,5 +1,6 @@
 import PageHeader from '@/components/page-header';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,6 +8,41 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Donate Us',
 };
+
+const items = [
+  {
+    title: 'Nitya Seva',
+    subtitle: 'Daily worship of the Lord. Join us',
+    imageURL: '/images/lord_jagannath_idols.svg',
+    link: '#',
+    className: 'bg-orange-100',
+    buttonText: 'Donate',
+  },
+  {
+    title: 'Future Temple',
+    subtitle: 'Daily distribution of prasadam for devotees',
+    imageURL: '/images/temple.svg',
+    link: '#',
+    className: 'bg-blue-100',
+    buttonText: 'Donate',
+  },
+  {
+    title: 'Vigraha Seva',
+    subtitle: 'Service and care for cows',
+    imageURL: '/images/shri_krishna.svg',
+    link: '#',
+    className: 'bg-pink-100',
+    buttonText: 'Donate',
+  },
+  {
+    title: 'Temple Donation',
+    subtitle: 'Learn the teachings of Bhagavad Gita',
+    imageURL: '/images/namaste.svg',
+    link: 'activities/gita-classes',
+    className: 'bg-teal-100',
+    buttonText: 'Donate',
+  },
+];
 
 const Donation = () => {
   return (
@@ -40,68 +76,32 @@ const Donation = () => {
       </PageHeader>
       <div className="container mx-auto py-16 ">
         <div className="grid md:grid-cols-4 gap-4 mt-4">
-          <Link
-            href={'donation/nitya-seva'}
-            className="bg-white rounded-md p-4 shadow-md border"
-          >
-            <div className="h-40 bg-purple-100 rounded-md relative">
-              <Image
-                fill={true}
-                src={'/images/jagannath.svg'}
-                alt="lord jagannath icon"
-                className="object-contain p-4"
-              />
-            </div>
+          {items.map((item, index) => {
+            return (
+              <Link
+                href={item.link}
+                className="bg-white rounded-md p-4 shadow-md border"
+                key={index}
+              >
+                <div className="h-40 bg-purple-100 rounded-md relative">
+                  <Image
+                    fill={true}
+                    src={item.imageURL}
+                    alt="lord jagannath icon"
+                    className={cn('object-contain', item.className)}
+                  />
+                </div>
 
-            <h4 className="mt-2">Nitya Seva</h4>
+                <div className="flex justify-between items-center mt-2">
+                  <h4 className="mt-2">{item.title}</h4>
 
-            <Button className="mt-2">Donate Now</Button>
-          </Link>
-          <Link
-            href={'/activities/new-temple'}
-            className="bg-white rounded-md p-4 shadow-md border"
-          >
-            <div className="h-40 bg-orange-100 rounded-md relative">
-              <Image
-                fill={true}
-                src={'/images/temple.svg'}
-                alt="temple icon"
-                className="object-contain"
-              />
-            </div>
-
-            <h4 className="mt-2">Future Temple</h4>
-
-            <Button className="mt-2">Donate Now</Button>
-          </Link>
-          <div className="bg-white rounded-md p-4 shadow-md border">
-            <div className="h-40 bg-green-100 rounded-md relative">
-              <Image
-                fill={true}
-                src={'/images/shri_krishna.svg'}
-                alt="Shri Krishna image"
-                className="object-contain p-4"
-              />
-            </div>
-
-            <h4 className="mt-2">Vigraha Seva</h4>
-
-            <Button className="mt-2">Donate Now</Button>
-          </div>
-          <div className="bg-white rounded-md p-4 shadow-md border">
-            <div className="h-40 bg-teal-100 rounded-md relative">
-              <Image
-                fill={true}
-                src={'/images/namaste.svg'}
-                alt="Namaste icon"
-                className="object-contain p-4"
-              />
-            </div>
-
-            <h4 className="mt-2">Temple Donation</h4>
-
-            <Button className="mt-2">Donate Now</Button>
-          </div>
+                  <Button className="mt-2" variant={'secondary'}>
+                    {item.buttonText}
+                  </Button>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </main>
