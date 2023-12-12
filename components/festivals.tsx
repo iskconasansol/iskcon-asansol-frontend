@@ -17,37 +17,37 @@ const festivals = [
   },
   {
     name: 'Sri Radhastami',
-    image: '/images/temple.svg',
+    image: '/images/radha_krishna.svg',
     link: '/festivals/radhastami',
     className: 'bg-purple-100',
   },
   {
     name: 'Deepavali',
-    image: '/images/temple.svg',
+    image: '/images/lord_ram.svg',
     link: '/festivals/deepavali',
     className: 'bg-yellow-100',
   },
   {
     name: 'Govardhan Puja',
-    image: '/images/temple.svg',
+    image: '/images/govardhan.svg',
     link: '/festivals/govardhan-puja',
     className: 'bg-red-100',
   },
   {
     name: 'Guru Purnima',
-    image: '/images/temple.svg',
+    image: '/images/guru.svg',
     link: '/festivals/guru-purnima',
     className: 'bg-blue-100',
   },
   {
     name: 'Srila Prabhupada Vyasapuja',
-    image: '/images/temple.svg',
+    image: '/images/prabhupada_smiling.svg',
     link: '/festivals/srila-prabhupadas-vyasapuja',
     className: 'bg-pink-100',
   },
   {
     name: 'Srila Prabhupada Disappearance',
-    image: '/images/temple.svg',
+    image: '/images/prabhupada.svg',
     link: '/festivals/srila-prabhupadas-disappearance',
     className: 'bg-indigo-100',
   },
@@ -57,6 +57,9 @@ const Festivals = () => {
   return (
     <section>
       <div className="container py-16">
+        <h1 className="text-xl md:text-3xl font-semibold text-purple-600">
+          Festivals
+        </h1>
         <div className="grid md:grid-cols-4 gap-4 mt-4">
           {festivals.map((festival, index) => (
             <Link

@@ -10,9 +10,7 @@ export const metadata: Metadata = {
 const FestivalsPage = () => {
   return (
     <main>
-      <PageHeader>
-        <h1 className='md:text-4xl'>Festivals</h1>
-      </PageHeader>
+      <PageHeader className="bg-[url('/images/krishna_illustration.svg')] bg-cover md:h-[400px] bg-yellow-100"></PageHeader>
 
       <Festivals />
     </main>
