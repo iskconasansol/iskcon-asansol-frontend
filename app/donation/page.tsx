@@ -14,7 +14,7 @@ const items = [
     title: 'Nitya Seva',
     subtitle: 'Daily worship of the Lord. Join us',
     imageURL: '/images/lord_jagannath_idols.svg',
-    link: '#',
+    link: '/donation/nitya-seva',
     className: 'bg-orange-100',
     buttonText: 'Donate',
   },
@@ -22,14 +22,14 @@ const items = [
     title: 'Future Temple',
     subtitle: 'Daily distribution of prasadam for devotees',
     imageURL: '/images/temple.svg',
-    link: '#',
+    link: '/donation/new-temple',
     className: 'bg-blue-100',
     buttonText: 'Donate',
   },
   {
-    title: 'Vigraha Seva',
-    subtitle: 'Service and care for cows',
-    imageURL: '/images/shri_krishna.svg',
+    title: 'Anna Dan Seva',
+    subtitle: 'Donate for free prasadam distribution',
+    imageURL: '/images/anna_dan.svg',
     link: '#',
     className: 'bg-pink-100',
     buttonText: 'Donate',
@@ -88,7 +88,7 @@ const Donation = () => {
                     fill={true}
                     src={item.imageURL}
                     alt="lord jagannath icon"
-                    className={cn('object-contain', item.className)}
+                    className={cn('object-contain p-2', item.className)}
                   />
                 </div>
 

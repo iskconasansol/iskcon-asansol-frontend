@@ -491,9 +491,9 @@ class GCMath {
   static putIn360(id) {
     var d = id;
     /*            if (d < 0.0)
-              d += Math.floor(-d / 360.0) * 360.0;
-          if (d > 360.0)
-              d -= Math.floor(d / 360.0) * 360;*/
+			d += Math.floor(-d / 360.0) * 360.0;
+		if (d > 360.0)
+			d -= Math.floor(d / 360.0) * 360;*/
     while (d >= 360.0) d -= 360.0;
     while (d < 0.0) d += 360.0;
     return d;
@@ -806,12 +806,12 @@ class GCAyanamsha {
   /*********************************************************************/
 
   /*
-      27.8.1900     22-27-54  2415259.000000 22,475
-      23.7.1950     23-09-53  2433486.000000 23,16472
-      3.9.2000      23-52-13  2451791.000000 23,870277778
-      28.8.2010     24-00-04  2455437.000000 24,001111111
-      21.6.2050     24-33-29  2469979.000000 24,558055556
-      14.6.2100     25-15-29  2488234.000000 25,258055556*/
+	27.8.1900     22-27-54  2415259.000000 22,475
+	23.7.1950     23-09-53  2433486.000000 23,16472
+	3.9.2000      23-52-13  2451791.000000 23,870277778
+	28.8.2010     24-00-04  2455437.000000 24,001111111
+	21.6.2050     24-33-29  2469979.000000 24,558055556
+	14.6.2100     25-15-29  2488234.000000 25,258055556*/
 
   static GetLahiriAyanamsa(d) {
     var h = [
@@ -1955,33 +1955,33 @@ class TCoreEvent {
   }
 
   /*public override GSCore GetPropertyValue(string s)
-      {
-          switch (s)
-          {
-              case "nType":
-                  return new GSNumber(nType);
-              case "nData":
-                  return new GSNumber(nType);
-              case "Time":
-                  return new GSNumber(Time);
-              case "nDst":
-                  return new GSNumber(nDst);
-              case "tithiName":
-                  return new GSString(GCTithi.GetName(nData));
-              case "naksatraName":
-                  return new GSString(GCNaksatra.GetName(nData));
-              case "rasiName":
-                  return new GSString(GCRasi.GetName(nData));
-              case "groupNameString":
-                  return new GSString(GetTypeString(nType));
-              case "typeString":
-                  return new GSString(GetTypeString(nType, nData));
-              case "dstSignature":
-                  return new GSString(GCStrings.GetDSTSignature(nDst));
-              default:
-                  return base.GetPropertyValue(s);
-          }
-      }*/
+	{
+		switch (s)
+		{
+			case "nType":
+				return new GSNumber(nType);
+			case "nData":
+				return new GSNumber(nType);
+			case "Time":
+				return new GSNumber(Time);
+			case "nDst":
+				return new GSNumber(nDst);
+			case "tithiName":
+				return new GSString(GCTithi.GetName(nData));
+			case "naksatraName":
+				return new GSString(GCNaksatra.GetName(nData));
+			case "rasiName":
+				return new GSString(GCRasi.GetName(nData));
+			case "groupNameString":
+				return new GSString(GetTypeString(nType));
+			case "typeString":
+				return new GSString(GetTypeString(nType, nData));
+			case "dstSignature":
+				return new GSString(GCStrings.GetDSTSignature(nDst));
+			default:
+				return base.GetPropertyValue(s);
+		}
+	}*/
 
   toString() {
     return this.TypeString() + ' ' + this.Time;
@@ -3524,8 +3524,8 @@ class TTimeZone {
   }
 
   /*public static List<TTimeZone> TimeZoneList = new List<TTimeZone>();
-      public static bool Modified = false;
-      private static TTimeZone p_defaultTimezone = null;*/
+	public static bool Modified = false;
+	private static TTimeZone p_defaultTimezone = null;*/
 
   toString() {
     return (
@@ -7265,20 +7265,20 @@ class GCSunData {
       // definition of event
       var eventdef = 0.01454;
       /*	switch(ed.obs)
-                  {
-                  case 1:	// civil twilight
-                      eventdef = 0.10453;
-                      break;
-                  case 2:	// nautical twilight
-                      eventdef = 0.20791;
-                      break;
-                  case 3:	// astronomical twilight
-                      eventdef = 0.30902;
-                      break;
-                  default:// center of the sun on the horizont
-                      eventdef = 0.01454;
-                      break;
-                  }*/
+				{
+				case 1:	// civil twilight
+					eventdef = 0.10453;
+					break;
+				case 2:	// nautical twilight
+					eventdef = 0.20791;
+					break;
+				case 3:	// astronomical twilight
+					eventdef = 0.30902;
+					break;
+				default:// center of the sun on the horizont
+					eventdef = 0.01454;
+					break;
+				}*/
 
       eventdef =
         eventdef /
@@ -7334,20 +7334,20 @@ class GCSunData {
   static RiseAngleLevel() {
     let eventdef = 0.01454;
     /*	switch(ed.obs)
-                  {
-                  case 1:	// civil twilight
-                      eventdef = 0.10453;
-                      break;
-                  case 2:	// nautical twilight
-                      eventdef = 0.20791;
-                      break;
-                  case 3:	// astronomical twilight
-                      eventdef = 0.30902;
-                      break;
-                  default:// center of the sun on the horizont
-                      eventdef = 0.01454;
-                      break;
-                  }*/
+				{
+				case 1:	// civil twilight
+					eventdef = 0.10453;
+					break;
+				case 2:	// nautical twilight
+					eventdef = 0.20791;
+					break;
+				case 3:	// astronomical twilight
+					eventdef = 0.30902;
+					break;
+				default:// center of the sun on the horizont
+					eventdef = 0.01454;
+					break;
+				}*/
     return eventdef;
   }
 
@@ -7541,18 +7541,18 @@ class GCSunData {
     //az[cosAzPos & sinAzNeg] <- az[cosAzPos & sinAzNeg] + twopi
     //az[!cosAzPos] <- pi - az[!cosAzPos]
     /*
-          if (0 < GCMath.sinDeg(dec) - GCMath.sinDeg(el) * GCMath.sinDeg(lat)) 
-          {
-               if(GCMath.sinDeg(az) < 0)
-               {
-                   az = az + 360;
-               }
-          }
-          else
-          {
-               az = 180 - az;
-          }
-      */
+		if (0 < GCMath.sinDeg(dec) - GCMath.sinDeg(el) * GCMath.sinDeg(lat)) 
+		{
+			 if(GCMath.sinDeg(az) < 0)
+			 {
+				 az = az + 360;
+			 }
+		}
+		else
+		{
+			 az = 180 - az;
+		}
+	*/
 
     //el <- el / deg2rad
     //az <- az / deg2rad
@@ -8398,7 +8398,7 @@ let GCCalendar_WeekDayName = [
   'Saturday',
 ];
 
-export class GCCalendar {
+class GCCalendar {
   /// <summary>
   ///
   /// </summary>
@@ -8574,7 +8574,7 @@ export class GCCalendar {
 }
 
 /*************************************************    js/Vaisnavaday.js **********************************************/
-export class VAISNAVAEVENT {
+class VAISNAVAEVENT {
   constructor() {
     this.prio = 0;
     this.dispItem = 0;
@@ -8608,7 +8608,7 @@ export class VAISNAVAEVENT {
   }
 }
 
-export class CoreEventFindRec {
+class CoreEventFindRec {
   constructor() {
     this.day = new VAISNAVADAY();
     this.coreEvent = new TCoreEvent();
@@ -8616,7 +8616,7 @@ export class CoreEventFindRec {
   }
 }
 
-export class VAISNAVADAY {
+class VAISNAVADAY {
   constructor() {
     this.Previous = null;
     this.Next = null;
@@ -8785,114 +8785,114 @@ export class VAISNAVADAY {
   }
 
   /*
-       * Function before is writen accoring this algorithms:
-  
-  
-          1. Normal - fasting day has ekadasi at sunrise and dvadasi at next sunrise.
-  
-          2. Viddha - fasting day has dvadasi at sunrise and trayodasi at next
-          sunrise, and it is not a naksatra mahadvadasi
-  
-          3. Unmilani - fasting day has ekadasi at both sunrises
-  
-          4. Vyanjuli - fasting day has dvadasi at both sunrises, and it is not a
-          naksatra mahadvadasi
-  
-          5. Trisprsa - fasting day has ekadasi at sunrise and trayodasi at next
-          sunrise.
-  
-          6. Jayanti/Vijaya - fasting day has gaura dvadasi and specified naksatra at
-          sunrise and same naksatra at next sunrise
-  
-          7. Jaya/Papanasini - fasting day has gaura dvadasi and specified naksatra at
-          sunrise and same naksatra at next sunrise
-  
-          ==============================================
-          Case 1 Normal (no change)
-  
-          If dvadasi tithi ends before 1/3 of daylight
-             then PARANA END = TIME OF END OF TITHI
-          but if dvadasi TITHI ends after 1/3 of daylight
-             then PARANA END = TIME OF 1/3 OF DAYLIGHT
-  
-          if 1/4 of dvadasi tithi is before sunrise
-             then PARANA BEGIN is sunrise time
-          but if 1/4 of dvadasi tithi is after sunrise
-             then PARANA BEGIN is time of 1/4 of dvadasi tithi
-  
-          if PARANA BEGIN is before PARANA END
-             then we will write "BREAK FAST FROM xx TO yy
-          but if PARANA BEGIN is after PARANA END
-             then we will write "BREAK FAST AFTER xx"
-  
-          ==============================================
-          Case 2 Viddha
-  
-          If trayodasi tithi ends before 1/3 of daylight
-             then PARANA END = TIME OF END OF TITHI
-          but if trayodasi TITHI ends after 1/3 of daylight
-             then PARANA END = TIME OF 1/3 OF DAYLIGHT
-  
-          PARANA BEGIN is sunrise time
-  
-          we will write "BREAK FAST FROM xx TO yy
-  
-          ==============================================
-          Case 3 Unmilani
-  
-          PARANA END = TIME OF 1/3 OF DAYLIGHT
-  
-          PARANA BEGIN is end of Ekadasi tithi
-  
-          if PARANA BEGIN is before PARANA END
-             then we will write "BREAK FAST FROM xx TO yy
-          but if PARANA BEGIN is after PARANA END
-             then we will write "BREAK FAST AFTER xx"
-  
-          ==============================================
-          Case 4 Vyanjuli
-  
-          PARANA BEGIN = Sunrise
-  
-          PARANA END is end of Dvadasi tithi
-  
-          we will write "BREAK FAST FROM xx TO yy
-  
-          ==============================================
-          Case 5 Trisprsa
-  
-          PARANA BEGIN = Sunrise
-  
-          PARANA END = 1/3 of daylight hours
-  
-          we will write "BREAK FAST FROM xx TO yy
-  
-          ==============================================
-          Case 6 Jayanti/Vijaya
-  
-          PARANA BEGIN = Sunrise
-  
-          PARANA END1 = end of dvadasi tithi or sunrise, whichever is later
-          PARANA END2 = end of naksatra
-  
-          PARANA END is earlier of END1 and END2
-  
-          we will write "BREAK FAST FROM xx TO yy
-  
-          ==============================================
-          Case 7 Jaya/Papanasini
-  
-          PARANA BEGIN = end of naksatra
-  
-          PARANA END = 1/3 of Daylight hours
-  
-          if PARANA BEGIN is before PARANA END
-             then we will write "BREAK FAST FROM xx TO yy
-          but if PARANA BEGIN is after PARANA END
-             then we will write "BREAK FAST AFTER xx"
-  
-  
-  * */
+	 * Function before is writen accoring this algorithms:
+
+
+		1. Normal - fasting day has ekadasi at sunrise and dvadasi at next sunrise.
+
+		2. Viddha - fasting day has dvadasi at sunrise and trayodasi at next
+		sunrise, and it is not a naksatra mahadvadasi
+
+		3. Unmilani - fasting day has ekadasi at both sunrises
+
+		4. Vyanjuli - fasting day has dvadasi at both sunrises, and it is not a
+		naksatra mahadvadasi
+
+		5. Trisprsa - fasting day has ekadasi at sunrise and trayodasi at next
+		sunrise.
+
+		6. Jayanti/Vijaya - fasting day has gaura dvadasi and specified naksatra at
+		sunrise and same naksatra at next sunrise
+
+		7. Jaya/Papanasini - fasting day has gaura dvadasi and specified naksatra at
+		sunrise and same naksatra at next sunrise
+
+		==============================================
+		Case 1 Normal (no change)
+
+		If dvadasi tithi ends before 1/3 of daylight
+		   then PARANA END = TIME OF END OF TITHI
+		but if dvadasi TITHI ends after 1/3 of daylight
+		   then PARANA END = TIME OF 1/3 OF DAYLIGHT
+
+		if 1/4 of dvadasi tithi is before sunrise
+		   then PARANA BEGIN is sunrise time
+		but if 1/4 of dvadasi tithi is after sunrise
+		   then PARANA BEGIN is time of 1/4 of dvadasi tithi
+
+		if PARANA BEGIN is before PARANA END
+		   then we will write "BREAK FAST FROM xx TO yy
+		but if PARANA BEGIN is after PARANA END
+		   then we will write "BREAK FAST AFTER xx"
+
+		==============================================
+		Case 2 Viddha
+
+		If trayodasi tithi ends before 1/3 of daylight
+		   then PARANA END = TIME OF END OF TITHI
+		but if trayodasi TITHI ends after 1/3 of daylight
+		   then PARANA END = TIME OF 1/3 OF DAYLIGHT
+
+		PARANA BEGIN is sunrise time
+
+		we will write "BREAK FAST FROM xx TO yy
+
+		==============================================
+		Case 3 Unmilani
+
+		PARANA END = TIME OF 1/3 OF DAYLIGHT
+
+		PARANA BEGIN is end of Ekadasi tithi
+
+		if PARANA BEGIN is before PARANA END
+		   then we will write "BREAK FAST FROM xx TO yy
+		but if PARANA BEGIN is after PARANA END
+		   then we will write "BREAK FAST AFTER xx"
+
+		==============================================
+		Case 4 Vyanjuli
+
+		PARANA BEGIN = Sunrise
+
+		PARANA END is end of Dvadasi tithi
+
+		we will write "BREAK FAST FROM xx TO yy
+
+		==============================================
+		Case 5 Trisprsa
+
+		PARANA BEGIN = Sunrise
+
+		PARANA END = 1/3 of daylight hours
+
+		we will write "BREAK FAST FROM xx TO yy
+
+		==============================================
+		Case 6 Jayanti/Vijaya
+
+		PARANA BEGIN = Sunrise
+
+		PARANA END1 = end of dvadasi tithi or sunrise, whichever is later
+		PARANA END2 = end of naksatra
+
+		PARANA END is earlier of END1 and END2
+
+		we will write "BREAK FAST FROM xx TO yy
+
+		==============================================
+		Case 7 Jaya/Papanasini
+
+		PARANA BEGIN = end of naksatra
+
+		PARANA END = 1/3 of Daylight hours
+
+		if PARANA BEGIN is before PARANA END
+		   then we will write "BREAK FAST FROM xx TO yy
+		but if PARANA BEGIN is after PARANA END
+		   then we will write "BREAK FAST AFTER xx"
+
+
+* */
   CalculateEParana(earth) {
     var t = this;
     if (t.Previous == null) return 0;
@@ -9574,6 +9574,8740 @@ export class VAISNAVADAY {
   }
 }
 
+/*************************************************    js/tz.js **********************************************/
+let TTimeZone_list = [
+  {
+    name: 'Undefined',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-12',
+    offset: -720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Apia',
+    offset: 780,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 9,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Midway',
+    offset: -660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Niue',
+    offset: -660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Pago_Pago',
+    offset: -660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-11',
+    offset: -660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Adak',
+    offset: -600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Fakaofo',
+    offset: 780,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Honolulu',
+    offset: -600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Johnston',
+    offset: -600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Rarotonga',
+    offset: -600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Tahiti',
+    offset: -600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-10',
+    offset: -600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Marquesas',
+    offset: -570,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-09:30',
+    offset: -570,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Anchorage',
+    offset: -540,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Juneau',
+    offset: -540,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Nome',
+    offset: -540,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Yakutat',
+    offset: -540,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Gambier',
+    offset: -540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Sitka',
+    offset: -540,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-09',
+    offset: -540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Dawson',
+    offset: -480,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Los_Angeles',
+    offset: -480,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Tijuana',
+    offset: -480,
+    bias: 60,
+    startdst: {
+      type: 1,
+      month: 3,
+      week: 29,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 9,
+      week: 21,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Vancouver',
+    offset: -480,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Whitehorse',
+    offset: -480,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Metlakatla',
+    offset: -480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Pitcairn',
+    offset: -480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-08',
+    offset: -480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Boise',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Cambridge_Bay',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Chihuahua',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 1,
+      month: 3,
+      week: 29,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 9,
+      week: 21,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Dawson_Creek',
+    offset: -420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Denver',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Edmonton',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Hermosillo',
+    offset: -420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Inuvik',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Mazatlan',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 1,
+      month: 3,
+      week: 29,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 9,
+      week: 21,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Phoenix',
+    offset: -420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Shiprock',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Yellowknife',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Creston',
+    offset: -420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Fort_Nelson',
+    offset: -420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Ojinaga',
+    offset: -420,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-07',
+    offset: -420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Belize',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Cancun',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 1,
+      month: 3,
+      week: 29,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 9,
+      week: 21,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Chicago',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Costa_Rica',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/El_Salvador',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Guatemala',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Knox',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Tell_City',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Managua',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Menominee',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Merida',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 1,
+      month: 3,
+      week: 29,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 9,
+      week: 21,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Mexico_City',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 1,
+      month: 3,
+      week: 29,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 9,
+      week: 21,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Monterrey',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 1,
+      month: 3,
+      week: 29,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 9,
+      week: 21,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/North_Dakota/Center',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/North_Dakota/New_Salem',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Rainy_River',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Rankin_Inlet',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Regina',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Swift_Current',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Tegucigalpa',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Winnipeg',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Galapagos',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Bahia_Banderas',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Matamoros',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/North_Dakota/Beulah',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Easter',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 2,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-06',
+    offset: -360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Atikokan',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Bogota',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Cayman',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Detroit',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Eirunepe',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Grand_Turk',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Guayaquil',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Havana',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 4,
+      week: 5,
+      day: 5,
+    },
+    enddst: {
+      type: 0,
+      month: 9,
+      week: 5,
+      day: 5,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Indianapolis',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Marengo',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Petersburg',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Vevay',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Vincennes',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Indiana/Winamac',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Iqaluit',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Jamaica',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Kentucky/Louisville',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Kentucky/Monticello',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Lima',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Montreal',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Nassau',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/New_York',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Nipigon',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Panama',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Pangnirtung',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Port-au-Prince',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Resolute',
+    offset: -360,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Rio_Branco',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Thunder_Bay',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Toronto',
+    offset: -300,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-05',
+    offset: -300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-04:30',
+    offset: -270,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Anguilla',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Antigua',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Aruba',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Barbados',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Blanc-Sablon',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Boa_Vista',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Caracas',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Curacao',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Dominica',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Glace_Bay',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Goose_Bay',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Grenada',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Guadeloupe',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Guyana',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Halifax',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/La_Paz',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Manaus',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Martinique',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Moncton',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Montserrat',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Port_of_Spain',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Porto_Velho',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Puerto_Rico',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Santiago',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 3,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Santo_Domingo',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/St_Kitts',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/St_Lucia',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/St_Thomas',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/St_Vincent',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Thule',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Tortola',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Asuncion',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 3,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Cuiaba',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 3,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 3,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Bermuda',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Palmer',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 3,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Kralendijk',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Lower_Princes',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-04',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/St_Johns',
+    offset: -210,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-03:30',
+    offset: -210,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Araguaina',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Buenos_Aires',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Catamarca',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Cordoba',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Jujuy',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/La_Rioja',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Mendoza',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Rio_Gallegos',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/San_Juan',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Salta',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/San_Luis',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Tucuman',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Argentina/Ushuaia',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Bahia',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Belem',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Campo_Grande',
+    offset: -240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 3,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 3,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Cayenne',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Santarem',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Fortaleza',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Godthab',
+    offset: -180,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Maceio',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Miquelon',
+    offset: -180,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 11,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Montevideo',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 2,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Paramaribo',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Recife',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Sao_Paulo',
+    offset: -180,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 3,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 3,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Rothera',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Stanley',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 9,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 3,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-03',
+    offset: -180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Noronha',
+    offset: -120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/South_Georgia',
+    offset: -120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-02',
+    offset: -120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Scoresbysund',
+    offset: -60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Azores',
+    offset: -60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Cape_Verde',
+    offset: -60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC-01',
+    offset: -60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Abidjan',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Accra',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Bamako',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Banjul',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Bissau',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Casablanca',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Conakry',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Dakar',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/El_Aaiun',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Freetown',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Lome',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Monrovia',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Nouakchott',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Ouagadougou',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Sao_Tome',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Danmarkshavn',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/Marigot',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'America/St_Barthelemy',
+    offset: -240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Canary',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Faroe',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Madeira',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/Reykjavik',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Atlantic/St_Helena',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Dublin',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Guernsey',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Isle_of_Man',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Jersey',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Lisbon',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/London',
+    offset: 0,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Troll',
+    offset: 0,
+    bias: 120,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+00',
+    offset: 0,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Algiers',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Bangui',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Brazzaville',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Ceuta',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Douala',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Kinshasa',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Lagos',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Libreville',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Luanda',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Malabo',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Ndjamena',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Niamey',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Porto-Novo',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Tunis',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Arctic/Longyearbyen',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Amsterdam',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Andorra',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Belgrade',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Berlin',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Bratislava',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Brussels',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Budapest',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Busingen',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Copenhagen',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Gibraltar',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Ljubljana',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Luxembourg',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Madrid',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Malta',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Monaco',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Oslo',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Paris',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Podgorica',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Prague',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Rome',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/San_Marino',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Sarajevo',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Skopje',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Stockholm',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Tirane',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Vaduz',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Vatican',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Vienna',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Warsaw',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Zagreb',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Zurich',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+01',
+    offset: 60,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Blantyre',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Bujumbura',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Cairo',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 6,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Gaborone',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Harare',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Johannesburg',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Kigali',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Lubumbashi',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Lusaka',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Maputo',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Maseru',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Mbabane',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Tripoli',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Windhoek',
+    offset: 60,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 9,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Amman',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Beirut',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Damascus',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 4,
+      day: 1,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 25,
+      day: 8,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Gaza',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 5,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Jerusalem',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 1,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 1,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Nicosia',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Hebron',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 9,
+      week: 4,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Athens',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Bucharest',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Chisinau',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Helsinki',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Istanbul',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Kaliningrad',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Kiev',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Mariehamn',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Minsk',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Riga',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Simferopol',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Sofia',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Tallinn',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Uzhgorod',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Vilnius',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Zaporozhye',
+    offset: 120,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+02',
+    offset: 120,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Addis_Ababa',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Asmara',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Dar_es_Salaam',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Djibouti',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Kampala',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Khartoum',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Mogadishu',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Nairobi',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Africa/Juba',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Syowa',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Aden',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Baghdad',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 9,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Bahrain',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kuwait',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Qatar',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Riyadh',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Moscow',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Volgograd',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Kirov',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Antananarivo',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Comoro',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Mayotte',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+03',
+    offset: 180,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Tehran',
+    offset: 210,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 4,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 9,
+      week: 4,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+03:30',
+    offset: 210,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Baku',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Dubai',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Muscat',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Tbilisi',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Yerevan',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Samara',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Astrakhan',
+    offset: 240,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Europe/Ulyanovsk',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Mahe',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Mauritius',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Reunion',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+04',
+    offset: 240,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kabul',
+    offset: 270,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+04:30',
+    offset: 270,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Aqtau',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Aqtobe',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Ashgabat',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Dushanbe',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Karachi',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Oral',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Samarkand',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Tashkent',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Yekaterinburg',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Kerguelen',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Maldives',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+05',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Calcutta',
+    offset: 330,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Colombo',
+    offset: 330,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kolkata',
+    offset: 330,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+05:30',
+    offset: 330,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Katmandu',
+    offset: 345,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kathmandu',
+    offset: 345,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+05:45',
+    offset: 345,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Mawson',
+    offset: 300,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Vostok',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Almaty',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Bishkek',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Dhaka',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Novosibirsk',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Omsk',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Qyzylorda',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Thimphu',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Chagos',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+06',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Rangoon',
+    offset: 390,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Cocos',
+    offset: 390,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+06:30',
+    offset: 390,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Davis',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Bangkok',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Hovd',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Jakarta',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Krasnoyarsk',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Phnom_Penh',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Pontianak',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Saigon',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Vientiane',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Indian/Christmas',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Ho_Chi_Minh',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Novokuznetsk',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Tomsk',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Barnaul',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+07',
+    offset: 420,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Casey',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Brunei',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Chongqing',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Harbin',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Hong_Kong',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Irkutsk',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kashgar',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kuala_Lumpur',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kuching',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Macau',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Makassar',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Manila',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Shanghai',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Singapore',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Taipei',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Ulaanbaatar',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Urumqi',
+    offset: 360,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Perth',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/West',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+08',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Pyongyang',
+    offset: 510,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+08:30',
+    offset: 510,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Eucla',
+    offset: 525,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+08:45',
+    offset: 525,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Choibalsan',
+    offset: 480,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Dili',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Jayapura',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Seoul',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Tokyo',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Yakutsk',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Palau',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Chita',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Khandyga',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+09',
+    offset: 540,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Adelaide',
+    offset: 570,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Broken_Hill',
+    offset: 570,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Darwin',
+    offset: 570,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/North',
+    offset: 570,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/South',
+    offset: 570,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Yancowinna',
+    offset: 570,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+09:30',
+    offset: 570,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+09:45',
+    offset: 585,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/DumontDUrville',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Sakhalin',
+    offset: 660,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Vladivostok',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/ACT',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Brisbane',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Canberra',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Currie',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Hobart',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Lindeman',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Melbourne',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/NSW',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Queensland',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Sydney',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Tasmania',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Victoria',
+    offset: 600,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 1,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Guam',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Port_Moresby',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Saipan',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Truk',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Ust-Nera',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Chuuk',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+10',
+    offset: 600,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Australia/Lord_Howe',
+    offset: 630,
+    bias: 30,
+    startdst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+10:30',
+    offset: 630,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Magadan',
+    offset: 660,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Bougainville',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Efate',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Guadalcanal',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Kosrae',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Noumea',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Pohnpei',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Ponape',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Srednekolymsk',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Norfolk',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/Macquarie',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+11',
+    offset: 660,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+11:30',
+    offset: 690,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Anadyr',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Asia/Kamchatka',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 3,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 5,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Auckland',
+    offset: 720,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 9,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Fiji',
+    offset: 720,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 1,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 10,
+      week: 4,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Funafuti',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Kwajalein',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Majuro',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Nauru',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Tarawa',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Wake',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Wallis',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+12',
+    offset: 720,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+12:45',
+    offset: 765,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/McMurdo',
+    offset: 720,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 9,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Antarctica/South_Pole',
+    offset: 780,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 9,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Enderbury',
+    offset: 780,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Tongatapu',
+    offset: 780,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+13',
+    offset: 780,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Chatham',
+    offset: 765,
+    bias: 60,
+    startdst: {
+      type: 0,
+      month: 9,
+      week: 5,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 4,
+      week: 1,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'Pacific/Kiritimati',
+    offset: 840,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+  {
+    name: 'UTC+14',
+    offset: 840,
+    bias: 0,
+    startdst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    enddst: {
+      type: 0,
+      month: 0,
+      week: 0,
+      day: 0,
+    },
+    country: '',
+  },
+];
+
 /*************************************************    js/GCMasa.js **********************************************/
 let GCMasa_masaName = [
   'Madhusudana',
@@ -9829,12 +18563,12 @@ class GCTithi {
   }
 
   /*
-  
-      Routines for calculation begining and ending times of given Tithi
-  
-      Main function is GetTithiTimes
-  
-      */
+
+	Routines for calculation begining and ending times of given Tithi
+
+	Main function is GetTithiTimes
+
+	*/
 
   static GetTithiTimes(ed, vc, sunRise) {
     var t1, t2;
@@ -9895,9 +18629,9 @@ class GCTithi {
     end.day = end.month = end.year = -1;
 
     /*	d = GetFirstDayOfYear(earth, nGYear + 1486);
-              d.shour = 0.5;
-              d.TimeZone = earth.tzone;
-          */
+			d.shour = 0.5;
+			d.TimeZone = earth.tzone;
+		*/
     d.Set(vcStart);
 
     i = 0;
@@ -10229,7 +18963,7 @@ class GCTithi {
 }
 
 /*************************************************    js/GCAstroData.js **********************************************/
-export class GCAstroData {
+class GCAstroData {
   constructor() {
     // date of Julian epoch
     this.JulianDay = 0.0;
@@ -10277,68 +19011,68 @@ export class GCAstroData {
   }
 
   /*public override GSCore GetPropertyValue(string Token)
-      {
-          GSCore result = null;
-          switch (Token)
-          {
-              case "tithi":
-                  result = new GSNumber() { IntegerValue = sunRise.Tithi }; break;
-              case "tithiElapsed":
-                  result = new GSNumber() { DoubleValue = sunRise.TithiElapse }; break;
-              case "tithiName":
-                  result = new GSString() { Value = GCTithi.GetName(sunRise.Tithi) }; break;
-              case "naksatra":
-                  result = new GSNumber() { IntegerValue = sunRise.Naksatra }; break;
-              case "naksatraElapsed":
-                  result = new GSNumber() { DoubleValue = sunRise.NaksatraElapse }; break;
-              case "naksatraName":
-                  result = new GSString() { Value = GCNaksatra.GetName(sunRise.Naksatra) }; break;
-              case "paksa":
-                  result = new GSNumber() { IntegerValue = sunRise.Paksa }; break;
-              case "paksaName":
-                  result = new GSString() { Value = GCPaksa.GetName(sunRise.Paksa) }; break;
-              case "paksaAbbr":
-                  result = new GSString() { Value = GCPaksa.GetAbbr(sunRise.Paksa).ToString() }; break;
-              case "yoga":
-                  result = new GSNumber() { IntegerValue = sunRise.Yoga }; break;
-              case "yogaName":
-                  result = new GSString() { Value = GCYoga.GetName(sunRise.Yoga) }; break;
-              case "masa":
-                  result = new GSNumber() { IntegerValue = Masa }; break;
-              case "masaName":
-                  result = new GSString() { Value = GCMasa.GetName(Masa) }; break;
-              case "masaNameVedic":
-                  result = new GSString() { Value = GCMasa.GetNameEx(Masa, 2) }; break;
-              case "masaNameGaudiya":
-                  result = new GSString() { Value = GCMasa.GetNameEx(Masa, 0) }; break;
-              case "gaurabdaYear":
-                  result = new GSNumber() { IntegerValue = GaurabdaYear }; break;
-              case "arunodayaTime":
-                  result = new GCHourTimeObject(sunArunodaya); break;
-              case "arunodayaTithi":
-                  result = new GSString(GCTithi.GetName(sunArunodaya.Tithi)); break;
-              case "sunRiseTime":
-                  result = new GCHourTimeObject(sunRise); break;
-              case "noonTime":
-                  result = new GCHourTimeObject(sunNoon); break;
-              case "sunSetTime":
-                  result = new GCHourTimeObject(sunSet); break;
-              case "moonRasi":
-                  result = new GSNumber(sunRise.RasiOfMoon); break;
-              case "moonRasiName":
-                  result = new GSString(GCRasi.GetName(sunRise.RasiOfMoon)); break;
-              case "sunRasi":
-                  result = new GSNumber(sunRise.RasiOfSun); break;
-              case "sunRasiName":
-                  result = new GSString(GCRasi.GetName(sunRise.RasiOfSun)); break;
-              case "sunLongitude":
-                  result = new GSNumber(sunRise.longitude); break;
-              default:
-                  result = base.GetPropertyValue(Token);
-                  break;
-          }
-          return result;
-      }*/
+	{
+		GSCore result = null;
+		switch (Token)
+		{
+			case "tithi":
+				result = new GSNumber() { IntegerValue = sunRise.Tithi }; break;
+			case "tithiElapsed":
+				result = new GSNumber() { DoubleValue = sunRise.TithiElapse }; break;
+			case "tithiName":
+				result = new GSString() { Value = GCTithi.GetName(sunRise.Tithi) }; break;
+			case "naksatra":
+				result = new GSNumber() { IntegerValue = sunRise.Naksatra }; break;
+			case "naksatraElapsed":
+				result = new GSNumber() { DoubleValue = sunRise.NaksatraElapse }; break;
+			case "naksatraName":
+				result = new GSString() { Value = GCNaksatra.GetName(sunRise.Naksatra) }; break;
+			case "paksa":
+				result = new GSNumber() { IntegerValue = sunRise.Paksa }; break;
+			case "paksaName":
+				result = new GSString() { Value = GCPaksa.GetName(sunRise.Paksa) }; break;
+			case "paksaAbbr":
+				result = new GSString() { Value = GCPaksa.GetAbbr(sunRise.Paksa).ToString() }; break;
+			case "yoga":
+				result = new GSNumber() { IntegerValue = sunRise.Yoga }; break;
+			case "yogaName":
+				result = new GSString() { Value = GCYoga.GetName(sunRise.Yoga) }; break;
+			case "masa":
+				result = new GSNumber() { IntegerValue = Masa }; break;
+			case "masaName":
+				result = new GSString() { Value = GCMasa.GetName(Masa) }; break;
+			case "masaNameVedic":
+				result = new GSString() { Value = GCMasa.GetNameEx(Masa, 2) }; break;
+			case "masaNameGaudiya":
+				result = new GSString() { Value = GCMasa.GetNameEx(Masa, 0) }; break;
+			case "gaurabdaYear":
+				result = new GSNumber() { IntegerValue = GaurabdaYear }; break;
+			case "arunodayaTime":
+				result = new GCHourTimeObject(sunArunodaya); break;
+			case "arunodayaTithi":
+				result = new GSString(GCTithi.GetName(sunArunodaya.Tithi)); break;
+			case "sunRiseTime":
+				result = new GCHourTimeObject(sunRise); break;
+			case "noonTime":
+				result = new GCHourTimeObject(sunNoon); break;
+			case "sunSetTime":
+				result = new GCHourTimeObject(sunSet); break;
+			case "moonRasi":
+				result = new GSNumber(sunRise.RasiOfMoon); break;
+			case "moonRasiName":
+				result = new GSString(GCRasi.GetName(sunRise.RasiOfMoon)); break;
+			case "sunRasi":
+				result = new GSNumber(sunRise.RasiOfSun); break;
+			case "sunRasiName":
+				result = new GSString(GCRasi.GetName(sunRise.RasiOfSun)); break;
+			case "sunLongitude":
+				result = new GSNumber(sunRise.longitude); break;
+			default:
+				result = base.GetPropertyValue(Token);
+				break;
+		}
+		return result;
+	}*/
 
   /*********************************************************************/
   /*   Finds first day of given masa and gaurabda year                 */
@@ -10536,24 +19270,24 @@ export class GCAstroData {
       R[n] = GCRasi.GetRasi(L[n], GCAyanamsha.GetAyanamsa(C[n].GetJulian()));
 
     /*	TRACE("TEST Date: %d %d %d ", date.day, date.month, date.year);
-              TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[1].day, C[1].month, C[1].year, R[1]);
-              TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[2].day, C[2].month, C[2].year, R[2]);
-              TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[3].day, C[3].month, C[3].year, R[3]);
-              TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[4].day, C[4].month, C[4].year, R[4]);
-              TRACE("--- 
-          */
+			TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[1].day, C[1].month, C[1].year, R[1]);
+			TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[2].day, C[2].month, C[2].year, R[2]);
+			TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[3].day, C[3].month, C[3].year, R[3]);
+			TRACE("FOUND CONJ Date: %d %d %d rasi: %d ", C[4].day, C[4].month, C[4].year, R[4]);
+			TRACE("--- 
+		*/
     // test for Adhika-Ksaya sequence
     // this is like 1-2-2-4-5...
     // second (2) is replaced by rasi(3)
     /*	if ( ((Sank[1] + 2) % 12 == SankA) && ((Sank[1] == Sank[0]) || (Sank[0] == SankA)))
-              {
-                  Sank[0] = (Sank[1] + 1) % 12;
-              }
-  
-              if ( ((Sank[2] + 2) % 12 == Sank[0]) && ((Sank[2] == Sank[1]) || (Sank[1] == Sank[0])))
-              {
-                  Sank[1] = (Sank[2] + 1) % 12;
-              }*/
+			{
+				Sank[0] = (Sank[1] + 1) % 12;
+			}
+
+			if ( ((Sank[2] + 2) % 12 == Sank[0]) && ((Sank[2] == Sank[1]) || (Sank[1] == Sank[0])))
+			{
+				Sank[1] = (Sank[2] + 1) % 12;
+			}*/
 
     // look for ksaya month
     ksaya_from = -1;
@@ -13299,8 +22033,8 @@ var gShaktiEvents = [
           if (d0.ksayaTithi == 23) return 1;
           if (d0.astro.tithi == 23) return 0;
           /*console.log('d1 tithi=', d1.astro.tithi, d1.date);
-                  console.log('d2 tithi=', d2.astro.tithi, d2.date);
-                  console.log('d3 fasttype=', d3);*/
+				console.log('d2 tithi=', d2.astro.tithi, d2.date);
+				console.log('d3 fasttype=', d3);*/
           if (d2.astro.tithi == 23 && d3.fastType > 0) return 1;
           if (d1.astro.tithi == 23 && d2.fastType == 0) return 1;
           return 0;
@@ -14333,8 +23067,8 @@ var gEvents = [
           if (d0.ksayaTithi == 23) return 1;
           if (d0.astro.tithi == 23) return 0;
           /*console.log('d1 tithi=', d1.astro.tithi, d1.date);
-                  console.log('d2 tithi=', d2.astro.tithi, d2.date);
-                  console.log('d3 fasttype=', d3);*/
+				console.log('d2 tithi=', d2.astro.tithi, d2.date);
+				console.log('d3 fasttype=', d3);*/
           if (d2.astro.tithi == 23 && d3.fastType > 0) return 1;
           if (d1.astro.tithi == 23 && d2.fastType == 0) return 1;
           return 0;
@@ -18637,12 +27371,12 @@ export class TResultCalendar {
           //"(Fast today)"
         } else {
           /* OLD STYLE FASTING
-                      if (gds.getValue(42) == 0)
-                      {
-                          if (nftype > 1)
-                              nftype = 7;
-                          else nftype = 0;
-                      }*/
+					if (gds.getValue(42) == 0)
+					{
+						if (nftype > 1)
+							nftype = 7;
+						else nftype = 0;
+					}*/
           if (fastForEvent != FastType.FAST_NULL) {
             t.AddEvent(
               md.prio + 1,
@@ -18670,15 +27404,15 @@ export class TResultCalendar {
 }
 
 //getDayBkgColorCode(VAISNAVADAY p)
-// export function getDayBkgColorCode(p) {
-//   if (p == null) return 'white';
-//   if (p.nFastID == FastType.FAST_EKADASI) return '#FFFFBB';
-//   if (p.nFastID != 0) return '#BBFFBB';
-//   return 'white';
-// }
+function getDayBkgColorCode(p) {
+  if (p == null) return 'white';
+  if (p.nFastID == FastType.FAST_EKADASI) return '#FFFFBB';
+  if (p.nFastID != 0) return '#BBFFBB';
+  return 'white';
+}
 
 /*************************************************    js/TResultToday.js **********************************************/
-export class TResultToday {
+class TResultToday {
   constructor() {
     this.calendar = new TResultCalendar();
     this.currentDay = new GregorianDateTime();
@@ -18929,7 +27663,7 @@ class TResultApp {
 
 /*************************************************    js/TResultCoreEvents.js **********************************************/
 
-export class TResultCoreEvents {
+class TResultCoreEvents {
   constructor() {
     this.Full = false;
     this.Year = 2020;
@@ -19002,10 +27736,10 @@ export class TResultCoreEvents {
     var earth = loc.GetEarthData();
 
     /*while (vcAdd.IsBeforeThis(vcEnd))
-            {
-                ndst = loc.TimeZone.DetermineDaylightChange(vcAdd);
-                vcAdd.NextDay();
-            }*/
+          {
+              ndst = loc.TimeZone.DetermineDaylightChange(vcAdd);
+              vcAdd.NextDay();
+          }*/
 
     if (this.Full || gds.getValue(GCDS.COREEVENTS_TITHI) != 0) {
       vcAdd.Set(vc);
@@ -19208,6 +27942,397 @@ class TCoreEventCollection {
   }
 }
 
+/*************************************************    js/TResultEvents.js *********************************************** */
+class TResultEvents {
+  static SORTING_BY_TYPE = 0;
+  static SORTING_BY_DATE = 1;
+
+  StartDateTime = new GregorianDateTime();
+  EndDateTime = new GregorianDateTime();
+  EarthLocation = new GCLocation();
+  SortType = TResultEvents.SORTING_BY_DATE;
+  p_events = [];
+
+  Clear() {
+    this.p_events = [];
+  }
+
+  AddEvent(inTime, inType, inData, inDst) {
+    let de = new TDayEvent();
+
+    de.Time = new GregorianDateTime();
+    de.Time.Set(inTime);
+
+    switch (inDst) {
+      case DstTypeChange.DstOff:
+        de.nDst = 0;
+        break;
+      case DstTypeChange.DstStart:
+        if (de.Time.shour >= 2 / 24.0) {
+          de.Time.shour += 1 / 24.0;
+          de.Time.NormalizeValues();
+          de.nDst = 1;
+        } else {
+          de.nDst = 0;
+        }
+        break;
+      case DstTypeChange.DstOn:
+        de.Time.shour += 1 / 24.0;
+        de.Time.NormalizeValues();
+        de.nDst = 1;
+        break;
+      case DstTypeChange.DstEnd:
+        if (de.Time.shour <= 2 / 24.0) {
+          de.Time.shour += 1 / 24.0;
+          de.Time.NormalizeValues();
+          de.nDst = 1;
+        } else {
+          de.nDst = 0;
+        }
+        break;
+      default:
+        de.nDst = 0;
+        break;
+    }
+    de.nData = inData;
+    de.nType = inType;
+
+    this.p_events.push(de);
+
+    return true;
+  }
+
+  Sort(nSortType) {
+    this.SortType = nSortType;
+    let dec = new TDayEventComparer();
+    dec.SortType = nSortType;
+    this.p_events.sort(dec);
+  }
+
+  getEvent(i) {
+    return this.p_events[i];
+  }
+
+  constructor() {
+    this.SortType = TResultEvents.SORTING_BY_DATE;
+    this.p_events = [];
+  }
+
+  CalculateEvents(loc, vcStart, vcEnd) {
+    let ndst = 0;
+    let nData;
+
+    let inEvents = this;
+    this.Clear();
+    this.EarthLocation = loc;
+    this.StartDateTime = new GregorianDateTime(vcStart);
+    this.EndDateTime = new GregorianDateTime(vcEnd);
+
+    let vc = new GregorianDateTime();
+    let vcAdd = new GregorianDateTime();
+    let vcNext = new GregorianDateTime();
+    let earth = loc.GetEarthData();
+
+    vc.Set(vcStart);
+    vc.TimezoneHours = loc.OffsetUtcHours;
+    vcAdd.Set(vc);
+    vcAdd.InitWeekDay();
+
+    let sunriseData, sunsetData;
+    let sunRise, sunSet;
+    let r1, r2;
+
+    while (vcAdd.IsBeforeThis(vcEnd)) {
+      sunriseData = GCSunData.CalcSunrise(vcAdd, earth);
+      sunsetData = GCSunData.CalcSunset(vcAdd, earth);
+      sunRise = sunriseData.TotalDays;
+      sunSet = sunsetData.TotalDays;
+      ndst = loc.TimeZone.DetermineDaylightChange(vcAdd);
+
+      if (gds.getValue(GCDS.COREEVENTS_SUN) != 0) {
+        ndst = loc.TimeZone.DetermineDaylightChange(vcAdd);
+
+        vcAdd.shour = sunriseData.TotalDays - 96.0 / 1440.0;
+        inEvents.AddEvent(vcAdd, CoreEventType.CCTYPE_S_ARUN, 0, ndst);
+
+        vcAdd.shour = sunRise;
+        inEvents.AddEvent(vcAdd, CoreEventType.CCTYPE_S_RISE, 0, ndst);
+
+        vcAdd.shour = (sunRise + sunSet) / 2;
+        inEvents.AddEvent(vcAdd, CoreEventType.CCTYPE_S_NOON, 0, ndst);
+
+        vcAdd.shour = sunSet;
+        inEvents.AddEvent(vcAdd, CoreEventType.CCTYPE_S_SET, 0, ndst);
+      }
+
+      if (gds.getValue(GCDS.COREEVENTS_RAHUKALAM) != 0) {
+        GCSunData.CalculateKala(
+          sunRise,
+          sunSet,
+          vcAdd.dayOfWeek,
+          KalaType.KT_RAHU_KALAM
+        );
+
+        vcAdd.shour = r1;
+        inEvents.AddEvent(
+          vcAdd,
+          CoreEventType.CCTYPE_KALA_START,
+          KalaType.KT_RAHU_KALAM,
+          ndst
+        );
+
+        vcAdd.shour = r2;
+        inEvents.AddEvent(
+          vcAdd,
+          CoreEventType.CCTYPE_KALA_END,
+          KalaType.KT_RAHU_KALAM,
+          ndst
+        );
+      }
+
+      if (gds.getValue(GCDS.COREEVENTS_YAMAGHANTI) != 0) {
+        GCSunData.CalculateKala(
+          sunRise,
+          sunSet,
+          vcAdd.dayOfWeek,
+          KalaType.KT_YAMA_GHANTI
+        );
+
+        vcAdd.shour = r1;
+        inEvents.AddEvent(
+          vcAdd,
+          CoreEventType.CCTYPE_KALA_START,
+          KalaType.KT_YAMA_GHANTI,
+          ndst
+        );
+
+        vcAdd.shour = r2;
+        inEvents.AddEvent(
+          vcAdd,
+          CoreEventType.CCTYPE_KALA_END,
+          KalaType.KT_YAMA_GHANTI,
+          ndst
+        );
+      }
+
+      if (gds.getValue(GCDS.COREEVENTS_GULIKALAM) != 0) {
+        GCSunData.CalculateKala(
+          sunRise,
+          sunSet,
+          vcAdd.dayOfWeek,
+          KalaType.KT_GULI_KALAM
+        );
+
+        vcAdd.shour = r1;
+        inEvents.AddEvent(
+          vcAdd,
+          CoreEventType.CCTYPE_KALA_START,
+          KalaType.KT_GULI_KALAM,
+          ndst
+        );
+
+        vcAdd.shour = r2;
+        inEvents.AddEvent(
+          vcAdd,
+          CoreEventType.CCTYPE_KALA_END,
+          KalaType.KT_GULI_KALAM,
+          ndst
+        );
+      }
+
+      if (gds.getValue(GCDS.COREEVENTS_ABHIJIT_MUHURTA) != 0) {
+        GCSunData.CalculateKala(
+          sunRise,
+          sunSet,
+          vcAdd.dayOfWeek,
+          KalaType.KT_ABHIJIT
+        );
+
+        if (r1 > 0 && r2 > 0) {
+          vcAdd.shour = r1;
+          inEvents.AddEvent(
+            vcAdd,
+            CoreEventType.CCTYPE_KALA_START,
+            KalaType.KT_ABHIJIT,
+            ndst
+          );
+
+          vcAdd.shour = r2;
+          inEvents.AddEvent(
+            vcAdd,
+            CoreEventType.CCTYPE_KALA_END,
+            KalaType.KT_ABHIJIT,
+            ndst
+          );
+        }
+      }
+
+      vcAdd.NextDay();
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_ASCENDENT) !== 0) {
+      let asc = new GCAscendant();
+      asc.Earth = EarthLocation.GetEarthData();
+      asc.CurrentDateTime = new GregorianDateTime(vc);
+      while (asc.GetNextAscendantBefore(vcEnd)) {
+        ndst = loc.TimeZone.DetermineDaylightChange(vcNext);
+        inEvents.AddEvent(
+          asc.CurrentDateTime,
+          CoreEventType.CCTYPE_ASCENDENT,
+          asc.CurrentSign,
+          ndst
+        );
+        asc.CurrentDateTime.AddHours(0.5);
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_TITHI) !== 0) {
+      vcAdd.Set(vc);
+      vcAdd.shour = 0.0;
+      while (vcAdd.IsBeforeThis(vcEnd)) {
+        nData = GCTithi.GetNextTithiStart(earth, vcAdd, vcNext);
+        if (vcNext.GetDayInteger() < vcEnd.GetDayInteger()) {
+          vcNext.InitWeekDay();
+          ndst = loc.TimeZone.DetermineDaylightChange(vcNext);
+          inEvents.AddEvent(vcNext, CoreEventType.CCTYPE_TITHI, nData, ndst);
+        } else {
+          break;
+        }
+        vcAdd.Set(vcNext);
+        vcAdd.shour += 0.2;
+        if (vcAdd.shour >= 1.0) {
+          vcAdd.shour -= 1.0;
+          vcAdd.NextDay();
+        }
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_NAKSATRA) !== 0) {
+      vcAdd.Set(vc);
+      vcAdd.shour = 0.0;
+      while (vcAdd.IsBeforeThis(vcEnd)) {
+        nData = GCNaksatra.GetNextNaksatra(earth, vcAdd, vcNext);
+        if (vcNext.GetDayInteger() < vcEnd.GetDayInteger()) {
+          vcNext.InitWeekDay();
+          ndst = loc.TimeZone.DetermineDaylightChange(vcNext);
+          inEvents.AddEvent(vcNext, CoreEventType.CCTYPE_NAKS, nData, ndst);
+        } else {
+          break;
+        }
+        vcAdd.Set(vcNext);
+        vcAdd.shour += 0.2;
+        if (vcAdd.shour >= 1.0) {
+          vcAdd.shour -= 1.0;
+          vcAdd.NextDay();
+        }
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_YOGA) !== 0) {
+      vcAdd.Set(vc);
+      vcAdd.shour = 0.0;
+      while (vcAdd.IsBeforeThis(vcEnd)) {
+        nData = GCYoga.GetNextYogaStart(earth, vcAdd, vcNext);
+        if (vcNext.GetDayInteger() < vcEnd.GetDayInteger()) {
+          vcNext.InitWeekDay();
+          ndst = loc.TimeZone.DetermineDaylightChange(vcNext);
+          inEvents.AddEvent(vcNext, CoreEventType.CCTYPE_YOGA, nData, ndst);
+        } else {
+          break;
+        }
+        vcAdd.Set(vcNext);
+        vcAdd.shour += 0.2;
+        if (vcAdd.shour >= 1.0) {
+          vcAdd.shour -= 1.0;
+          vcAdd.NextDay();
+        }
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_SANKRANTI) !== 0) {
+      let vcNext = new GregorianDateTime();
+      vcAdd.Set(vc);
+      vcAdd.shour = 0.0;
+      while (vcAdd.IsBeforeThis(vcEnd)) {
+        vcNext.Set(GCSankranti.GetNextSankranti(vcAdd, earth, nData));
+        if (vcNext.GetDayInteger() < vcEnd.GetDayInteger()) {
+          vcNext.InitWeekDay();
+          ndst = loc.TimeZone.DetermineDaylightChange(vcNext);
+          inEvents.AddEvent(vcNext, CoreEventType.CCTYPE_SANK, nData, ndst);
+        } else {
+          break;
+        }
+        vcAdd.Set(vcNext);
+        vcAdd.NextDay();
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_MOONRASI) !== 0) {
+      vcAdd.Set(vc);
+      vcAdd.shour = 0.0;
+      while (vcAdd.IsBeforeThis(vcEnd)) {
+        [nData, vcNext] = GCMoonData.GetNextMoonRasi(earth, vcAdd);
+        if (vcNext.GetDayInteger() < vcEnd.GetDayInteger()) {
+          vcNext.InitWeekDay();
+          ndst = loc.TimeZone.DetermineDaylightChange(vcNext);
+          inEvents.AddEvent(vcNext, CoreEventType.CCTYPE_M_RASI, nData, ndst);
+        } else {
+          break;
+        }
+        vcAdd.Set(vcNext);
+        vcAdd.shour += 0.5;
+        vcAdd.NormalizeValues();
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_CONJUNCTION) !== 0) {
+      let dlong;
+      vcAdd.Set(vc);
+      vcAdd.shour = 0.0;
+      while (vcAdd.IsBeforeThis(vcEnd)) {
+        dlong = GCConjunction.GetNextConjunction(vcAdd, vcNext, true, earth);
+        if (vcNext.GetDayInteger() < vcEnd.GetDayInteger()) {
+          vcNext.InitWeekDay();
+          ndst = loc.TimeZone.DetermineDaylightChange(vcNext);
+          inEvents.AddEvent(
+            vcNext,
+            CoreEventType.CCTYPE_CONJ,
+            GCRasi.GetRasi(
+              dlong,
+              GCAyanamsha.GetAyanamsa(vcNext.GetJulianComplete())
+            ),
+            ndst
+          );
+        } else {
+          break;
+        }
+        vcAdd.Set(vcNext);
+        vcAdd.NextDay();
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_MOON) !== 0) {
+      vcAdd.Set(vc);
+      vcAdd.shour = 0.0;
+      while (vcAdd.IsBeforeThis(vcEnd)) {
+        vcNext.Set(GCMoonData.GetNextRise(earth, vcAdd, true));
+        inEvents.AddEvent(vcNext, CoreEventType.CCTYPE_M_RISE, 0, ndst);
+
+        vcNext.Set(GCMoonData.GetNextRise(earth, vcNext, false));
+        inEvents.AddEvent(vcNext, CoreEventType.CCTYPE_M_SET, 0, ndst);
+
+        vcNext.shour += 0.05;
+        vcNext.NormalizeValues();
+        vcAdd.Set(vcNext);
+      }
+    }
+
+    if (gds.getValue(GCDS.COREEVENTS_SORT) != 0)
+      inEvents.Sort(TResultEvents.SORTING_BY_DATE);
+    else inEvents.Sort(TResultEvents.SORTING_BY_TYPE);
+  }
+}
+
 /*************************************************    js/TResultMasaList.js **********************************************/
 class TResultMasaList {
   constructor() {
@@ -19293,14 +28418,6 @@ class TResultMasa {
 }
 
 /*************************************************    js/TCalendarFormatter.js **********************************************/
-
-function getDayBkgColorCode(/*VAISNAVADAY */ p) {
-  if (p == null) return '';
-  if (p.nFastID == FastType.FAST_EKADASI) return '#FFFFBB';
-  if (p.nFastID != 0) return '#BBFFBB';
-  return '';
-}
-
 function getDateRangeText(d1, d2) {
   return sprintf(
     ' %s %d - %s %d ',

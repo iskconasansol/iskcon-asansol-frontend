@@ -46,7 +46,7 @@ const festivals = [
     className: 'bg-pink-100',
   },
   {
-    name: 'Srila Prabhupada Disappearance',
+    name: 'Srila Prabhupada Disappearance Day',
     image: '/images/prabhupada.svg',
     link: '/festivals/srila-prabhupadas-disappearance',
     className: 'bg-indigo-100',
@@ -78,7 +78,7 @@ const Festivals = () => {
                 />
               </div>
 
-              <h4 className="mt-4">{festival.name}</h4>
+              <h4 className="mt-4 text-sm">{festival.name}</h4>
             </Link>
           ))}
         </div>

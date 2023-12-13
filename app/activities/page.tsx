@@ -46,14 +46,6 @@ const activities = [
 const Activities = () => {
   return (
     <main>
-      <PageHeader className="relative lg:h-[300px] bg-slate-100">
-        <Image
-          src={'/images/krishna_playing_flute.svg'}
-          fill={true}
-          alt="Prabhupada image"
-          className="object-contain p-4"
-        />
-      </PageHeader>
       <div className="py-16 container">
         <h2 className="text-xl md:text-3xl font-semibold text-purple-600">
           Our Activites

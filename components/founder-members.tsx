@@ -18,9 +18,9 @@ const FounderMembers: React.FC<Props> = ({ className }) => {
             <div className={'h-40 rounded-md relative bg-teal-100'}>
               <Image
                 fill={true}
-                src={'/images/lord_jagannath_idols.svg'}
+                src={'/images/logo/iskcon-asansol-logo.svg'}
                 alt="temple icon"
-                className="object-contain p-4"
+                className="object-contain p-8"
               />
             </div>
 
