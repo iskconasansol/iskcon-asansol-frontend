@@ -27,7 +27,7 @@ type PropType = {
 };
 
 const autoplayOptions = {
-  delay: 8000,
+  delay: 5000,
   jump: false,
   rootNode: (emblaRoot: any) => emblaRoot.parentElement,
 };

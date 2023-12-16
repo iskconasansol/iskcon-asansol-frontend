@@ -27,7 +27,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/donation/nitya-seva"
   ],
   "exclude": ["node_modules"]
 }
