@@ -10,14 +10,37 @@ export async function GET() {
   const startDate = new GregorianDateTime();
 
   const tc = new TResultCalendar();
-  tc.CalculateCalendar(loc, startDate, 0);
+  tc.CalculateMonth(loc, startDate.year, startDate.month);
+
+  const sortDayEventsByPriority = (a: any, b: any) => {
+    if (a.prio < b.prio) return -1;
+    if (a.prio > b.prio) return 1;
+    return 0;
+  };
+
+  const combineAllEventsWithDate = (tc: TResultCalendar) => {
+    const events = tc.m_pData.map((e) => {
+      return e.dayEvents.map((de: any) => {
+        return {
+          ...de,
+          start: `${e.date.year}-${e.date.month}-${e.date.day}`,
+        };
+      });
+    });
+
+    return events.flat();
+  };
+
+  const formatEvent = (e: any) => {
+    return {
+      title: e.text,
+      ...e,
+    };
+  };
 
   return Response.json({
-    data: tc.m_pData.map((d) => {
-      return {
-        events: d.dayEvents,
-        date: `${d.date.day}/${d.date.month}/${d.date.year}`,
-      };
-    }),
+    events: combineAllEventsWithDate(tc)
+      .map(formatEvent)
+      .sort(sortDayEventsByPriority),
   });
 }

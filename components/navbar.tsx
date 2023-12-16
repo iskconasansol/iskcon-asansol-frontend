@@ -20,7 +20,6 @@ import {
   MenubarItem,
   MenubarShortcut,
 } from '@/components/ui/menubar';
-import { Button } from '@/components/ui/button';
 import TranslateIcon from './icons/translate-icon';
 
 const Navbar = () => {
@@ -74,15 +73,15 @@ const Navbar = () => {
                           </NavigationMenuLink>
                         </Link>
                       </li>
-                      {/* <li className="">
-                        <Link href="/iskcon/about-us" legacyBehavior passHref>
+                      <li className="">
+                        <Link href="/iskcon/vaishnava-calendar" legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
-                            About Us
+                            Vaishnava Calendar
                           </NavigationMenuLink>
                         </Link>
-                      </li> */}
+                      </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
