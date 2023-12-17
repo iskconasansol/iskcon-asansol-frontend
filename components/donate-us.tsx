@@ -5,6 +5,14 @@ import Link from 'next/link';
 
 const items = [
   {
+    title: 'Gita Donation',
+    subtitle: 'Contribute and help us distribute Gita to 3 lakh people',
+    imageURL: '/images/ram_mandir.svg',
+    link: '/donation/gita-donation',
+    className: 'bg-pink-100',
+    buttonText: 'Donate',
+  },
+  {
     title: 'Nitya Seva',
     subtitle: 'Daily worship of the Lord. Join us',
     imageURL: '/images/lord_jagannath_idols.svg',
@@ -20,14 +28,7 @@ const items = [
     className: 'bg-blue-100',
     buttonText: 'Donate',
   },
-  {
-    title: 'Anna Dan Seva',
-    subtitle: 'Donate for free prasadam distribution',
-    imageURL: '/images/anna_dan.svg',
-    link: '#',
-    className: 'bg-pink-100',
-    buttonText: 'Donate',
-  },
+
   {
     title: 'Temple Donation',
     subtitle: 'Learn the teachings of Bhagavad Gita',
@@ -71,9 +72,11 @@ const DonateUs = () => {
                 </div>
 
                 <div className="flex justify-between items-center mt-2">
-                  <h4 className="mt-2">{item.title}</h4>
+                  <h4 className="mt-2 font-semibold text-purple-600">{item.title}</h4>
 
-                  <Button className="mt-2" variant={'secondary'}>{item.buttonText}</Button>
+                  <Button className="mt-2" variant={'secondary'}>
+                    {item.buttonText}
+                  </Button>
                 </div>
               </Link>
             );

@@ -4,6 +4,15 @@ import Activities from '@/components/activities';
 
 const slides: Slide[] = [
   {
+    title: 'Donate Gita for Ram Mandir In Ayodhya Inauguration',
+    description: 'Contribute and help us distribute Gita to 3 lakh people',
+    image: '/images/ram-mandir.jpg',
+    callToAction: {
+      text: 'Donate',
+      link: '/donation/gita-donation',
+    },
+  },
+  {
     title: 'Welcome to Iskcon Asansol',
     description: 'Join us in building our new temple',
     image: '/images/lord_radha_krishna.jpg',
@@ -44,8 +53,8 @@ export default function Home() {
           }}
         />
       </section>
-      <Activities />
       <DonateUs />
+      <Activities />
     </main>
   );
 }

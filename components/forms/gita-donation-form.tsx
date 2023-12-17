@@ -1,0 +1,410 @@
+'use client';
+
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { cn } from '@/lib/utils';
+import CalendarIcon from '@/components/icons/calendar-icon';
+import { format } from 'date-fns';
+import { useEffect } from 'react';
+
+type Props = {
+  className?: string;
+  onFormSubmit: (data: FormValues) => void;
+};
+
+const donationTypes = [
+  {
+    name: '11 Gita Books',
+    value: '11_gita_books',
+    amount: 2750,
+  },
+  {
+    name: '21 Gita Books',
+    value: '21_gita_books',
+    amount: 5250,
+  },
+  {
+    name: '51 Gita Books',
+    value: '51_gita_books',
+    amount: 12750,
+  },
+  {
+    name: '108 Gita Books',
+    value: '108_gita_books',
+    amount: 27000,
+  },
+  {
+    name: '251 Gita Books',
+    value: '251_gita_books',
+    amount: 62750,
+  },
+  {
+    name: '501 Gita Books',
+    value: '501_gita_books',
+    amount: 125250,
+  },
+  {
+    name: '1008 Gita Books',
+    value: '1008_gita_books',
+    amount: 252000,
+  },
+];
+
+const FormSchema = z.object({
+  qty: z.string().min(11, {
+    message: 'Minimum 11 books required',
+  }),
+  amount: z.string().optional(),
+  name: z.string().min(1, {
+    message: 'Please provide a valid name',
+  }),
+  initiatedName: z.string().optional(),
+  dob: z.date().optional(),
+  anniversary: z.date().optional(),
+  email: z
+    .string()
+    .email({
+      message: 'Please provide a valid email',
+    })
+    .optional(),
+  phone: z.string().min(10).max(10, {
+    message: 'Please provide a valid phone number',
+  }),
+  street_address: z.string().min(1, {
+    message: 'Please provide a valid address',
+  }),
+  city: z.string().min(1, {
+    message: 'Please provide a valid city',
+  }),
+  state: z.string().min(1, {
+    message: 'Please provide a valid state',
+  }),
+  postal_code: z.string().min(6).max(6, {
+    message: 'Please provide a valid postal code',
+  }),
+  pan_number: z
+    .string()
+    .min(10)
+    .max(10, {
+      message: 'Please provide a valid PAN number',
+    })
+    .optional(),
+});
+
+type FormValues = z.infer<typeof FormSchema>;
+
+const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
+  const form = useForm<FormValues>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      name: '',
+    },
+  });
+
+  const { watch, setValue } = form;
+
+  const watchQty = watch('qty');
+
+  const watchAmount = watch('amount');
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data, 'data submitted', 'watch', watch('name'));
+    onFormSubmit(data);
+  };
+  return (
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className={cn('space-y-6', className)}
+      >
+        <FormField
+          control={form.control}
+          name="qty"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel htmlFor="seva_type">Select quantity</FormLabel>
+
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={String(field.value)}
+              >
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select quantity" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {donationTypes.map((type) => (
+                    <SelectItem
+                      key={type.value}
+                      value={type.value}
+                      className="text-sm"
+                    >
+                      <span>{type.name}</span>
+                      <span className="font-semibold ml-2">
+                        {type.amount ? `(₹${type.amount})` : null}
+                      </span>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {Number(watchAmount) ? (
+                <FormDescription>
+                  {`You are contributing ₹${watchAmount} for ${watchQty} Gita books. Hare Krishna!`}
+                </FormDescription>
+              ) : null}
+              <FormMessage {...field} />
+            </FormItem>
+          )}
+        ></FormField>
+
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input placeholder="Enter your name" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="initiatedName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Initiated Name</FormLabel>
+              <FormControl>
+                <Input placeholder="Enter initiated name" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <FormField
+            control={form.control}
+            name="dob"
+            render={({ field }) => (
+              <FormItem className="flex flex-col">
+                <FormLabel>Date of birth</FormLabel>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <FormControl>
+                      <Button
+                        variant={'outline'}
+                        className={cn(
+                          'w-[240px] pl-3 text-left font-normal',
+                          !field.value && 'text-muted-foreground'
+                        )}
+                      >
+                        {field.value ? (
+                          format(field.value, 'PPP')
+                        ) : (
+                          <span>Pick a date</span>
+                        )}
+                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      </Button>
+                    </FormControl>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={(date) =>
+                        date > new Date() || date < new Date('1900-01-01')
+                      }
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="anniversary"
+            render={({ field }) => (
+              <FormItem className="flex flex-col">
+                <FormLabel>Date of Anniversary</FormLabel>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <FormControl>
+                      <Button
+                        variant={'outline'}
+                        className={cn(
+                          'w-[240px] pl-3 text-left font-normal',
+                          !field.value && 'text-muted-foreground'
+                        )}
+                      >
+                        {field.value ? (
+                          format(field.value, 'PPP')
+                        ) : (
+                          <span>Pick a date</span>
+                        )}
+                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      </Button>
+                    </FormControl>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={(date) =>
+                        date > new Date() || date < new Date('1900-01-01')
+                      }
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="md:grid md:grid-cols-2 gap-4">
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter email" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter phone" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <FormField
+          control={form.control}
+          name="street_address"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Street Address</FormLabel>
+              <FormControl>
+                <Input placeholder="Enter street address" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <div className="md:grid md:grid-cols-2 gap-4">
+          <FormField
+            control={form.control}
+            name="city"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>City</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter city" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="state"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>State</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter state" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="postal_code"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Postal Code</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter postal code" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="pan_number"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>PAN Number</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter PAN number" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
+  );
+};
+
+export default GitaDonationForm;
