@@ -12,6 +12,8 @@
     "@cashfreepayments/cashfree-js": "^1.0.4",
     "@fullcalendar/core": "^6.1.10",
     "@fullcalendar/daygrid": "^6.1.10",
+    "@fullcalendar/interaction": "^6.1.10",
+    "@fullcalendar/multimonth": "^6.1.10",
     "@fullcalendar/react": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
     "@hookform/resolvers": "^3.3.2",

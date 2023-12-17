@@ -38,6 +38,9 @@ export async function GET() {
     };
   };
 
+  // check request query params
+
+
   return Response.json({
     events: combineAllEventsWithDate(tc)
       .map(formatEvent)

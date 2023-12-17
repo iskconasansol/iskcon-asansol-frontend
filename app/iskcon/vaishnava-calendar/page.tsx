@@ -1,3 +1,5 @@
+'use client';
+
 import PageHeader from '@/components/page-header';
 import VaishnavaCalendar, {
   VaishnavEvent,
@@ -138,6 +140,7 @@ const events: any[] = [
 ];
 
 const VaishnavaCalendarPage = () => {
+  const handleDateClick = (events: VaishnavEvent[]) => {};
   return (
     <main className="bg-teal-50">
       <PageHeader className="bg-teal-100">
@@ -152,7 +155,7 @@ const VaishnavaCalendarPage = () => {
         </div>
       </PageHeader>
       <div className="container py-16">
-        <VaishnavaCalendar events={events} />
+        <VaishnavaCalendar events={events} onClickDate={handleDateClick} />
       </div>
     </main>
   );

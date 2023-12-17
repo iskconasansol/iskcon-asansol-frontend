@@ -11,8 +11,12 @@
   @apply space-x-8;
 }
 
+.fc .fc-toolbar-title {
+  @apply text-lg md:text-2xl;
+}
+
 .fc-day {
-  @apply m-8;
+  @apply m-8 cursor-pointer;
 }
 
 .fc-scrollgrid-sync-table {
@@ -27,8 +31,16 @@
   @apply bg-violet-500 border border-violet-600;
 }
 
+.fc-h-event.ekadasi{
+  @apply bg-red-500 border border-red-600;
+}
+
 .fc .fc-daygrid-day.fc-day-today {
   @apply bg-violet-100;
+}
+
+.fc-toolbar-chunk {
+  @apply flex items-center;
 }
 
 .fc .fc-button {

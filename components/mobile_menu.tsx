@@ -31,8 +31,8 @@ const moreItems = [
     href: '/iskcon/philosophy',
   },
   {
-    name: 'About Us',
-    href: '/iskcon/about-us',
+    name: 'Vaishnava Calendar',
+    href: '/iskcon/vaishnava-calendar',
   },
   {
     name: 'Festivals',
@@ -51,7 +51,7 @@ const moreItems = [
 const MobileNav = () => {
   const popoverClose = useRef(null);
   return (
-    <nav className="sticky bottom-0 lg:hidden bg-yellow-50 text-gray-800">
+    <nav className="sticky bottom-0 lg:hidden bg-slate-800 text-yellow-200 z-10">
       <div className="flex justify-between items-center py-4 px-8 text-xs font-light">
         <Link href="/" className="flex justify-center flex-col items-center ">
           <HomeIcon className="" />

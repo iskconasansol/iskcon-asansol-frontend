@@ -5,17 +5,21 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getDaysInCurrentMonth() {
-  // Create a new Date object for the current date
+export function getDaysInMonth(month: number) {
+  // Ensure the input is a valid month (between 1 and 12)
+  if (month < 1 || month > 12) {
+    console.error('Invalid month. Please provide a month between 1 and 12.');
+    return null;
+  }
+
+  // Create a new Date object for the specified month and set the date to the first day
   const currentDate = new Date();
+  currentDate.setMonth(month - 1, 1);
 
-  // Set the date to the first day of the next month
-  currentDate.setMonth(currentDate.getMonth() + 1, 1);
-
-  // Subtract one day to get the last day of the current month
+  // Subtract one day to get the last day of the specified month
   currentDate.setDate(currentDate.getDate() - 1);
 
-  // Retrieve the day of the month, which gives the number of days in the current month
+  // Retrieve the day of the month, which gives the number of days in the specified month
   const daysInMonth = currentDate.getDate();
 
   return daysInMonth;
