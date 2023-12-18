@@ -24,3 +24,7 @@ export function getDaysInMonth(month: number) {
 
   return daysInMonth;
 }
+
+export const padDigit = (digit: number, padding: number) => {
+  return Number(digit.toString().padStart(padding, '0'));
+};

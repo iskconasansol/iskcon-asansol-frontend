@@ -4,13 +4,19 @@ import {
   GregorianDateTime,
 } from './gaurabda-calendar/index.js';
 
-export async function GET() {
+export async function POST(request: Request) {
+  const payload = await request.json();
   var loc = GCLocation.FindByName('Calcutta');
+  const { month, year } = payload;
 
   const startDate = new GregorianDateTime();
 
+  const padDigit = (digit: number, padding: number) => {
+    return digit.toString().padStart(padding, '0');
+  };
+
   const tc = new TResultCalendar();
-  tc.CalculateMonth(loc, startDate.year, startDate.month);
+  tc.CalculateMonth(loc, year || startDate.year, month || startDate.month);
 
   const sortDayEventsByPriority = (a: any, b: any) => {
     if (a.prio < b.prio) return -1;
@@ -23,7 +29,7 @@ export async function GET() {
       return e.dayEvents.map((de: any) => {
         return {
           ...de,
-          start: `${e.date.year}-${e.date.month}-${e.date.day}`,
+          start: `${e.date.year}-${padDigit(e.date.month, 2)}-${e.date.day}`,
         };
       });
     });
@@ -37,9 +43,6 @@ export async function GET() {
       ...e,
     };
   };
-
-  // check request query params
-
 
   return Response.json({
     events: combineAllEventsWithDate(tc)

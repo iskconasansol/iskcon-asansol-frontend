@@ -7,9 +7,9 @@ const MahamantraMarquee: React.FC<Props> = ({ className }) => {
     <div className={className}>
       <div className="relative flex overflow-x-hidden">
         <div className="animate-marquee whitespace-nowrap">
-          <span className="mx-4">Hare Kṛṣṇa</span>
-          <span className="mx-4">Hare Kṛṣṇa</span>
-          <span className="mx-4">Kṛṣṇa Kṛṣṇa</span>
+          <span className="mx-4">Hare Krishna</span>
+          <span className="mx-4">Hare Krishna</span>
+          <span className="mx-4">Krishna Krishna</span>
           <span className="mx-4">Hare Hare...</span>
           <span className="mx-4">Hare Rama</span>
           <span className="mx-4">Hare Rama</span>
@@ -18,9 +18,9 @@ const MahamantraMarquee: React.FC<Props> = ({ className }) => {
         </div>
 
         <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-          <span className="mx-4">Hare Kṛṣṇa</span>
-          <span className="mx-4">Hare Kṛṣṇa</span>
-          <span className="mx-4">Kṛṣṇa Kṛṣṇa</span>
+          <span className="mx-4">Hare Krishna</span>
+          <span className="mx-4">Hare Krishna</span>
+          <span className="mx-4">Krishna Krishna</span>
           <span className="mx-4">Hare Hare...</span>
           <span className="mx-4">Hare Rama</span>
           <span className="mx-4">Hare Rama</span>

@@ -16,20 +16,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import { Calendar } from '@/components/ui/calendar';
+import { DateInput } from '@/components/ui/date-input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import CalendarIcon from '@/components/icons/calendar-icon';
-import { format } from 'date-fns';
 import { useEffect } from 'react';
 
 type Props = {
@@ -40,37 +33,37 @@ type Props = {
 const donationTypes = [
   {
     name: '11 Gita Books',
-    value: '11_gita_books',
+    value: '11',
     amount: 2750,
   },
   {
     name: '21 Gita Books',
-    value: '21_gita_books',
+    value: '21',
     amount: 5250,
   },
   {
     name: '51 Gita Books',
-    value: '51_gita_books',
+    value: '51',
     amount: 12750,
   },
   {
     name: '108 Gita Books',
-    value: '108_gita_books',
+    value: '108',
     amount: 27000,
   },
   {
     name: '251 Gita Books',
-    value: '251_gita_books',
+    value: '251',
     amount: 62750,
   },
   {
     name: '501 Gita Books',
-    value: '501_gita_books',
+    value: '501',
     amount: 125250,
   },
   {
     name: '1008 Gita Books',
-    value: '1008_gita_books',
+    value: '1008',
     amount: 252000,
   },
 ];
@@ -132,6 +125,13 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
 
   const watchAmount = watch('amount');
 
+  useEffect(() => {
+    const donationType = donationTypes.find((type) => type.value === watchQty);
+    if (donationType) {
+      setValue('amount', String(donationType.amount));
+    }
+  }, [watchQty, setValue]);
+
   const onSubmit = (data: FormValues) => {
     console.log(data, 'data submitted', 'watch', watch('name'));
     onFormSubmit(data);
@@ -147,7 +147,9 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
           name="qty"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="seva_type">Select quantity</FormLabel>
+              <FormLabel htmlFor="seva_type" required>
+                Select quantity
+              </FormLabel>
 
               <Select
                 onValueChange={field.onChange}
@@ -176,7 +178,7 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
 
               {Number(watchAmount) ? (
                 <FormDescription>
-                  {`You are contributing ₹${watchAmount} for ${watchQty} Gita books. Hare Krishna!`}
+                  {`You are contributing ₹${watchAmount} by donating ${watchQty} Gita books. Hare Krishna!`}
                 </FormDescription>
               ) : null}
               <FormMessage {...field} />
@@ -189,7 +191,7 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel required>Name</FormLabel>
               <FormControl>
                 <Input placeholder="Enter your name" {...field} />
               </FormControl>
@@ -219,37 +221,7 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <FormLabel>Date of birth</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={'outline'}
-                        className={cn(
-                          'w-[240px] pl-3 text-left font-normal',
-                          !field.value && 'text-muted-foreground'
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, 'PPP')
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date('1900-01-01')
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
+                <DateInput {...field} />
 
                 <FormMessage />
               </FormItem>
@@ -262,37 +234,7 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <FormLabel>Date of Anniversary</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={'outline'}
-                        className={cn(
-                          'w-[240px] pl-3 text-left font-normal',
-                          !field.value && 'text-muted-foreground'
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, 'PPP')
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date('1900-01-01')
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
+                <DateInput {...field} />
                 <FormMessage />
               </FormItem>
             )}
@@ -319,7 +261,7 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone</FormLabel>
+                <FormLabel required>Phone</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter phone" {...field} />
                 </FormControl>

@@ -4,8 +4,8 @@ import Activities from '@/components/activities';
 
 const slides: Slide[] = [
   {
-    title: 'Donate Gita for Ram Mandir In Ayodhya Inauguration',
-    description: 'Contribute and help us distribute Gita to 3 lakh people',
+    title: 'Donate Gita for Ram Mandir',
+    description: 'Contribute and help us distribute Gita',
     image: '/images/ram-mandir.jpg',
     callToAction: {
       text: 'Donate',

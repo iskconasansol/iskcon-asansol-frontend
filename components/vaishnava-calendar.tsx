@@ -21,16 +21,16 @@ export interface VaishnavEvent {
 
 type Props = {
   events: VaishnavEvent[];
-  onClickDate: (events: VaishnavEvent[]) => void;
+  onChangeMonth?: (month: number, year: number) => void;
+  onDateClick?: (events: VaishnavEvent[]) => void;
 };
 
-const VaishnavaCalendar: React.FC<Props> = ({ events, onClickDate }) => {
+const VaishnavaCalendar: React.FC<Props> = ({ events, onChangeMonth, onDateClick }) => {
   const handleDateClick = (arg: DateClickArg) => {
     const clickedEvents = events.filter((event) => {
       return event.start === arg.dateStr;
     });
-
-    onClickDate(clickedEvents);
+    onDateClick && onDateClick(clickedEvents);
   };
   return (
     <FullCalendar
@@ -43,6 +43,11 @@ const VaishnavaCalendar: React.FC<Props> = ({ events, onClickDate }) => {
         return arg.event.title.toLowerCase().includes('ekadasi')
           ? ['ekadasi']
           : [''];
+      }}
+      datesSet={(arg) => {
+        const currentMonth = arg.view.currentStart.getMonth() + 1;
+        const currentYear = arg.view.currentStart.getFullYear();
+        onChangeMonth && onChangeMonth(currentMonth, currentYear);
       }}
     />
   );

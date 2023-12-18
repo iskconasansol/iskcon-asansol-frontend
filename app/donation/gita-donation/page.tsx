@@ -12,7 +12,7 @@ const GitaDonationPage = () => {
           <h1 className="text-xl md:text-4xl font-semibold text-red-600">
             Gita Donation
           </h1>
-          <p>Contribute and help us distribute Gita to 3 lakh people</p>
+          <p>Contribute and help us distribute Gita</p>
         </div>
       </PageHeader>
 
@@ -68,8 +68,10 @@ const GitaDonationPage = () => {
             </div>
 
             <Card className="bg-yellow-100 p-4 shadow-md cols-span-2">
-              <h3 className='py-2 px-8 text-xl font-semibold text-red-600'>হ্যাঁ! আমি শ্রীমদ ভগবদ্গীতা দান করতে চাই</h3>
-              <GitaDonationForm onFormSubmit={() => {}} className='px-8'/>
+              <h3 className="py-2 px-8 text-xl font-semibold text-red-600">
+                হ্যাঁ! আমি শ্রীমদ ভগবদ্গীতা দান করতে চাই
+              </h3>
+              <GitaDonationForm onFormSubmit={() => {}} className="px-8" />
             </Card>
           </div>
         </div>
