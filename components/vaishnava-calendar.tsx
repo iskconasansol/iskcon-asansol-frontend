@@ -43,7 +43,7 @@ const VaishnavaCalendar: React.FC<Props> = ({
         plugins={[dayGridPlugin, interactionPlugin]}
         events={events as EventSourceInput}
         nowIndicator={true}
-        height={'900px'}
+        height={'1200px'}
         dateClick={handleDateClick}
         eventClassNames={(arg) => {
           return arg.event.title.toLowerCase().includes('ekadasi')

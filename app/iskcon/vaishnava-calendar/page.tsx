@@ -21,6 +21,7 @@ const VaishnavaCalendarPage = () => {
   const [selectedEvents, setSelectedEvents] = useState<VaishnavEvent[]>([]);
 
   const handleMonthChange = async (month: number, year: number) => {
+    setEvents([]);
     const payload = JSON.stringify({ month, year });
     const response = await fetchCalendarEventsByMonthAndYear(payload);
 
