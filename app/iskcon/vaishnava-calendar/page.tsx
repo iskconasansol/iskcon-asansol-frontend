@@ -13,7 +13,6 @@ import VaishnavaCalendar, {
 } from '@/components/vaishnava-calendar';
 import { useState } from 'react';
 
-
 const VaishnavaCalendarPage = () => {
   const [events, setEvents] = useState<VaishnavEvent[]>([]);
   const { fetchCalendarEventsByMonthAndYear } = useCalendarApi();
@@ -36,6 +35,16 @@ const VaishnavaCalendarPage = () => {
   };
 
   const selectedDate = selectedEvents[0]?.start;
+  //format selected Date to show in this format 12th January 2021
+
+  const formattedSelectedDate = new Date(selectedDate).toLocaleDateString(
+    'en-GB',
+    {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }
+  );
 
   const handleDialogOpenChange = (open: boolean) => {
     setSelectedEvents([]);
@@ -65,10 +74,14 @@ const VaishnavaCalendarPage = () => {
       <Dialog open={showDialog} onOpenChange={handleDialogOpenChange}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className='md:text-2xl text-purple-800'>{selectedDate?.toString()}</DialogTitle>
+            <DialogTitle className="md:text-2xl text-purple-800">
+              {formattedSelectedDate}
+            </DialogTitle>
             <ul className="pt-8 md:text-lg list-decimal pl-4">
               {selectedEvents.map((event, idx) => (
-                <li key={event.id} className='text-left pl-2'>{event.title}</li>
+                <li key={event.id} className="text-left pl-2">
+                  {event.title}
+                </li>
               ))}
             </ul>
           </DialogHeader>

@@ -2,6 +2,7 @@
 
 import GitaDonationForm from '@/components/forms/gita-donation-form';
 import PageHeader from '@/components/page-header';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const GitaDonationPage = () => {
@@ -13,11 +14,15 @@ const GitaDonationPage = () => {
             Gita Donation
           </h1>
           <p>Contribute and help us distribute Gita</p>
+
+          <a href="#info">
+            <Button className="bg-orange-800 mt-4">Contribute</Button>
+          </a>
         </div>
       </PageHeader>
 
-      <section>
-        <div className="container py-16">
+      <section id="info" className=" py-16">
+        <div className="container">
           <div className="mx-auto text-center">
             <h1 className="text-2xl md:text-3xl font-semibold text-purple-800">
               প্রিয় ভক্তগণ । হরে কৃষ্ণ
@@ -43,11 +48,11 @@ const GitaDonationPage = () => {
         </div>
       </section>
 
-      <section className="bg-orange-50 relative">
+      <section className="bg-orange-50">
         <div className="container py-4">
           <div className="grid md:grid-cols-2 gap-4 mt-4">
             <div className="flex items-start justify-center">
-              <Card className="shadow-md bg-yellow-100 p-4 w-content h-content">
+              <Card className="shadow-md bg-yellow-100 p-4 w-content h-content md:sticky md:top-[120px]">
                 <CardHeader>
                   <h3 className="font-semibold text-xl lg:text-2xl text text-red-600">
                     গীতা দানের ফলে ব্যক্তি

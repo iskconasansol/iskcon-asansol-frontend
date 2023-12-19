@@ -61,7 +61,7 @@ const TempleTimeStatus: React.FC<Props> = ({ className }) => {
       <DialogTrigger asChild>
         <div
           className={cn(
-            'flex gap-2 items-center rounded-full p-2 border-gray-100 border-2 shadow-md text-xs md:text-base',
+            'flex gap-2 items-center rounded-full p-2 border-gray-100 border-2 text-xs md:text-sm',
             className
           )}
         >
