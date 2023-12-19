@@ -3505,7 +3505,7 @@ class TTimeZone {
     this.CountryISOCode = '';
     if (data != undefined) {
       if (data.length != 12) {
-        console.log('data is not correct for timezone creation: ', data);
+        //console.log('data is not correct for timezone creation: ', data);
       } else {
         this.Name = data[0];
         this.OffsetMinutes = data[1];
@@ -8935,7 +8935,7 @@ class VAISNAVADAY {
     var sunRise = t.FindCoreEvent(CoreEventType.CCTYPE_S_RISE);
     var sunSet = t.FindCoreEvent(CoreEventType.CCTYPE_S_SET);
     if (sunRise == null || sunSet == null) {
-      console.log('Cannot find sunrise of sunset for day ', t.date);
+      //console.log('Cannot find sunrise of sunset for day ', t.date);
       return 0;
     }
 
@@ -8951,7 +8951,7 @@ class VAISNAVADAY {
       1
     );
     if (tempTimes.length != 1) {
-      console.log('Start of tithi was not found for date ' + t.toString());
+      //console.log('Start of tithi was not found for date ' + t.toString());
       return 0;
     } else {
       tithiStart = new TCoreEvent(tempTimes[0].coreEvent);
@@ -8963,7 +8963,7 @@ class VAISNAVADAY {
       1
     );
     if (tempTimes.length != 1) {
-      console.log('End of tithi was not found for date ' + t.toString());
+      //console.log('End of tithi was not found for date ' + t.toString());
       return 0;
     } else {
       tithiEnd = new TCoreEvent(tempTimes[0].coreEvent);
@@ -8979,7 +8979,7 @@ class VAISNAVADAY {
       1
     );
     if (tempTimes.length != 1) {
-      console.log('End of naksatra was not found for date ' + t.toString());
+      //console.log('End of naksatra was not found for date ' + t.toString());
       return 0;
     } else {
       naksEnd = new TCoreEvent(tempTimes[0].coreEvent);
@@ -12126,7 +12126,7 @@ class GCConjunction {
 
       longitudeMoon = GCCoreAstronomy.GetMoonLongitude(d, earth);
       sunl = GCSunData.GetSunLongitude(d);
-      //console.log('count', counter, 'jday', jday, 'moon.long', longitudeMoon, 'sun.long', sunl);
+      ////console.log('count', counter, 'jday', jday, 'moon.long', longitudeMoon, 'sun.long', sunl);
       l2 = GCMath.putIn180(longitudeMoon - sunl);
       new_tit = GCMath.IntFloor(l2 / phi);
 
@@ -13278,12 +13278,12 @@ var gShaktiEvents = [
           var d1 = days[idx];
           var d2 = days[idx + 1];
           var d3 = days[idx + 2];
-          //console.log('Rama navami func idx:', idx, days[idx-1].ksayaTithi, d0.astro.tithi)
+          ////console.log('Rama navami func idx:', idx, days[idx-1].ksayaTithi, d0.astro.tithi)
           if (d0.ksayaTithi == 23) return 1;
           if (d0.astro.tithi == 23) return 0;
-          /*console.log('d1 tithi=', d1.astro.tithi, d1.date);
-				console.log('d2 tithi=', d2.astro.tithi, d2.date);
-				console.log('d3 fasttype=', d3);*/
+          /*//console.log('d1 tithi=', d1.astro.tithi, d1.date);
+				//console.log('d2 tithi=', d2.astro.tithi, d2.date);
+				//console.log('d3 fasttype=', d3);*/
           if (d2.astro.tithi == 23 && d3.fastType > 0) return 1;
           if (d1.astro.tithi == 23 && d2.fastType == 0) return 1;
           return 0;
@@ -14312,12 +14312,12 @@ var gEvents = [
           var d1 = days[idx];
           var d2 = days[idx + 1];
           var d3 = days[idx + 2];
-          //console.log('Rama navami func idx:', idx, days[idx-1].ksayaTithi, d0.astro.tithi)
+          ////console.log('Rama navami func idx:', idx, days[idx-1].ksayaTithi, d0.astro.tithi)
           if (d0.ksayaTithi == 23) return 1;
           if (d0.astro.tithi == 23) return 0;
-          /*console.log('d1 tithi=', d1.astro.tithi, d1.date);
-				console.log('d2 tithi=', d2.astro.tithi, d2.date);
-				console.log('d3 fasttype=', d3);*/
+          /*//console.log('d1 tithi=', d1.astro.tithi, d1.date);
+				//console.log('d2 tithi=', d2.astro.tithi, d2.date);
+				//console.log('d3 fasttype=', d3);*/
           if (d2.astro.tithi == 23 && d3.fastType > 0) return 1;
           if (d1.astro.tithi == 23 && d2.fastType == 0) return 1;
           return 0;
@@ -18106,7 +18106,7 @@ export class TResultCalendar {
           t.date.day in sun_eclipses[t.date.year][t.date.month]
         ) {
           var rec = sun_eclipses[t.date.year][t.date.month][t.date.day];
-          //console.log('Date in sun eclipses:', rec)
+          ////console.log('Date in sun eclipses:', rec)
           var A = this.GetTimeInDay(t, rec.dayhour);
           var curr = A[0];
           var dayt1 = A[1];
@@ -18118,7 +18118,7 @@ export class TResultCalendar {
               rec.visibility
             );
             curr.AddEvent(DisplayPriorities.PRIO_SUN, GCDS.CAL_ECLIPSE, text);
-            //console.log('Timezone offset x:', text)
+            ////console.log('Timezone offset x:', text)
           }
         } else if (
           t.date.year in moon_eclipses &&
@@ -18126,7 +18126,7 @@ export class TResultCalendar {
           t.date.day in moon_eclipses[t.date.year][t.date.month]
         ) {
           var rec = moon_eclipses[t.date.year][t.date.month][t.date.day];
-          console.log('Date in moon eclipses:', rec);
+          //console.log('Date in moon eclipses:', rec);
           var t1 = null,
             t2 = null;
           var mult = 1 / 1440.0;
@@ -18180,7 +18180,7 @@ export class TResultCalendar {
                 );
               }
             }
-            console.log('Timezone offset x:', A[0]);
+            //console.log('Timezone offset x:', A[0]);
           }
         }
       }
@@ -18283,7 +18283,7 @@ export class TResultCalendar {
   GetTimeInDay(curr, dayhours) {
     var doff = this.m_Location.OffsetUtcHours * 60 + curr.BiasMinutes;
     doff = dayhours + (doff * 60) / 86400;
-    console.log('doff:', doff);
+    //console.log('doff:', doff);
     if (doff < 0.0 && curr.Previous != null) {
       doff += 1.0;
       curr = curr.Previous;
@@ -18448,13 +18448,13 @@ export class TResultCalendar {
       i < this.m_PureCount + this.BEFORE_DAYS - 1;
       i++
     ) {
-      //console.log('festival check -> ', i)
+      ////console.log('festival check -> ', i)
       for (var book of gEvents) {
         if (!gEventsVisible[book.bookid]) continue;
         for (var fb of book.events) {
           if (fb.nReserved != 1 && fb.nReserved != undefined) continue;
           if (fb.nVisible == 0) continue;
-          //console.log('========', this.m_pData[i], fb);
+          ////console.log('========', this.m_pData[i], fb);
           if (this.IsFestivalDay(this.m_pData, i, fb)) {
             currFestTop = this.AddEventToDay(
               i,

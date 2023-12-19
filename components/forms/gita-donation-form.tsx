@@ -133,7 +133,7 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
   }, [watchQty, setValue]);
 
   const onSubmit = (data: FormValues) => {
-    console.log(data, 'data submitted', 'watch', watch('name'));
+    //console.log(data, 'data submitted', 'watch', watch('name'));
     onFormSubmit(data);
   };
   return (

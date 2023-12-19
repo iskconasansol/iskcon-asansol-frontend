@@ -35,6 +35,10 @@
   @apply bg-red-500 border border-red-600;
 }
 
+.fc .fc-daygrid-day:hover{
+  @apply bg-violet-50;
+}
+
 .fc .fc-daygrid-day.fc-day-today {
   @apply bg-violet-100;
 }

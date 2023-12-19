@@ -46,7 +46,7 @@ const NityaSeva = () => {
           <NityaSevaForm
             className="mt-2"
             onFormSubmit={(data) => {
-              console.log('form data', data);
+              //console.log('form data', data);
               toast({
                 title: 'Hare Krishna! Thank you for your contribution.',
                 description: 'We will contact you soon.',

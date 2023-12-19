@@ -36,7 +36,7 @@ const NewTemple = () => {
           <FutureTempleContributionForm
             className="mt-4"
             onFormSubmit={(data) => {
-              console.log('form data', data);
+              //console.log('form data', data);
             }}
           />
         </Card>

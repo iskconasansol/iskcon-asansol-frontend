@@ -169,7 +169,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
   }, [watchSevaType, setValue]);
 
   const onSubmit = (data: FormValues) => {
-    console.log(data, 'data submitted', 'watch', watch('name'));
+    //console.log(data, 'data submitted', 'watch', watch('name'));
     onFormSubmit(data);
   };
   return (

@@ -6,8 +6,6 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogOverlay,
-  DialogPortal,
   DialogTitle,
 } from '@/components/ui/dialog';
 import VaishnavaCalendar, {
@@ -15,10 +13,6 @@ import VaishnavaCalendar, {
 } from '@/components/vaishnava-calendar';
 import { useState } from 'react';
 
-type VaishnavaCalendarPayload = {
-  year: string;
-  month: string;
-};
 
 const VaishnavaCalendarPage = () => {
   const [events, setEvents] = useState<VaishnavEvent[]>([]);
@@ -70,10 +64,10 @@ const VaishnavaCalendarPage = () => {
       <Dialog open={showDialog} onOpenChange={handleDialogOpenChange}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{selectedDate?.toString()}</DialogTitle>
-            <ul className="pt-8 text-sm list-decimal pl-4">
+            <DialogTitle className='md:text-2xl text-purple-800'>{selectedDate?.toString()}</DialogTitle>
+            <ul className="pt-8 md:text-lg list-decimal pl-4">
               {selectedEvents.map((event, idx) => (
-                <li key={event.id}>{event.title}</li>
+                <li key={event.id} className='text-left pl-2'>{event.title}</li>
               ))}
             </ul>
           </DialogHeader>

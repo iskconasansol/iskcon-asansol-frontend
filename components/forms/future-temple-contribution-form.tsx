@@ -152,7 +152,7 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
   };
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data, 'data');
+    //console.log(data, 'data');
     // You can perform additional actions here, such as submitting data to a server.
     // For now, let's navigate to a different page.
   };

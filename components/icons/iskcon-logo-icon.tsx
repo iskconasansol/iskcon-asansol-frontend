@@ -12,7 +12,6 @@ const IskconLogoIcon: React.FC<Props> = ({ className }) => (
     xmlSpace="preserve"
     className={cn('h-6 w-6', className)}
   >
-    <style>{'.st0{fill:#b74233}'}</style>
     <g id="Group_311" transform="translate(-27.917 -57.723)">
       <g id="Group_306" transform="translate(27.917 57.723)">
         <g id="Group_304">
