@@ -1,11 +1,13 @@
 'use client';
 
+import usePaytmCheckout from '@/app/hooks/usePaytmCheckout';
 import GitaDonationForm from '@/components/forms/gita-donation-form';
 import PageHeader from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const GitaDonationPage = () => {
+  const { performPaytmCheckout } = usePaytmCheckout();
   return (
     <main>
       <PageHeader className="bg-orange-50 bg-[url('/images/ram-mandir.jpg')] lg:h-[600px] bg-cover relative">
@@ -76,7 +78,17 @@ const GitaDonationPage = () => {
               <h3 className="py-2 px-8 text-xl font-semibold text-red-600">
                 হ্যাঁ! আমি শ্রীমদ ভগবদ্গীতা দান করতে চাই
               </h3>
-              <GitaDonationForm onFormSubmit={() => {}} className="px-8" />
+              <GitaDonationForm
+                onFormSubmit={async (data) => {
+                  console.log('initate payment request');
+                  performPaytmCheckout({
+                    orderId: '123343876',
+                    amount: String(100),
+                    userId: '123',
+                  });
+                }}
+                className="px-8"
+              />
             </Card>
           </div>
         </div>

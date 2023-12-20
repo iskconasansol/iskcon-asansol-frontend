@@ -28,3 +28,14 @@ export function getDaysInMonth(month: number) {
 export const padDigit = (digit: number, padding: number) => {
   return Number(digit.toString().padStart(padding, '0'));
 };
+
+
+// export const initatePaymentRequest = async (
+//   url: string,
+//   { arg }: { arg: string }
+// ) => {
+//   const response = await axios.post(url, JSON.parse(arg));
+//   const events = response.data?.events
+
+//   return events;
+// };

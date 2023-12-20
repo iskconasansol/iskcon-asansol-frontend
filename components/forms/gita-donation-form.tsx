@@ -69,8 +69,8 @@ const donationTypes = [
 ];
 
 const FormSchema = z.object({
-  qty: z.string().min(11, {
-    message: 'Minimum 11 books required',
+  qty: z.string({
+    required_error: 'Please select how many Gita books you want to donate',
   }),
   amount: z.string().optional(),
   name: z.string().min(1, {
