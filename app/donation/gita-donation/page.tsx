@@ -1,13 +1,14 @@
 'use client';
 
-import usePaytmCheckout from '@/app/hooks/usePaytmCheckout';
+import useCashfreeCheckout from '@/app/hooks/useCashfreeCheckout';
 import GitaDonationForm from '@/components/forms/gita-donation-form';
 import PageHeader from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const GitaDonationPage = () => {
-  const { performPaytmCheckout } = usePaytmCheckout();
+  const { performCashfreeCheckout } = useCashfreeCheckout();
+
   return (
     <main>
       <PageHeader className="bg-orange-50 bg-[url('/images/ram-mandir.jpg')] lg:h-[600px] bg-cover relative">
@@ -80,11 +81,14 @@ const GitaDonationPage = () => {
               </h3>
               <GitaDonationForm
                 onFormSubmit={async (data) => {
-                  console.log('initate payment request');
-                  performPaytmCheckout({
-                    orderId: '123343876',
-                    amount: String(100),
-                    userId: '123',
+                  performCashfreeCheckout({
+                    customer_details: {
+                      customer_id: '123',
+                      customer_phone: '1234567890',
+                    },
+                    order: {
+                      order_amount: '10',
+                    },
                   });
                 }}
                 className="px-8"

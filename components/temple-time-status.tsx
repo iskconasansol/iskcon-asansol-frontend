@@ -31,29 +31,25 @@ const TempleTimeStatus: React.FC<Props> = ({ className }) => {
   const isNight = templeTiming === '20:30 - 4:30';
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const date = new Date();
-      const hour = date.getHours();
-      const minutes = date.getMinutes();
+    const date = new Date();
+    const hour = date.getHours();
+    const minutes = date.getMinutes();
 
-      const totalMinutes = hour * 60 + minutes;
+    const totalMinutes = hour * 60 + minutes;
 
-      if (totalMinutes >= 4 * 60 + 30 && totalMinutes < 12 * 60 + 45) {
-        setTempleStatus('open');
-        setTempleTiming('4:30-12:30');
-      } else if (totalMinutes >= 12 * 60 + 45 && totalMinutes < 16 * 60 + 30) {
-        setTempleStatus('closed');
-        setTempleTiming('12:45 - 16:30');
-      } else if (totalMinutes >= 16 * 60 + 30 && totalMinutes < 20 * 60 + 30) {
-        setTempleStatus('open');
-        setTempleTiming('16:30 - 20:30');
-      } else {
-        setTempleStatus('closed');
-        setTempleTiming('20:30 - 4:30');
-      }
-    }, 60000);
-
-    return () => clearInterval(interval);
+    if (totalMinutes >= 4 * 60 + 30 && totalMinutes < 12 * 60 + 45) {
+      setTempleStatus('open');
+      setTempleTiming('4:30-12:30');
+    } else if (totalMinutes >= 12 * 60 + 45 && totalMinutes < 16 * 60 + 30) {
+      setTempleStatus('closed');
+      setTempleTiming('12:45 - 16:30');
+    } else if (totalMinutes >= 16 * 60 + 30 && totalMinutes < 20 * 60 + 30) {
+      setTempleStatus('open');
+      setTempleTiming('16:30 - 20:30');
+    } else {
+      setTempleStatus('closed');
+      setTempleTiming('20:30 - 4:30');
+    }
   }, []);
 
   return (

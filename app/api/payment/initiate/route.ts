@@ -1,22 +1,25 @@
-import { initiatePayment } from '../../paytmPayment';
+import { createOrder } from '../../cashfreePayment';
 
 export async function POST(request: Request) {
   const payload = await request.json();
-  const { orderId, amount, customerId } = payload;
+  const { customer_details, order } = payload;
+  const { customer_id, customer_phone } = customer_details;
+  const { order_amount } = order;
 
-  if (!orderId || !amount || !customerId) {
+  if (!customer_id || !customer_phone || !order_amount) {
     return Response.json({
       error: 'Invalid request',
     });
   }
 
-  const paytmParams = await initiatePayment({
-    orderId,
-    amount,
-    customerId,
+  const response = await createOrder({
+    customer_details,
+    order_amount,
+    order_meta: {
+      return_url: 'http://localhost:3000/order-summary/{order_id}/status'
+    },
+    order_currency: 'INR',
   });
 
-  return Response.json({
-    ...paytmParams,
-  });
+  return Response.json(response);
 }

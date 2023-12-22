@@ -44,9 +44,11 @@ export const initiatePayment = async ({
 
     params.head.signature = checksum;
 
-    console.log(params, 'params')
+    console.log(params, 'params');
 
     const postPayload = JSON.stringify(params);
+
+    console.log(postPayload, 'postPayload', postPayload.length);
 
     const response = await fetch(
       `https://securegw-stage.paytm.in/theia/api/v1/initiateTransaction?mid=${paytmConfig.MID}&orderId=${orderId}`,
@@ -60,15 +62,17 @@ export const initiatePayment = async ({
       }
     );
 
-    console.log(await response.json(), 'response');
+    console.log(await response.body, response.status, 'response');
 
     if (response.ok) {
       const responseData = await response.json();
       // Handle the response data as needed
       console.log('Transaction Token:', responseData.body.txnToken);
+      const transactionToken = responseData.body.txnToken;
 
-      // You can return the response data if needed
-      return responseData;
+      if (!transactionToken) throw new Error('Transaction token not found');
+
+      return transactionToken;
     } else {
       console.error('Failed to initiate payment:', response.statusText);
       return null;

@@ -66,7 +66,8 @@ const usePaytmCheckout = () => {
 
     console.log('tranx', res);
 
-    if (res) {
+    if ('txnToken' in res && res.txnToken) {
+      console.log('opening paytm popup');
       openJsCheckoutPopup({
         amount,
         orderId,
