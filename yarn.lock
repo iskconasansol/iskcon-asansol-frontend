@@ -26,11 +26,6 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@cashfreepayments/cashfree-js@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@cashfreepayments/cashfree-js/-/cashfree-js-1.0.4.tgz#e08171e5878a34f791497c228a4e3a419ba34c9a"
-  integrity sha512-xa5TwBKtYhOC+LFJxltFmWjexQCJzK7xdz0QcwrkVxIrAv78gdaYZKGxBHXeEb05O+S4xG9R4DUUO/enmjwD/g==
-
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz"

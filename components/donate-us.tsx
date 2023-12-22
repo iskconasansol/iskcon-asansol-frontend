@@ -72,7 +72,9 @@ const DonateUs = () => {
                 </div>
 
                 <div className="flex justify-between items-center mt-2">
-                  <h4 className="mt-2 font-semibold text-purple-600">{item.title}</h4>
+                  <h4 className="mt-2 font-semibold text-purple-600">
+                    {item.title}
+                  </h4>
 
                   <Button className="mt-2" variant={'secondary'}>
                     {item.buttonText}

@@ -1,13 +1,13 @@
 'use client';
 
-import useCashfreeCheckout from '@/app/hooks/useCashfreeCheckout';
+import useCashfreeCheckout from '@/app/hooks/useCashfree';
 import GitaDonationForm from '@/components/forms/gita-donation-form';
 import PageHeader from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const GitaDonationPage = () => {
-  const { performCashfreeCheckout } = useCashfreeCheckout();
+  const { performCashfreeCheckout, isCheckoutLoading } = useCashfreeCheckout();
 
   return (
     <main>
@@ -80,14 +80,25 @@ const GitaDonationPage = () => {
                 হ্যাঁ! আমি শ্রীমদ ভগবদ্গীতা দান করতে চাই
               </h3>
               <GitaDonationForm
+                isLoading={isCheckoutLoading}
                 onFormSubmit={async (data) => {
                   performCashfreeCheckout({
                     customer_details: {
-                      customer_id: '123',
-                      customer_phone: '1234567890',
+                      customer_id: data.phone,
+                      customer_phone: data.phone,
+                      customer_email: data.email,
+                      customer_name: data.name,
                     },
                     order: {
-                      order_amount: '10',
+                      order_amount: data.amount,
+                      order_tags: {
+                        address: `${data?.street_address},${data?.city},${data?.state},${data.postal_code}`,
+                        pan_number: data?.pan_number,
+                        initiated_name: data?.initiatedName,
+                        quantity: data?.qty,
+                        type: 'donation',
+                        purpose: 'gita_donation',
+                      },
                     },
                   });
                 }}

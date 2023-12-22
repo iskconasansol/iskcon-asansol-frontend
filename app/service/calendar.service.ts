@@ -1,12 +1,11 @@
 import { VaishnavEvent } from '@/components/vaishnava-calendar';
-import axios from 'axios';
+import axiosFetcher from './api.service';
 
 export const fetchCalendarEvents = async (
   url: string,
   { arg }: { arg: string }
 ) => {
-  const response = await axios.post(url, JSON.parse(arg));
-  const events = response.data?.events as VaishnavEvent[];
+  const events = (await axiosFetcher('POST')(url, { arg })) as VaishnavEvent[];
 
   return events;
 };

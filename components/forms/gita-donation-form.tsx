@@ -27,6 +27,7 @@ import { useEffect } from 'react';
 
 type Props = {
   className?: string;
+  isLoading?: boolean;
   onFormSubmit: (data: FormValues) => void;
 };
 
@@ -72,7 +73,7 @@ const FormSchema = z.object({
   qty: z.string({
     required_error: 'Please select how many Gita books you want to donate',
   }),
-  amount: z.string().optional(),
+  amount: z.string(),
   name: z.string().min(1, {
     message: 'Please provide a valid name',
   }),
@@ -111,7 +112,11 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
-const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
+const GitaDonationForm: React.FC<Props> = ({
+  className,
+  onFormSubmit,
+  isLoading,
+}) => {
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -342,7 +347,9 @@ const GitaDonationForm: React.FC<Props> = ({ className, onFormSubmit }) => {
           />
         </div>
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit" loading={isLoading}>
+          Submit
+        </Button>
       </form>
     </Form>
   );

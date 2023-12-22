@@ -1,5 +1,3 @@
-export interface Order {
-  orderId: string;
-  amount: number;
-  currency: string;
-}
+import { OrderEntity } from 'cashfree-pg';
+
+export interface Order extends OrderEntity {}

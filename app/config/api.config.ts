@@ -4,6 +4,7 @@ export const API_CONFIG = {
     payment: {
       initiate: '/api/payment/initiate',
       callback: '/api/payment/callback',
+      order: '/api/payment/order',
     },
   },
 };

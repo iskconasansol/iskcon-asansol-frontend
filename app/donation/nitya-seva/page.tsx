@@ -16,7 +16,7 @@ const NityaSeva = () => {
           layout="fill"
           objectFit="cover"
           objectPosition="top"
-          alt="prabhupada image old"
+          alt="lord jagannath idols"
         />
 
         <div className="absolute w-full tex-center bottom-0 py-4 bg-red-900 bg-opacity-75">
