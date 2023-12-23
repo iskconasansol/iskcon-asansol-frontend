@@ -24,6 +24,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { useEffect } from 'react';
+import indianStates from '@/data/indian-states.json';
 
 type Props = {
   className?: string;

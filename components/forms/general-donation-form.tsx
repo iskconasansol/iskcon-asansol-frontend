@@ -12,6 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
 
 type Props = {
   className?: string;
@@ -20,8 +21,8 @@ type Props = {
 };
 
 const FormSchema = z.object({
-  amount: z.string({ required_error: 'Please provide an amount' }).min(1, {
-    message: 'Please provide an amount',
+  amount: z.string().min(1, {
+    message: 'Minimum amount is ₹100',
   }),
   name: z.string().min(1, {
     message: 'Please provide a valid name',
@@ -61,7 +62,7 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
-const defaultAmount = '100';
+const defaultAmount = 100;
 
 const GeneralDonationForm: React.FC<Props> = ({
   className,
@@ -72,12 +73,19 @@ const GeneralDonationForm: React.FC<Props> = ({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: '',
-      amount: defaultAmount,
+      amount: String(defaultAmount),
     },
   });
 
-  const { watch } = form;
+  const { watch, setError } = form;
   const onSubmit = (data: FormValues) => {
+    if (Number(data.amount) < 100) {
+      form.setError('amount', {
+        message: `Minimum amount is ₹${defaultAmount}`,
+      });
+      form.setFocus('amount');
+      return;
+    }
     onFormSubmit(data);
   };
 
@@ -103,8 +111,9 @@ const GeneralDonationForm: React.FC<Props> = ({
                 />
               </FormControl>
               <FormMessage>
-                We have added a default contribution of ₹ {defaultAmount}. You
-                can contribute a higher amount if you wish. Hare Krishna!
+                {watchAmount && Number(watchAmount) < 100
+                  ? `Minimum amount is ₹${defaultAmount}`
+                  : null}
               </FormMessage>
             </FormItem>
           )}
