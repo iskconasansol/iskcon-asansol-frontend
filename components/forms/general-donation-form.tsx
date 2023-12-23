@@ -1,29 +1,17 @@
-'use client';
-
+import { z } from 'zod';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import { DateInput } from '@/components/ui/date-input';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '@/lib/utils';
-import { useEffect } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 type Props = {
   className?: string;
@@ -31,49 +19,10 @@ type Props = {
   onFormSubmit: (data: FormValues) => void;
 };
 
-const donationTypes = [
-  {
-    name: '11 Gita Books',
-    value: '11',
-    amount: 2750,
-  },
-  {
-    name: '21 Gita Books',
-    value: '21',
-    amount: 5250,
-  },
-  {
-    name: '51 Gita Books',
-    value: '51',
-    amount: 12750,
-  },
-  {
-    name: '108 Gita Books',
-    value: '108',
-    amount: 27000,
-  },
-  {
-    name: '251 Gita Books',
-    value: '251',
-    amount: 62750,
-  },
-  {
-    name: '501 Gita Books',
-    value: '501',
-    amount: 125250,
-  },
-  {
-    name: '1008 Gita Books',
-    value: '1008',
-    amount: 252000,
-  },
-];
-
 const FormSchema = z.object({
-  qty: z.string({
-    required_error: 'Please select how many Gita books you want to donate',
+  amount: z.string({ required_error: 'Please provide an amount' }).min(1, {
+    message: 'Please provide an amount',
   }),
-  amount: z.string(),
   name: z.string().min(1, {
     message: 'Please provide a valid name',
   }),
@@ -112,7 +61,9 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
-const GitaDonationForm: React.FC<Props> = ({
+const defaultAmount = '100';
+
+const GeneralDonationForm: React.FC<Props> = ({
   className,
   onFormSubmit,
   isLoading,
@@ -121,25 +72,17 @@ const GitaDonationForm: React.FC<Props> = ({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: '',
+      amount: defaultAmount,
     },
   });
 
-  const { watch, setValue } = form;
-
-  const watchQty = watch('qty');
-
-  const watchAmount = watch('amount');
-
-  useEffect(() => {
-    const donationType = donationTypes.find((type) => type.value === watchQty);
-    if (donationType) {
-      setValue('amount', String(donationType.amount));
-    }
-  }, [watchQty, setValue]);
-
+  const { watch } = form;
   const onSubmit = (data: FormValues) => {
     onFormSubmit(data);
   };
+
+  const watchAmount = watch('amount');
+
   return (
     <Form {...form}>
       <form
@@ -148,47 +91,24 @@ const GitaDonationForm: React.FC<Props> = ({
       >
         <FormField
           control={form.control}
-          name="qty"
+          name="amount"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="seva_type" required>
-                Select quantity
-              </FormLabel>
-
-              <Select
-                onValueChange={field.onChange}
-                defaultValue={String(field.value)}
-              >
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select quantity" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  {donationTypes.map((type) => (
-                    <SelectItem
-                      key={type.value}
-                      value={type.value}
-                      className="text-sm"
-                    >
-                      <span>{type.name}</span>
-                      <span className="font-semibold ml-2">
-                        {type.amount ? `(₹${type.amount})` : null}
-                      </span>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {Number(watchAmount) ? (
-                <FormDescription>
-                  {`You are contributing ₹${watchAmount} by donating ${watchQty} Gita books. Hare Krishna!`}
-                </FormDescription>
-              ) : null}
-              <FormMessage {...field} />
+              <FormLabel required>Amount</FormLabel>
+              <FormControl>
+                <Input
+                  type="number"
+                  placeholder="Enter your contribution amount"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage>
+                We have added a default contribution of ₹ {defaultAmount}. You
+                can contribute a higher amount if you wish. Hare Krishna!
+              </FormMessage>
             </FormItem>
           )}
-        ></FormField>
+        />
 
         <FormField
           control={form.control}
@@ -218,34 +138,7 @@ const GitaDonationForm: React.FC<Props> = ({
           )}
         />
 
-        {/* <div className="grid md:grid-cols-2 gap-6">
-          <FormField
-            control={form.control}
-            name="dob"
-            render={({ field }) => (
-              <FormItem className="flex flex-col">
-                <FormLabel>Date of birth</FormLabel>
-                <DateInput {...field} />
-
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="anniversary"
-            render={({ field }) => (
-              <FormItem className="flex flex-col">
-                <FormLabel>Date of Anniversary</FormLabel>
-                <DateInput {...field} />
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div> */}
-
-        <div className="md:grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           <FormField
             control={form.control}
             name="email"
@@ -289,7 +182,7 @@ const GitaDonationForm: React.FC<Props> = ({
           )}
         />
 
-        <div className="md:grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           <FormField
             control={form.control}
             name="city"
@@ -365,4 +258,4 @@ const GitaDonationForm: React.FC<Props> = ({
   );
 };
 
-export default GitaDonationForm;
+export default GeneralDonationForm;

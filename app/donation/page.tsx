@@ -36,9 +36,9 @@ const items = [
   },
   {
     title: 'Temple Donation',
-    subtitle: 'Learn the teachings of Bhagavad Gita',
+    subtitle: 'Any other contribution for temple',
     imageURL: '/images/namaste.svg',
-    link: 'activities/gita-classes',
+    link: '/donation/general-donation',
     className: 'bg-teal-100',
     buttonText: 'Donate',
   },
