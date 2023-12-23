@@ -118,7 +118,7 @@ const Footer = () => {
           <div className="mt-2 flex flex-col gap-2">
             <div className="flex gap-2">
               <PhoneIcon className="w-4 h-4" />{' '}
-              <a href="tel:+9194340 00000">+91 94340 00000</a>
+              <a href="tel:+919433320314">+91 9433320314</a>
             </div>
             <div className="flex gap-2 items-center">
               <EnvelopeIcon className="w-4 h-4" />

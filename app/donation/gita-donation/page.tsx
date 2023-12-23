@@ -2,6 +2,7 @@
 
 import useCashfreeCheckout from '@/app/hooks/useCashfree';
 import GitaDonationForm from '@/components/forms/gita-donation-form';
+import OfflinePayment from '@/components/offline-payment';
 import PageHeader from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -53,9 +54,9 @@ const GitaDonationPage = () => {
 
       <section className="bg-orange-50">
         <div className="container py-4">
-          <div className="grid md:grid-cols-2 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
             <div className="flex items-start justify-center">
-              <Card className="shadow-md bg-yellow-100 p-4 w-content h-content md:sticky md:top-[120px]">
+              <Card className="shadow-md bg-purple-100 p-4 w-content h-content md:sticky md:top-[120px]">
                 <CardHeader>
                   <h3 className="font-semibold text-xl lg:text-2xl text text-red-600">
                     গীতা দানের ফলে ব্যক্তি
@@ -75,11 +76,14 @@ const GitaDonationPage = () => {
               </Card>
             </div>
 
-            <Card className="bg-yellow-100 p-4 shadow-md cols-span-2">
-              <h3 className="py-2 px-8 text-xl font-semibold text-red-600">
-                হ্যাঁ! আমি শ্রীমদ ভগবদ্গীতা দান করতে চাই
-              </h3>
-              <GitaDonationForm
+            <Card className="bg-yellow-100 p-4 px-8 shadow-md col-span-3">
+              <CardHeader>
+                <h3 className="font-semibold text-xl lg:text-2xl text text-red-600">
+                  হ্যাঁ! আমি শ্রীমদ ভগবদ্গীতা দান করতে চাই
+                </h3>
+              </CardHeader>
+
+              {/* <GitaDonationForm
                 isLoading={isCheckoutLoading}
                 onFormSubmit={async (data) => {
                   performCashfreeCheckout({
@@ -103,7 +107,9 @@ const GitaDonationPage = () => {
                   });
                 }}
                 className="px-8"
-              />
+              /> */}
+
+              <OfflinePayment />
             </Card>
           </div>
         </div>
