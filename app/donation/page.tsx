@@ -19,10 +19,10 @@ const items = [
     buttonText: 'Donate',
   },
   {
-    title: 'Future Temple',
+    title: 'Projects',
     subtitle: 'Daily distribution of prasadam for devotees',
     imageURL: '/images/temple.svg',
-    link: '/donation/new-temple',
+    link: '/donation/projects',
     className: 'bg-blue-100',
     buttonText: 'Donate',
   },

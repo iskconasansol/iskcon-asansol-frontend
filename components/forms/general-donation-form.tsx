@@ -12,7 +12,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { useEffect } from 'react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import indianStates from '@/data/indian-states.json';
 
 type Props = {
   className?: string;
@@ -62,8 +69,6 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
-const defaultAmount = 100;
-
 const GeneralDonationForm: React.FC<Props> = ({
   className,
   onFormSubmit,
@@ -73,7 +78,7 @@ const GeneralDonationForm: React.FC<Props> = ({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: '',
-      amount: String(defaultAmount),
+      amount: '',
     },
   });
 
@@ -81,7 +86,7 @@ const GeneralDonationForm: React.FC<Props> = ({
   const onSubmit = (data: FormValues) => {
     if (Number(data.amount) < 100) {
       form.setError('amount', {
-        message: `Minimum amount is ₹${defaultAmount}`,
+        message: `Minimum amount is ₹${100}`,
       });
       form.setFocus('amount');
       return;
@@ -112,7 +117,7 @@ const GeneralDonationForm: React.FC<Props> = ({
               </FormControl>
               <FormMessage>
                 {watchAmount && Number(watchAmount) < 100
-                  ? `Minimum amount is ₹${defaultAmount}`
+                  ? `Minimum amount is ₹${100}`
                   : null}
               </FormMessage>
             </FormItem>
@@ -133,7 +138,7 @@ const GeneralDonationForm: React.FC<Props> = ({
           )}
         />
 
-        <FormField
+        {/* <FormField
           control={form.control}
           name="initiatedName"
           render={({ field }) => (
@@ -145,7 +150,7 @@ const GeneralDonationForm: React.FC<Props> = ({
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         <div className="grid md:grid-cols-2 gap-4">
           <FormField
@@ -182,7 +187,7 @@ const GeneralDonationForm: React.FC<Props> = ({
           name="street_address"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Street Address</FormLabel>
+              <FormLabel required>Street Address</FormLabel>
               <FormControl>
                 <Input placeholder="Enter street address" {...field} />
               </FormControl>
@@ -197,7 +202,7 @@ const GeneralDonationForm: React.FC<Props> = ({
             name="city"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>City</FormLabel>
+                <FormLabel required>City</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter city" {...field} />
                 </FormControl>
@@ -211,10 +216,28 @@ const GeneralDonationForm: React.FC<Props> = ({
             name="state"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>State</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter state" {...field} />
-                </FormControl>
+                <FormLabel required>State</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={String(field.value)}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select state" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {indianStates.map((state) => (
+                      <SelectItem
+                        key={state.code}
+                        value={state.code}
+                        className="text-sm"
+                      >
+                        <span>{state.name}</span>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -225,7 +248,7 @@ const GeneralDonationForm: React.FC<Props> = ({
             name="postal_code"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Postal Code</FormLabel>
+                <FormLabel required>Postal Code</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter postal code" {...field} />
                 </FormControl>
@@ -234,7 +257,7 @@ const GeneralDonationForm: React.FC<Props> = ({
             )}
           />
 
-          <FormField
+          {/* <FormField
             control={form.control}
             name="pan_number"
             render={({ field }) => (
@@ -246,7 +269,7 @@ const GeneralDonationForm: React.FC<Props> = ({
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
         </div>
 
         <Button type="submit" loading={isLoading}>

@@ -32,7 +32,7 @@ const VaishnavaCalendar: React.FC<Props> = ({
   onDateClick,
 }) => {
   const handleDateClick = (arg: DateClickArg) => {
-    const clickedEvents = events.filter((event) => {
+    const clickedEvents = events?.filter((event) => {
       return event.start === arg.dateStr;
     });
     onDateClick && onDateClick(clickedEvents);

@@ -3,11 +3,13 @@ import Image from 'next/image';
 
 const OfflinePayment = () => {
   return (
-    <section className='text-slate-800'>
-      <h3 className="text-sm md:text-xl">Donate via NEFT/RTGS/IMPS/PayTm/UPI</h3>
+    <section className="text-slate-800">
+      <h3 className="text-sm md:text-xl">
+        Donate via NEFT/RTGS/IMPS/PayTm/UPI
+      </h3>
 
       <div className="grid md:grid-cols-3 gap-4 mt-4">
-        <Card className="bg-white p-2 rounded-md shadow-md">
+        <Card className="bg-yellow-50 p-2 rounded-md shadow-md">
           <CardContent className="py-2">
             <CardTitle className="text-base">NEFT/RTGS/IMPS</CardTitle>
             <div className="mt-2">
@@ -27,7 +29,7 @@ const OfflinePayment = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-white p-2 rounded-md shadow-md">
+        <Card className="bg-yellow-50 p-2 rounded-md shadow-md">
           <CardContent className="py-2">
             <CardTitle className="text-base">Another account</CardTitle>
             <div className="mt-2">
@@ -46,9 +48,10 @@ const OfflinePayment = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-white p-2 rounded-md shadow-md ">
+        <Card className="bg-yellow-50 p-2 rounded-md shadow-md ">
+          <CardTitle className="text-base text-center">Scan and Pay</CardTitle>
           <CardContent>
-            <div className="mt-2 relative h-[200px]">
+            <div className="mt-2 relative h-[100px]">
               <Image
                 src={'/images/paytm_qr_code.png'}
                 fill

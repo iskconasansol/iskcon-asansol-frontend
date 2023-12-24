@@ -5,7 +5,9 @@ export const fetchCalendarEvents = async (
   url: string,
   { arg }: { arg: string }
 ) => {
-  const events = (await axiosFetcher('POST')(url, { arg })) as VaishnavEvent[];
+  const events = (await axiosFetcher('POST')(url, { arg })) as {
+    events: VaishnavEvent[];
+  };
 
   return events;
 };

@@ -25,7 +25,7 @@ const VaishnavaCalendarPage = () => {
     const response = await fetchCalendarEventsByMonthAndYear(payload);
 
     if (response) {
-      setEvents(response || []);
+      setEvents(response.events || []);
     }
   };
 

@@ -22,14 +22,16 @@ import {
 import { Input } from '@/components/ui/input';
 import { z } from 'zod';
 import { cn } from '@/lib/utils';
-import { DateInput } from '@/components/ui/date-input';
+import indianStates from '@/data/indian-states.json';
 
 type Props = {
   className?: string;
   onFormSubmit: (data: FormValues) => void;
+  isLoading?: boolean;
 };
 
 const schema = z.object({
+  amount: z.string().optional(),
   contributionType: z.enum(['squareFeet', 'materials', 'other']),
   squareFeetContribution: z.string().min(1).optional(),
   laborCharges: z.string().min(1).optional(),
@@ -108,7 +110,11 @@ const contributionTypeOptions = [
   { value: 'other', label: 'Other (Donate any amount you wish)' },
 ];
 
-const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
+const FutureTempleContributionForm: React.FC<Props> = ({
+  className,
+  onFormSubmit,
+  isLoading
+}) => {
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -122,8 +128,6 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
   const { handleSubmit, watch } = form;
 
   const calculateTotalCost = () => {
-    // Implement your cost calculation logic based on user contributions
-    // This is just a placeholder, replace it with your actual calculation
     const laborCharges = watch('laborCharges');
     const brickContribution = watch('brickContribution') || 0;
     const cementContribution = watch('cementContribution') || 0;
@@ -152,9 +156,8 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
   };
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    //console.log(data, 'data');
-    // You can perform additional actions here, such as submitting data to a server.
-    // For now, let's navigate to a different page.
+    form.setValue('amount', String(calculateTotalCost()));
+    onFormSubmit(data);
   };
   return (
     <Form {...form}>
@@ -355,7 +358,7 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
           )}
         />
 
-        <FormField
+        {/* <FormField
           control={form.control}
           name="initiatedName"
           render={({ field }) => (
@@ -367,9 +370,9 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
-        <div className="grid md:grid-cols-2 gap-4">
+        {/* <div className="grid md:grid-cols-2 gap-4">
           <FormField
             control={form.control}
             name="dob"
@@ -393,7 +396,7 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
               </FormItem>
             )}
           />
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 gap-4">
           <FormField
@@ -460,9 +463,27 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>State</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter state" {...field} />
-                </FormControl>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={String(field.value)}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select state" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {indianStates.map((state) => (
+                      <SelectItem
+                        key={state.code}
+                        value={state.code}
+                        className="text-sm"
+                      >
+                        <span>{state.name}</span>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -482,7 +503,7 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
             )}
           />
 
-          <FormField
+          {/* <FormField
             control={form.control}
             name="pan_number"
             render={({ field }) => (
@@ -494,10 +515,10 @@ const FutureTempleContributionForm: React.FC<Props> = ({ className }) => {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
         </div>
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit" loading={isLoading}>Submit</Button>
       </form>
 
       {calculateTotalCost() > 0 && (

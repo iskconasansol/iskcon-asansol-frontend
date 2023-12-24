@@ -25,6 +25,7 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { useEffect } from 'react';
 import { DateInput } from '@/components/ui/date-input';
+import indianStates from '@/data/indian-states.json';
 
 type Props = {
   className?: string;
@@ -140,9 +141,12 @@ const FormSchema = z.object({
       message: 'Please provide a valid PAN number',
     })
     .optional(),
-  preferred_language: z.string().min(1, {
-    message: 'Please provide a valid language',
-  }),
+  preferred_language: z
+    .string()
+    .min(1, {
+      message: 'Please provide a valid language',
+    })
+    .optional(),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
@@ -183,7 +187,9 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
           name="seva_type"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="seva_type">Select Seva</FormLabel>
+              <FormLabel htmlFor="seva_type" required>
+                Select Seva
+              </FormLabel>
 
               <Select
                 onValueChange={field.onChange}
@@ -241,7 +247,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel required>Name</FormLabel>
               <FormControl>
                 <Input placeholder="Enter your name" {...field} />
               </FormControl>
@@ -250,7 +256,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
           )}
         />
 
-        <FormField
+        {/* <FormField
           control={form.control}
           name="initiatedName"
           render={({ field }) => (
@@ -262,9 +268,9 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
-        <div className="md:grid md:grid-cols-2 gap-4">
+        {/* <div className="md:grid md:grid-cols-2 gap-4">
           <FormField
             control={form.control}
             name="dob"
@@ -289,7 +295,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
               </FormItem>
             )}
           />
-        </div>
+        </div> */}
 
         <div className="md:grid md:grid-cols-2 gap-4">
           <FormField
@@ -311,7 +317,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone</FormLabel>
+                <FormLabel required>Phone</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter phone" {...field} />
                 </FormControl>
@@ -341,7 +347,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             name="city"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>City</FormLabel>
+                <FormLabel required>City</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter city" {...field} />
                 </FormControl>
@@ -355,10 +361,28 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             name="state"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>State</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter state" {...field} />
-                </FormControl>
+                <FormLabel required>State</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={String(field.value)}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select state" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {indianStates.map((state) => (
+                      <SelectItem
+                        key={state.code}
+                        value={state.code}
+                        className="text-sm"
+                      >
+                        <span>{state.name}</span>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -369,7 +393,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             name="postal_code"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Postal Code</FormLabel>
+                <FormLabel required>Postal Code</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter postal code" {...field} />
                 </FormControl>
@@ -378,7 +402,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
             )}
           />
 
-          <FormField
+          {/* <FormField
             control={form.control}
             name="pan_number"
             render={({ field }) => (
@@ -390,9 +414,9 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
         </div>
-        <FormField
+        {/* <FormField
           control={form.control}
           name="preferred_language"
           render={({ field }) => (
@@ -424,7 +448,7 @@ const NityaSevaForm: React.FC<Props> = ({ className, onFormSubmit }) => {
               <FormMessage {...field} />
             </FormItem>
           )}
-        />
+        /> */}
 
         <Button type="submit">Submit</Button>
       </form>

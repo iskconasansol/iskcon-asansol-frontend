@@ -205,7 +205,7 @@ const GitaDonationForm: React.FC<Props> = ({
           )}
         />
 
-        <FormField
+        {/* <FormField
           control={form.control}
           name="initiatedName"
           render={({ field }) => (
@@ -217,7 +217,7 @@ const GitaDonationForm: React.FC<Props> = ({
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         {/* <div className="grid md:grid-cols-2 gap-6">
           <FormField
@@ -311,9 +311,27 @@ const GitaDonationForm: React.FC<Props> = ({
             render={({ field }) => (
               <FormItem>
                 <FormLabel>State</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter state" {...field} />
-                </FormControl>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={String(field.value)}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select state" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {indianStates.map((state) => (
+                      <SelectItem
+                        key={state.code}
+                        value={state.code}
+                        className="text-sm"
+                      >
+                        <span>{state.name}</span>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -333,7 +351,7 @@ const GitaDonationForm: React.FC<Props> = ({
             )}
           />
 
-          <FormField
+          {/* <FormField
             control={form.control}
             name="pan_number"
             render={({ field }) => (
@@ -345,7 +363,7 @@ const GitaDonationForm: React.FC<Props> = ({
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
         </div>
 
         <Button type="submit" loading={isLoading}>

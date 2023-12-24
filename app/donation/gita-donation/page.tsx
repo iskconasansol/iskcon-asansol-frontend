@@ -83,7 +83,7 @@ const GitaDonationPage = () => {
                 </h3>
               </CardHeader>
 
-              {/* <GitaDonationForm
+              <GitaDonationForm
                 isLoading={isCheckoutLoading}
                 onFormSubmit={async (data) => {
                   performCashfreeCheckout({
@@ -107,10 +107,12 @@ const GitaDonationPage = () => {
                   });
                 }}
                 className="px-8"
-              /> */}
-
-              <OfflinePayment />
+              />
             </Card>
+          </div>
+
+          <div className='py-16'>
+            <OfflinePayment />
           </div>
         </div>
       </section>
