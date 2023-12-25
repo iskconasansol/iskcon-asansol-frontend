@@ -142,6 +142,9 @@ const Footer = () => {
           <Link href="/privacy" className="px-4">
             Privacy
           </Link>
+          <Link href="/contact-us" className="px-4">
+            Contact
+          </Link>
         </div>
       </div>
     </footer>
