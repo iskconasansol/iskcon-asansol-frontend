@@ -19,7 +19,7 @@ const slides: Slide[] = [
     image: '/images/lord_radha_krishna.jpg',
     callToAction: {
       text: 'Contribute',
-      link: '/donation/new-temple',
+      link: '/donation/projects',
     },
   },
   {

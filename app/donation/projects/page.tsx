@@ -12,7 +12,7 @@ const NewTemple = () => {
     <main className="py-8">
       <div className="container mx-auto">
         <section className="grid md:grid-cols-3  gap-4">
-          <div className="col-span-2 bg-purple-200 rounded-lg h-52 p-8">
+          <div className="col-span-2 bg-purple-200 rounded-lg md:h-52 p-8">
             <p className="text-xl md:text-2xl font-semibold">
               {` Contribute towards our under-construction projects`}
             </p>
