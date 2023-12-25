@@ -1,6 +1,7 @@
 import DonateUs from '@/components/donate-us';
 import Carousel, { Slide } from '@/components/ui/carousel/carousel';
 import Activities from '@/components/activities';
+import { Metadata } from 'next';
 
 const slides: Slide[] = [
   {
@@ -41,6 +42,14 @@ const slides: Slide[] = [
     },
   },
 ];
+
+export const metadata: Metadata = {
+  title: 'Iskcon Project | Asansol',
+  description: 'Official website of Iskcon Asansol',
+  creator: 'ISKCON Asansol',
+  keywords:
+    'iskcon, asansol, hare krishna, jagannath temple asansol, namhatta, iskcon asansol, iskcon project',
+};
 
 export default function Home() {
   return (
