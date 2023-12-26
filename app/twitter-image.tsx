@@ -29,12 +29,7 @@ export default async function TwitterImage() {
           justifyContent: 'center',
         }}
       >
-        <Image
-          src="/images/logo/iskcon-asansol-logo.svg"
-          width={60}
-          height={60}
-          alt="logo"
-        />
+        <Image src="/images/logo/icon.svg" width={60} height={60} alt="logo" />
       </div>
     ),
     // ImageResponse options

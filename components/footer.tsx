@@ -52,10 +52,11 @@ const templeSchedule = [
 ];
 
 const quickLinks = [
-  { name: 'About', link: '/about-us' },
-  { name: 'Donate', link: '/donation' },
+  { name: 'Donation', link: '/donation' },
   { name: 'Festivals', link: '/festivals' },
   { name: 'Activities', link: '/activities' },
+  { name: 'Vaishnava Calendar', link: 'iskcon/vaishnava-calendar' },
+  { name: 'Membership', link: '/members' },
   {
     name: 'Learn from Prabhupada',
     link: '/learn-from-prabhupada',

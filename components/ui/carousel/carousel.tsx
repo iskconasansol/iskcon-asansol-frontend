@@ -62,9 +62,9 @@ const Carousel: React.FC<PropType> = (props) => {
               </div>
               <div className="md:bg-gradient-to-b from-transparent to-fuchsia-900 bg-fuchsia-800 bg-opacity-70 md:bg-transparent absolute w-full md:w-full md:h-[400px] bottom-0 px-8 py-4 md:py-0 rounded-md font-light">
                 <div className="md:transform md:translate-y-60">
-                  <div className="text-xl md:text-3xl lg:text-4xl font-bold text-yellow-300">
+                  <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-yellow-300">
                     {slide.title}
-                  </div>
+                  </h1>
                   <div className="text-sm lg:text-2xl text-white">
                     {slide.description}
                   </div>
