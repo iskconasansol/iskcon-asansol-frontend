@@ -6,8 +6,9 @@ export async function GET(request: NextRequest) {
   const params = await request.nextUrl.searchParams;
   const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
   const orderId = params.get('order_id');
-  if (!orderId) {
-    return Response.redirect(BASE_URL);
+
+  if (orderId === null || orderId === undefined || orderId === 'undefined') {
+    return Response.redirect(`${BASE_URL}`);
   }
 
   const response: OrderEntity = await getOrderDetails(orderId);

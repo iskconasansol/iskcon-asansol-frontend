@@ -76,8 +76,8 @@ const GitaDonationPage = () => {
               </Card>
             </div>
 
-            <Card className="bg-yellow-100 p-4 px-8 shadow-md col-span-3">
-              <CardHeader>
+            <Card className="bg-yellow-100 p-4 md:px-8 shadow-md md:col-span-3">
+              <CardHeader className='px-0'>
                 <h3 className="font-semibold text-xl lg:text-2xl text text-red-600">
                   হ্যাঁ! আমি শ্রীমদ ভগবদ্গীতা দান করতে চাই
                 </h3>
@@ -106,7 +106,7 @@ const GitaDonationPage = () => {
                     },
                   });
                 }}
-                className="px-8"
+                className="md:px-8"
               />
             </Card>
           </div>
