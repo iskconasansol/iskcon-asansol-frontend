@@ -1,3 +1,4 @@
+import OfflinePayment from '@/components/offline-payment';
 import PageHeader from '@/components/page-header';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -103,6 +104,10 @@ const Donation = () => {
               </Link>
             );
           })}
+        </div>
+
+        <div className="py-32">
+          <OfflinePayment />
         </div>
       </div>
     </main>

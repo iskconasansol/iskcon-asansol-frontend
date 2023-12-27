@@ -4,6 +4,7 @@ import FutureTempleContributionForm from '@/components/forms/future-temple-contr
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import useCashfreeCheckout from '@/app/hooks/useCashfree';
+import OfflinePayment from '@/components/offline-payment';
 
 const NewTemple = () => {
   const { performCashfreeCheckout, isCheckoutLoading } = useCashfreeCheckout();
@@ -64,6 +65,9 @@ const NewTemple = () => {
             }}
           />
         </Card>
+      </div>
+      <div className="py-16 container">
+        <OfflinePayment />
       </div>
     </main>
   );

@@ -5,6 +5,7 @@ import PageHeader from '@/components/page-header';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { useToast } from '@/components/ui/use-toast';
+import OfflinePayment from '@/components/offline-payment';
 
 const NityaSeva = () => {
   const { toast } = useToast();
@@ -54,6 +55,9 @@ const NityaSeva = () => {
             }}
           />
         </Card>
+      </div>
+      <div className="py-16 container">
+        <OfflinePayment />
       </div>
     </main>
   );

@@ -523,11 +523,10 @@ const FutureTempleContributionForm: React.FC<Props> = ({
 
       {calculateTotalCost() > 0 && (
         <div className="mt-4 sticky bottom-2 bg-white p-4 text-center border border-gray-400 rounded-md shadow-md ">
-          <p>
-            You are contributing{' '}
-            <span className="font-semibold">₹{calculateTotalCost()}</span>{' '}
-            towards the construction of our future temple. Hare Krishna!
-          </p>
+         <div className="flex justify-between items-center">
+              <span>Your contribution</span>
+              <span className="font-semibold">₹{calculateTotalCost()}</span>
+            </div>
         </div>
       )}
     </Form>

@@ -2,6 +2,7 @@
 
 import useCashfree from '@/app/hooks/useCashfree';
 import GeneralDonationForm from '@/components/forms/general-donation-form';
+import OfflinePayment from '@/components/offline-payment';
 import PageHeader from '@/components/page-header';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
@@ -60,6 +61,9 @@ const GeneralDonationPage = () => {
                 isLoading={isCheckoutLoading}
               />
             </Card>
+          </div>
+          <div className="py-16">
+            <OfflinePayment />
           </div>
         </div>
       </section>
