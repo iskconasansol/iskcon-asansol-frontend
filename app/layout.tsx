@@ -13,7 +13,22 @@ const noto_sans_bengali = Noto_Sans_Bengali({
 
 export const metadata: Metadata = {
   title: 'Iskcon Asansol',
-  description: 'Iskcon Asansol',
+  description:
+    'Iskcon Project is an initiate of Iskcon Asansol. It is a non-profit organization. It is a project to spread the teachings of Lord Krishna and Srila Prabhupada.',
+  metadataBase: new URL('https://iskconasansol.com'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://iskconasansol.com',
+    images: [
+      {
+        url: './images/logo/icon.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Iskcon Project Asansol',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
