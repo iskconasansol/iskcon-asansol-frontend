@@ -4,6 +4,12 @@ import Link from 'next/link';
 
 const festivals = [
   {
+    name: 'Nityananda Trayodasi',
+    image: '/images/nityananda.svg',
+    link: '/festivals/nityananda-trayodasi',
+    className: 'bg-teal-100',
+  },
+  {
     name: 'Ratha Yatra',
     image: '/images/temple.svg',
     link: '/festivals/ratha-yatra',

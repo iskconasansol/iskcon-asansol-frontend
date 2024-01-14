@@ -6,6 +6,15 @@ import Head from 'next/head';
 
 const slides: Slide[] = [
   {
+    title: 'Nityananda Trayodasi. 22nd Feb 2024',
+    description: 'Celebrate the appearance of Lord Nityananda',
+    image: '/images/nityananda_trayodasi.jpg',
+    callToAction: {
+      text: 'Donate',
+      link: '/festivals/nityananda-trayodasi',
+    },
+  },
+  {
     title: 'Donate Gita for Ram Mandir',
     description: 'Contribute and help us distribute Gita',
     image: '/images/ram-mandir.jpg',

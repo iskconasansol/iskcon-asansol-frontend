@@ -21,6 +21,18 @@ export async function POST(request: Request) {
   });
 }
 
+export async function GET() {
+  const loc = GCLocation.FindByName('Calcutta');
+  const startDate = new GregorianDateTime();
+
+  const tc = new TResultCalendar();
+  tc.CalculateMonth(loc, 2023, 12);
+
+  return Response.json({
+    events: tc.m_pData,
+  });
+}
+
 const sortDayEventsByPriority = (a: any, b: any) => {
   if (a.prio < b.prio) return -1;
   if (a.prio > b.prio) return 1;
