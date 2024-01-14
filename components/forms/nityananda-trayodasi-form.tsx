@@ -71,8 +71,8 @@ const donationTypes = [
 ];
 
 const FormSchema = z.object({
-  qty: z.string({
-    required_error: 'Please select how many Gita books you want to donate',
+  seva_type: z.string({
+    required_error: 'Please select type of seva',
   }),
   amount: z.string(),
   name: z.string().min(1, {
@@ -127,16 +127,16 @@ const NityanandaTrayodasiForm: React.FC<Props> = ({
 
   const { watch, setValue } = form;
 
-  const watchQty = watch('qty');
+  const watchSevaType = watch('seva_type');
 
   const watchAmount = watch('amount');
 
   useEffect(() => {
-    const donationType = donationTypes.find((type) => type.value === watchQty);
+    const donationType = donationTypes.find((type) => type.value === watchSevaType);
     if (donationType) {
       setValue('amount', String(donationType.amount));
     }
-  }, [watchQty, setValue]);
+  }, [watchSevaType, setValue]);
 
   const onSubmit = (data: FormValues) => {
     onFormSubmit(data);
@@ -149,7 +149,7 @@ const NityanandaTrayodasiForm: React.FC<Props> = ({
       >
         <FormField
           control={form.control}
-          name="qty"
+          name="seva_type"
           render={({ field }) => (
             <FormItem>
               <FormLabel htmlFor="seva_type" required>
@@ -183,7 +183,7 @@ const NityanandaTrayodasiForm: React.FC<Props> = ({
 
               {Number(watchAmount) ? (
                 <FormDescription>
-                  {`You are contributing ₹${watchAmount} by donating ${watchQty} Gita books. Hare Krishna!`}
+                  {`You are contributing ₹${watchAmount} by donating ${watchSevaType} Gita books. Hare Krishna!`}
                 </FormDescription>
               ) : null}
               <FormMessage {...field} />
