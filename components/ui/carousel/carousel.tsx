@@ -8,6 +8,7 @@ import Image from 'next/image';
 import './carousel.css';
 import { Button } from '../button';
 import Link from 'next/link';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 type CallToAction = {
   text: string;
@@ -28,7 +29,7 @@ type PropType = {
 };
 
 const autoplayOptions = {
-  delay: 5000,
+  delay: 10000,
   jump: false,
   rootNode: (emblaRoot: any) => emblaRoot.parentElement,
 };
@@ -49,7 +50,7 @@ const Carousel: React.FC<PropType> = (props) => {
 
   return (
     <div className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
+      <div className="embla__viewport relative" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
@@ -86,10 +87,10 @@ const Carousel: React.FC<PropType> = (props) => {
       {props.showArrows && (
         <>
           <button className="embla__prev" onClick={scrollPrev}>
-            Prev
+            <ChevronLeft size={48}/>
           </button>
           <button className="embla__next" onClick={scrollNext}>
-            Next
+            <ChevronRight size={48}/>
           </button>
         </>
       )}

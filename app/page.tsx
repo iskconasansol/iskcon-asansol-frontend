@@ -211,6 +211,7 @@ export default function Home() {
       <section>
         <Carousel
           slides={slides}
+          showArrows
           options={{
             loop: true,
           }}
