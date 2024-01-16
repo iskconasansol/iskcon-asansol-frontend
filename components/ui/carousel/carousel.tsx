@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useCallback } from 'react';
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 import './carousel.css';
