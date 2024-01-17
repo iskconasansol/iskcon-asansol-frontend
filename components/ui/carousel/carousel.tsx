@@ -49,8 +49,8 @@ const Carousel: React.FC<PropType> = (props) => {
   }, [emblaApi]);
 
   return (
-    <div className="embla">
-      <div className="embla__viewport relative" ref={emblaRef}>
+    <div className="embla relative">
+      <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
@@ -64,10 +64,10 @@ const Carousel: React.FC<PropType> = (props) => {
               </div>
               <div className="md:bg-gradient-to-b from-transparent to-fuchsia-900 bg-fuchsia-800 bg-opacity-70 md:bg-transparent absolute w-full md:w-full md:h-[400px] bottom-0 px-8 py-4 md:py-0 rounded-md font-light">
                 <div className="md:transform md:translate-y-60">
-                  <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-yellow-300">
+                  <h1 className="text-base md:text-3xl lg:text-4xl font-bold text-yellow-300">
                     {slide.title}
                   </h1>
-                  <div className="text-sm lg:text-2xl text-white">
+                  <div className="text-xs lg:text-2xl text-white">
                     {slide.description}
                   </div>
 
@@ -87,10 +87,10 @@ const Carousel: React.FC<PropType> = (props) => {
       {props.showArrows && (
         <>
           <button className="embla__prev" onClick={scrollPrev}>
-            <ChevronLeft size={48}/>
+            <ChevronLeft size={48} />
           </button>
           <button className="embla__next" onClick={scrollNext}>
-            <ChevronRight size={48}/>
+            <ChevronRight size={48} />
           </button>
         </>
       )}

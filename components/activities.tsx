@@ -41,9 +41,12 @@ const Activities = () => {
   return (
     <section className=" py-16 bg-yellow-50">
       <div className="container mx-auto">
-        <div className="flex justify-between">
+        <div className="flex flex-col justify-between gap-4 md:flex-row">
           <div>
-            <h3 className="text-3xl">Our Activities</h3>
+            <h3 className="text-3xl">Activities</h3>
+            <p className="text-sm md:text-base">
+              Explore through our various activities
+            </p>
           </div>
 
           <Link href={'/activities'} className="flex items-center">
@@ -52,7 +55,6 @@ const Activities = () => {
             </Button>
           </Link>
         </div>
-        <p>Explore through our various activities</p>
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {activities.map((activity, index) => (
@@ -71,7 +73,7 @@ const Activities = () => {
               </div>
 
               <h4 className="mt-2 font-semibold">{activity.title}</h4>
-              <p className='text-xs'>{activity.subtitle}</p>
+              <p className="text-xs">{activity.subtitle}</p>
             </Link>
           ))}
         </div>

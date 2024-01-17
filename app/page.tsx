@@ -2,11 +2,10 @@ import DonateUs from '@/components/donate-us';
 import Carousel, { Slide } from '@/components/ui/carousel/carousel';
 import Activities from '@/components/activities';
 import { Metadata } from 'next';
-import Head from 'next/head';
 
 const slides: Slide[] = [
   {
-    title: 'Nityananda Trayodasi. 22nd Feb 2024',
+    title: 'Nityananda Trayodasi. 22nd Feb',
     description: 'Celebrate the appearance of Lord Nityananda',
     image: '/images/nityananda_trayodasi.jpg',
     callToAction: {
@@ -24,8 +23,8 @@ const slides: Slide[] = [
     },
   },
   {
-    title: 'Welcome to Iskcon Asansol',
-    description: 'Join us in building our new temple',
+    title: 'Iskcon Asansol Jagannath Temple',
+    description: 'Join us in our ongoing projects',
     image: '/images/lord_radha_krishna.jpg',
     callToAction: {
       text: 'Contribute',

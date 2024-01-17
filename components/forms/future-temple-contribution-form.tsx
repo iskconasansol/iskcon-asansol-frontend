@@ -32,12 +32,9 @@ type Props = {
 
 const schema = z.object({
   amount: z.string().optional(),
-  contributionType: z.enum(['squareFeet', 'materials', 'other']),
+  contributionType: z.enum(['squareFeet', 'labourCharges', 'other']),
   squareFeetContribution: z.string().min(1).optional(),
   laborCharges: z.string().min(1).optional(),
-  brickContribution: z.number().min(10).optional(),
-  cementContribution: z.number().min(1).optional(),
-  ironRodContribution: z.number().min(1).optional(),
   otherContribution: z.number().min(1).optional(),
   name: z.string().min(1, {
     message: 'Please provide a valid name',
@@ -106,7 +103,7 @@ const laborChargesOptions = [
 
 const contributionTypeOptions = [
   { value: 'squareFeet', label: 'Square feet' },
-  { value: 'materials', label: 'Materials (Cement, Bricks, Iron Rod etc)' },
+  { value: 'labourCharges', label: 'Labour Charges' },
   { value: 'other', label: 'Other (Donate any amount you wish)' },
 ];
 
@@ -118,7 +115,7 @@ const FutureTempleContributionForm: React.FC<Props> = ({
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      laborCharges: '',
+      laborCharges: '1',
       contributionType: 'squareFeet',
       squareFeetContribution: '1',
       name: '',
@@ -129,24 +126,17 @@ const FutureTempleContributionForm: React.FC<Props> = ({
 
   const calculateTotalCost = () => {
     const laborCharges = watch('laborCharges');
-    const brickContribution = watch('brickContribution') || 0;
-    const cementContribution = watch('cementContribution') || 0;
-    const ironRodContribution = watch('ironRodContribution') || 0;
     const squareFeetContribution = watch('squareFeetContribution');
     const otherContribution = watch('otherContribution') || 0;
 
     const totalSquareFeetCost = Number(squareFeetContribution) * 3000;
     const totalLaborCost = Number(laborCharges) * 1750;
-    const totalBrickCost = Number(brickContribution) * 8;
-    const totalCementCost = Number(cementContribution) * 350;
-    const totalIronRodCost = Number(ironRodContribution) * 600;
-    const totalMaterialCost =
-      totalBrickCost + totalCementCost + totalIronRodCost + totalLaborCost;
+    const totalMaterialCost = totalLaborCost;
 
     if (watch('contributionType') === 'squareFeet') {
       return totalSquareFeetCost;
     }
-    if (watch('contributionType') === 'materials') {
+    if (watch('contributionType') === 'labourCharges') {
       return totalMaterialCost;
     }
     if (watch('contributionType') === 'other') {
@@ -157,7 +147,7 @@ const FutureTempleContributionForm: React.FC<Props> = ({
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     form.setValue('amount', String(calculateTotalCost()));
-    onFormSubmit(data);
+    onFormSubmit(form.getValues());
   };
   return (
     <Form {...form}>
@@ -235,7 +225,7 @@ const FutureTempleContributionForm: React.FC<Props> = ({
           </div>
         )}
 
-        {watch('contributionType') === 'materials' && (
+        {watch('contributionType') === 'labourCharges' && (
           <div className="grid md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -268,62 +258,6 @@ const FutureTempleContributionForm: React.FC<Props> = ({
               )}
             ></FormField>
 
-            <FormField
-              control={form.control}
-              name="brickContribution"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Brick Contribution</FormLabel>
-                  <Input
-                    type="number"
-                    placeholder="Enter no of bricks"
-                    {...field}
-                  />
-                  <FormDescription>
-                    {`The cost of each brick is ₹8`}
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            ></FormField>
-
-            <FormField
-              control={form.control}
-              name="cementContribution"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Cement Contribution</FormLabel>
-                  <Input
-                    type="number"
-                    placeholder="Enter no of bags"
-                    {...field}
-                  />
-                  <FormDescription>
-                    {`The cost of each bag is ₹350`}
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            ></FormField>
-
-            <FormField
-              control={form.control}
-              name="ironRodContribution"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Iron Rod Contribution</FormLabel>
-                  <Input
-                    type="number"
-                    placeholder="Enter no of rods"
-                    {...field}
-                  />
-                  <FormDescription>
-                    {`The cost of each rod is ₹600`}
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            ></FormField>
           </div>
         )}
 

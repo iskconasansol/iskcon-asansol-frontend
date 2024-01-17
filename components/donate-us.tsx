@@ -43,10 +43,10 @@ const DonateUs = () => {
   return (
     <section>
       <div className="container py-16">
-        <div className="flex justify-between">
+        <div className="flex flex-col gap-4 justify-between md:flex-row">
           <div>
-            <h3 className="text-3xl">Donate Us!</h3>
-            <p>Your small contribution can make a big difference!</p>
+            <h3 className="text-3xl">Contribute</h3>
+            <p className='text-sm md:text-base'>Your small donation can make a big difference!</p>
           </div>
 
           <Link href={'/donation'} className="flex items-center">

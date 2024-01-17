@@ -14,10 +14,10 @@ const NewTemple = () => {
       <div className="container mx-auto">
         <section className="grid md:grid-cols-3  gap-4">
           <div className="col-span-2 bg-purple-200 rounded-lg md:h-52 p-8">
-            <p className="text-xl md:text-2xl font-semibold">
+            <p className="text-base md:text-lg lg:text-2xl font-semibold">
               {` Contribute towards our under-construction projects`}
             </p>
-            <p className="mt-2">
+            <p className="text-xs md:text-sm lg:text-base mt-2">
               Embark on a sacred journey with us as we construct a magnificent
               temple for Lord Jagannath in Garui Village. Your generous
               contributions, whether in funds or construction materials, are
@@ -44,6 +44,7 @@ const NewTemple = () => {
             className="mt-4"
             isLoading={isCheckoutLoading}
             onFormSubmit={(data) => {
+              console.log(data, 'on submit')
               performCashfreeCheckout({
                 customer_details: {
                   customer_name: data.name,
