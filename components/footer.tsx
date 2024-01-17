@@ -107,7 +107,7 @@ const Footer = () => {
           <h3 className="text-xl font-semibold">Timing</h3>
           <div className="mt-2 text-sm flex flex-col gap-2">
             {templeSchedule.map(({ name, time }, index) => (
-              <div key={index} className="flex gap-2 items-center text-xs md:text-base">
+              <div key={index} className="flex gap-2 items-center text-xs md:text-sm">
                 <TimeIcon className="w-4 h-4" />
                 <span className="font-semibold">{name}</span> : {time}
               </div>
@@ -132,7 +132,7 @@ const Footer = () => {
           </div>
         </section>
       </div>
-      <div className="flex flex-col md:flex-row gap-2 justify-between items-center w-full border-t border-gray-200 py-8 text-xs md:text-base">
+      <div className="flex flex-col md:flex-row gap-2 justify-between items-center text-slate-600 w-full border-t border-gray-200 py-8 text-xs md:text-base">
         <div>© {currentYear} ISKCON Asansol</div>
 
         {/* terms privacy cancellation */}
@@ -142,6 +142,9 @@ const Footer = () => {
           </Link>
           <Link href="/privacy" className="px-4">
             Privacy
+          </Link>
+          <Link href="/refund-cancellation" className="px-4">
+            Refunds & Cancellation
           </Link>
           <Link href="/contact-us" className="px-4">
             Contact
