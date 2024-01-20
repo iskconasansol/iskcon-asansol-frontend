@@ -45,6 +45,7 @@
     "next": "14.0.3",
     "next-intl": "^3.2.4",
     "paytmchecksum": "^1.5.1",
+    "razorpay": "^2.9.2",
     "react": "^18",
     "react-day-picker": "^8.9.1",
     "react-dom": "^18",

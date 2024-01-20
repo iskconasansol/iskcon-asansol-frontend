@@ -13,7 +13,7 @@ const NityanandaTrayodasiPage = () => {
         />
 
         <div className="absolute left-12 top-1/2 transform -translate-1/2">
-          <h1 className="text-4xl font-semibold text-purple-900">
+          <h1 className="md:text-4xl font-semibold text-purple-900">
             Nityananda Trayodasi
           </h1>
           <p className="text-2xl font-semibold text-slate-800">

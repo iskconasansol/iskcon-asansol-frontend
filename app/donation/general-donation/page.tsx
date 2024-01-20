@@ -1,14 +1,36 @@
 'use client';
 
 import useCashfree from '@/app/hooks/useCashfree';
+import useRazorpay from '@/app/hooks/useRazorpay';
 import GeneralDonationForm from '@/components/forms/general-donation-form';
 import OfflinePayment from '@/components/offline-payment';
 import PageHeader from '@/components/page-header';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 const GeneralDonationPage = () => {
-  const { performCashfreeCheckout, isCheckoutLoading } = useCashfree();
+  // const { performCashfreeCheckout, isCheckoutLoading } = useCashfree();
+  const { performRazorpayCheckout, isCheckoutLoading, orderId } = useRazorpay();
+
+  useEffect(() => {
+    if(!orderId) return;
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+      amount: 1000, //  = INR 10
+      name: 'ISKCON Asansol',
+      description: 'Donation',
+      image: '/images/logo.png',
+      order_id: orderId,
+      callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/order-summary/${orderId}/status`,
+      notes: {
+        address: 'Razorpay Corporate Office'
+      },
+      theme: {
+        color: '#F37254'
+      }
+    };
+  }, [orderId])
 
   return (
     <main>
@@ -39,23 +61,8 @@ const GeneralDonationPage = () => {
             <Card className="bg-yellow-50 p-4 shadow-md">
               <GeneralDonationForm
                 onFormSubmit={(data) => {
-                  performCashfreeCheckout({
-                    customer_details: {
-                      customer_id: data.phone,
-                      customer_phone: data.phone,
-                      customer_email: data.email,
-                      customer_name: data.name,
-                    },
-                    order: {
-                      order_amount: data.amount,
-                      order_tags: {
-                        address: `${data?.street_address},${data?.city},${data?.state},${data.postal_code}`,
-                        pan_number: data?.pan_number,
-                        initiated_name: data?.initiatedName,
-                        type: 'donation',
-                        purpose: 'general_donation',
-                      },
-                    },
+                  performRazorpayCheckout({
+                    amount: Number(data.amount),
                   });
                 }}
                 isLoading={isCheckoutLoading}

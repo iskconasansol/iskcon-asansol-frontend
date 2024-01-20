@@ -1,2 +1,2 @@
 declare module 'paytmchecksum';
-declare module '@cashfreepayments/cashfree-js'
+declare module '@cashfreepayments/cashfree-js';

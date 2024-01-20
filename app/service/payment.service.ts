@@ -14,7 +14,6 @@ export const initatePaymentRequest = async (
 
 export const getOrderDetails = async (url: string) => {
   const orders = await axiosFetcher('GET')(url, { arg: '' });
-
   return orders;
 };
 
