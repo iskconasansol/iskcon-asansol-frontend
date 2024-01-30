@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { TimeIcon, EnvelopeIcon, PhoneIcon } from '@/components/icons';
 import MahamantraMarquee from './mahamantra-marquee';
 import MapEmbed from './map-embed';
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from 'lucide-react';
 
 const templeSchedule = [
   {
@@ -92,6 +93,24 @@ const Footer = () => {
           <p className="mt-2 text-sm">
             NH2 Bye-Pass, Garui, Asansol, <br /> West Bengal 713341, India
           </p>
+
+          <div className="mt-2 flex gap-8 text-gray-400">
+            <a
+              href="https://www.facebook.com/people/Iskcon-Asansol/100072286610743/"
+              target="_blank"
+            >
+              <FacebookIcon className="w-12 h-8 hover:text-purple-600" />
+            </a>
+            <a href="https://www.youtube.com/@ISKCON699/" target="_blank">
+              <YoutubeIcon className="w-8 h-8 hover:text-purple-600" />
+            </a>
+            <Link
+              href="https://www.instagram.com/iskconasansol/"
+              target="_blank"
+            >
+              <InstagramIcon className="w-8 h-8 hover:text-purple-600" />
+            </Link>
+          </div>
         </section>
         <section>
           <h3 className="text-xl font-semibold">Quick Links</h3>
@@ -107,7 +126,10 @@ const Footer = () => {
           <h3 className="text-xl font-semibold">Timing</h3>
           <div className="mt-2 text-sm flex flex-col gap-2">
             {templeSchedule.map(({ name, time }, index) => (
-              <div key={index} className="flex gap-2 items-center text-xs md:text-sm">
+              <div
+                key={index}
+                className="flex gap-2 items-center text-xs md:text-sm"
+              >
                 <TimeIcon className="w-4 h-4" />
                 <span className="font-semibold">{name}</span> : {time}
               </div>
@@ -136,17 +158,17 @@ const Footer = () => {
         <div>© {currentYear} ISKCON Asansol</div>
 
         {/* terms privacy cancellation */}
-        <div className="divide-x divide-gray-400">
-          <Link href="/terms" className="px-4">
+        <div className="md:divide-x divide-gray-400 grid gap-2 grid-cols-2 sm:grid-cols-4 mt-4 md:mt-0 md:block flex-wrap">
+          <Link href="/terms" className="px-2">
             Terms
           </Link>
-          <Link href="/privacy" className="px-4">
+          <Link href="/privacy" className="px-2">
             Privacy
           </Link>
-          <Link href="/refund-cancellation" className="px-4">
+          <Link href="/refund-cancellation" className="px-2">
             Refunds & Cancellation
           </Link>
-          <Link href="/contact-us" className="px-4">
+          <Link href="/contact-us" className="px-2">
             Contact
           </Link>
         </div>

@@ -22,7 +22,7 @@ export type Slide = {
   callToAction?: CallToAction;
 };
 
-type PropType = {
+type Props = {
   slides: Slide[];
   options?: EmblaOptionsType;
   showArrows?: boolean;
@@ -34,8 +34,8 @@ const autoplayOptions = {
   rootNode: (emblaRoot: any) => emblaRoot.parentElement,
 };
 
-const Carousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+const Carousel: React.FC<Props> = (props) => {
+  const { slides, options, showArrows } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay(autoplayOptions),
   ]);
@@ -84,7 +84,7 @@ const Carousel: React.FC<PropType> = (props) => {
           ))}
         </div>
       </div>
-      {props.showArrows && (
+      {showArrows && (
         <>
           <button className="embla__prev" onClick={scrollPrev}>
             <ChevronLeft size={48} />
