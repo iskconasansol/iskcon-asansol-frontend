@@ -1,5 +1,5 @@
 {
-  "name": "iskcon-asansol-frontend",
+  "name": "iskcon-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -45,6 +45,7 @@
     "next": "14.0.3",
     "next-intl": "^3.2.4",
     "paytmchecksum": "^1.5.1",
+    "qr-scanner": "^1.4.2",
     "razorpay": "^2.9.2",
     "react": "^18",
     "react-day-picker": "^8.9.1",
