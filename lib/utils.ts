@@ -42,13 +42,3 @@ export const loadScript = (src: string) => {
     document.body.appendChild(script);
   });
 };
-
-// export const initatePaymentRequest = async (
-//   url: string,
-//   { arg }: { arg: string }
-// ) => {
-//   const response = await axios.post(url, JSON.parse(arg));
-//   const events = response.data?.events
-
-//   return events;
-// };

@@ -2,6 +2,7 @@ import DonateUs from '@/components/donate-us';
 import Carousel, { Slide } from '@/components/ui/carousel/carousel';
 import Activities from '@/components/activities';
 import { Metadata } from 'next';
+import Hero from '@/components/hero';
 
 const slides: Slide[] = [
   {
@@ -208,13 +209,14 @@ export default function Home() {
     <main>
       {jsonLD()}
       <section>
-        <Carousel
+        {/* <Carousel
           slides={slides}
           showArrows
           options={{
             loop: true,
           }}
-        />
+        /> */}
+        <Hero />
       </section>
       <DonateUs />
       <Activities />

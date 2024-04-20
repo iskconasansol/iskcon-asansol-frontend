@@ -1,7 +1,7 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import { MoonIcon, SunIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import {
   Dialog,
   DialogContent,
@@ -12,6 +12,8 @@ import {
 } from '@/components/ui/dialog';
 import TempleSchedule from './temple-schedule';
 import { ScrollArea } from './ui/scroll-area';
+import { Button } from './ui/button';
+import { nextScheduleWithTime } from '@/lib/temple-schedule';
 
 type Props = {
   className?: string;
@@ -19,16 +21,16 @@ type Props = {
 
 type TempleTimeStatus = 'open' | 'closed';
 type TempleTimings =
-  | '4:30-12:30'
-  | '12:45 - 16:30'
-  | '16:30 - 20:30'
-  | '20:30 - 4:30';
+  | '4:15 - 13:00'
+  | '13:00 - 16:15'
+  | '16:15 - 21:00'
+  | '21:00 - 4:15';
 
 const TempleTimeStatus: React.FC<Props> = ({ className }) => {
   const [templeStatus, setTempleStatus] = useState<TempleTimeStatus>('open');
-  const [templeTiming, setTempleTiming] = useState<TempleTimings>('4:30-12:30');
+  const [templeTiming, setTempleTiming] =
+    useState<TempleTimings>('4:15 - 13:00');
   const isOpen = templeStatus === 'open';
-  const isNight = templeTiming === '20:30 - 4:30';
 
   useEffect(() => {
     const date = new Date();
@@ -37,58 +39,73 @@ const TempleTimeStatus: React.FC<Props> = ({ className }) => {
 
     const totalMinutes = hour * 60 + minutes;
 
-    if (totalMinutes >= 4 * 60 + 30 && totalMinutes < 12 * 60 + 45) {
+    if (totalMinutes >= 4 * 60 + 15 && totalMinutes < 13 * 60) {
       setTempleStatus('open');
-      setTempleTiming('4:30-12:30');
-    } else if (totalMinutes >= 12 * 60 + 45 && totalMinutes < 16 * 60 + 30) {
+      setTempleTiming('4:15 - 13:00');
+    } else if (totalMinutes >= 13 * 60 && totalMinutes < 16 * 60 + 15) {
       setTempleStatus('closed');
-      setTempleTiming('12:45 - 16:30');
-    } else if (totalMinutes >= 16 * 60 + 30 && totalMinutes < 20 * 60 + 30) {
+      setTempleTiming('13:00 - 16:15');
+    } else if (totalMinutes >= 16 * 60 + 15 && totalMinutes < 21 * 60) {
       setTempleStatus('open');
-      setTempleTiming('16:30 - 20:30');
+      setTempleTiming('16:15 - 21:00');
     } else {
       setTempleStatus('closed');
-      setTempleTiming('20:30 - 4:30');
+      setTempleTiming('21:00 - 4:15');
     }
   }, []);
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <div
-          className={cn(
-            'flex gap-2 items-center rounded-full p-2 border-gray-100 border-2 text-xs md:text-sm',
-            className
-          )}
-        >
+    <div className='bg-black/40 backdrop-blur-md p-4 rounded-xl text-center'>
+      <div className='text-center'>
+        <div className='flex gap-2 items-center justify-center md:text-xl'>
           <div
             className={clsx(
-              'w-4 h-4 rounded-full border-4',
+              'w-4 h-4 md:w-6 md:h-6 rounded-full border-4',
               isOpen
                 ? 'bg-green-500  border-green-300'
                 : 'bg-red-500 border-red-300'
             )}
           ></div>
-          <div className="capitalize">{templeStatus}</div>
-          <div>
-            {isNight ? <MoonIcon /> : <SunIcon className="text-gray-500" />}
-          </div>
-          <div>{templeTiming}</div>
+          <div className='uppercase flex items-center'>{templeStatus}</div>
         </div>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle className="text-left md:text-center">
-            Temple Schedule
-          </DialogTitle>
-          <DialogDescription>
-            <ScrollArea className="h-[450px] md:h-auto">
-              <TempleSchedule />
-            </ScrollArea>
-          </DialogDescription>
-        </DialogHeader>
-      </DialogContent>
-    </Dialog>
+
+        <div className='mt-4'>
+          <div className='text-slate-300'>
+            Next Schedule: {nextScheduleWithTime()}
+          </div>
+        </div>
+      </div>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant={'link'} className='text-purple-300 md:text-lg'>
+            View Temple Schedule
+          </Button>
+        </DialogTrigger>
+        <DialogContent className='sm:max-w-[425px]'>
+          <DialogHeader>
+            <DialogTitle className='text-left md:text-center'>
+              Temple Schedule
+            </DialogTitle>
+            <DialogDescription>
+              <ScrollArea className='h-[450px] md:h-auto'>
+                <TempleSchedule />
+              </ScrollArea>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      <div className='flex gap-4 justify-center mt-4'>
+        <Button>
+          <a href='tel:+91 9433320314'>Call Now</a>
+        </Button>
+        <Button>
+          <a href='https://maps.app.goo.gl/nAaXWFALFN4kY7Af8' target='_blank'>
+            Get Directions
+          </a>
+        </Button>
+      </div>
+    </div>
   );
 };
 

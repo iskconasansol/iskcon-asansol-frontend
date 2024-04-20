@@ -46,6 +46,10 @@ const moreItems = [
     name: 'Learn from Prabhupada',
     href: '/learn-from-prabhupada',
   },
+  {
+    name: 'Admin',
+    href: '/admin',
+  }
 ];
 
 const MobileNav = () => {

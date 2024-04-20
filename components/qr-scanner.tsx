@@ -75,7 +75,8 @@ const QrScanner:React.FC<Props> = (
     // 🧹 Clean up on unmount.
     // 🚨 This removes the QR Scanner from rendering and using camera when it is closed or removed from the UI.
     return () => {
-      if (!videoEl?.current) {
+      const videoElement = videoEl.current;
+      if (!videoElement) {
         scanner?.current?.stop();
       }
     };
@@ -84,7 +85,7 @@ const QrScanner:React.FC<Props> = (
     <div>
       {showScanner && 
         <div className={className}>
-          <video ref={videoEl} className='h-full object-cover' />
+          <video ref={videoEl} className='h-full' />
         </div>
       }
       {scannedResult && <p>{scannedResult}</p>}

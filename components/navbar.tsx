@@ -24,30 +24,29 @@ import TranslateIcon from './icons/translate-icon';
 
 const Navbar = () => {
   return (
-    <nav className="w-full sticky top-0 shadow-md bg-white z-10 py-2">
-      <div className="container mx-auto md:px-auto flex justify-between items-center">
-        <div className="flex gap-2 items-center">
-          <Link href="/">
+    <nav className='w-full sticky top-0 shadow-md bg-black/40 backdrop-blur-sm z-20 py-2'>
+      <div className='container mx-auto md:px-auto flex justify-between items-center'>
+        <div className='flex gap-2 items-center'>
+          <Link href='/'>
             <Image
-              src="/images/logo/iskcon-asansol-logo.svg"
+              src='/images/logo/iskcon-asansol-logo.svg'
               width={60}
               height={60}
-              alt="logo"
+              alt='logo'
             />
           </Link>
         </div>
 
-        <div className="flex gap-4">
-          <TempleTimeStatus className='cursor-pointer hover:bg-slate-100'/>
-          <div className="hidden lg:block">
+        <div className='flex gap-4'>
+          <div className='hidden lg:block'>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Iskcon</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="md:w-[200px]">
+                    <ul className='md:w-[200px]'>
                       <li>
-                        <Link href="/iskcon/history" legacyBehavior passHref>
+                        <Link href='/iskcon/history' legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
@@ -56,7 +55,7 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/iskcon/philosophy" legacyBehavior passHref>
+                        <Link href='/iskcon/philosophy' legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
@@ -65,7 +64,7 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/iskcon/founder" legacyBehavior passHref>
+                        <Link href='/iskcon/founder' legacyBehavior passHref>
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
@@ -73,8 +72,12 @@ const Navbar = () => {
                           </NavigationMenuLink>
                         </Link>
                       </li>
-                      <li className="">
-                        <Link href="/iskcon/vaishnava-calendar" legacyBehavior passHref>
+                      <li className=''>
+                        <Link
+                          href='/iskcon/vaishnava-calendar'
+                          legacyBehavior
+                          passHref
+                        >
                           <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                           >
@@ -87,7 +90,7 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/donation" legacyBehavior passHref>
+                  <Link href='/donation' legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
@@ -97,7 +100,7 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/activities" legacyBehavior passHref>
+                  <Link href='/activities' legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
@@ -107,7 +110,7 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/festivals" legacyBehavior passHref>
+                  <Link href='/festivals' legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
@@ -116,7 +119,7 @@ const Navbar = () => {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/members" legacyBehavior passHref>
+                  <Link href='/members' legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
